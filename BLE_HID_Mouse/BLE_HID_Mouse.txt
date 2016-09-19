@@ -1,0 +1,35 @@
+==============================================================
+BLE_HID_Mouse v1.0
+==============================================================
+- 2014-05-14, no CDT, nazr
+
+[UserInfo]
+
+[Internal]
+ Initial version
+
+[Reason for Change]
+
+
+==============================================================
+
+- 2015-07-30, multiple CDTs, nazr
+
+[UserInfo]
+ Battery Level voltage value is simulated/measured regardless to notification state.
+ Added LowPowerImplementation() function which implements low power in the project. 
+  It uses CyEnterCriticalSection API instead of GlobalInt Enable/Disable.
+ Added possibility to disable debug messages trough UART in the project.
+  To do it, set DEBUG_UART_ENABLED define from ENABLED to DISABLED. 
+ Added appearance field to advertising packet. 
+
+[Internal]
+ None
+
+[Reason for Change]
+ CDT 208663 BAS Eg- Simulator/Battery Monitor should be active irrespective of CCCD state 
+ CDT 201070 BLE example projects - replace GlobalInt Enable/Disable with CriticalSection 
+ CDT 199132 Option to disable console messages in BLE component example
+ CDT 212694 HID Examples: add appearance to advertising packet
+
+==============================================================
