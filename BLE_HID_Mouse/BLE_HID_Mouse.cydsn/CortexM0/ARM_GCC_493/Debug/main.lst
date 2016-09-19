@@ -1,0 +1,5198 @@
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	connIntv
+  18              		.data
+  19              		.align	1
+  20              		.type	connIntv, %object
+  21              		.size	connIntv, 2
+  22              	connIntv:
+  23 0000 0600     		.short	6
+  24              		.global	mainTimer
+  25              		.bss
+  26              		.align	2
+  27              		.type	mainTimer, %object
+  28              		.size	mainTimer, 4
+  29              	mainTimer:
+  30 0000 00000000 		.space	4
+  31              		.global	authenticated
+  32              		.type	authenticated, %object
+  33              		.size	authenticated, 1
+  34              	authenticated:
+  35 0004 00       		.space	1
+  36 0005 000000   		.section	.rodata
+  37              		.align	2
+  38              	.LC0:
+  39 0000 53746172 		.ascii	"StartAdvertisement API Error: %d \015\012\000"
+  39      74416476 
+  39      65727469 
+  39      73656D65 
+  39      6E742041 
+  40              		.align	2
+  41              	.LC2:
+  42 0024 426C7565 		.ascii	"Bluetooth On, StartAdvertisement with addr: \000"
+  42      746F6F74 
+  42      68204F6E 
+  42      2C205374 
+  42      61727441 
+  43 0051 000000   		.align	2
+  44              	.LC4:
+  45 0054 25322E32 		.ascii	"%2.2x\000"
+  45      7800
+  46 005a 0000     		.align	2
+  47              	.LC6:
+  48 005c 0D00     		.ascii	"\015\000"
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 2
+
+
+  49 005e 0000     		.align	2
+  50              	.LC8:
+  51 0060 48617264 		.ascii	"Hardware Error \015\000"
+  51      77617265 
+  51      20457272 
+  51      6F72200D 
+  51      00
+  52 0071 000000   		.align	2
+  53              	.LC10:
+  54 0074 4359424C 		.ascii	"CYBLE_EVT_STACK_BUSY_STATUS: %x\015\012\000"
+  54      455F4556 
+  54      545F5354 
+  54      41434B5F 
+  54      42555359 
+  55 0096 0000     		.align	2
+  56              	.LC12:
+  57 0098 4359424C 		.ascii	"CYBLE_EVT_AUTH_REQ: security=%x, bonding=%x, ekeySi"
+  57      455F4556 
+  57      545F4155 
+  57      54485F52 
+  57      45513A20 
+  58 00cb 7A653D25 		.ascii	"ze=%x, err=%x \015\012\000"
+  58      782C2065 
+  58      72723D25 
+  58      78200D0A 
+  58      00
+  59              		.align	2
+  60              	.LC14:
+  61 00dc 4359424C 		.ascii	"CYBLE_EVT_PASSKEY_ENTRY_REQUEST press 'p' to enter "
+  61      455F4556 
+  61      545F5041 
+  61      53534B45 
+  61      595F454E 
+  62 010f 70617373 		.ascii	"passkey \015\000"
+  62      6B657920 
+  62      0D00
+  63 0119 000000   		.align	2
+  64              	.LC16:
+  65 011c 4359424C 		.ascii	"CYBLE_EVT_PASSKEY_DISPLAY_REQUEST %6.6ld \015\012\000"
+  65      455F4556 
+  65      545F5041 
+  65      53534B45 
+  65      595F4449 
+  66              		.align	2
+  67              	.LC18:
+  68 0148 4359424C 		.ascii	"CYBLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT \015\000"
+  68      455F4556 
+  68      545F4741 
+  68      505F4B45 
+  68      59494E46 
+  69 016e 0000     		.align	2
+  70              	.LC20:
+  71 0170 41555448 		.ascii	"AUTH_COMPLETE: security:%x, bonding:%x, ekeySize:%x"
+  71      5F434F4D 
+  71      504C4554 
+  71      453A2073 
+  71      65637572 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 3
+
+
+  72 01a3 2C206175 		.ascii	", authErr %x \015\012\000"
+  72      74684572 
+  72      72202578 
+  72      200D0A00 
+  73 01b3 00       		.align	2
+  74              	.LC23:
+  75 01b4 4359424C 		.ascii	"CYBLE_EVT_AUTH_FAILED: %x \015\012\000"
+  75      455F4556 
+  75      545F4155 
+  75      54485F46 
+  75      41494C45 
+  76 01d1 000000   		.align	2
+  77              	.LC25:
+  78 01d4 4359424C 		.ascii	"CYBLE_EVT_ADVERTISING \015\000"
+  78      455F4556 
+  78      545F4144 
+  78      56455254 
+  78      4953494E 
+  79              		.align	2
+  80              	.LC28:
+  81 01ec 48696265 		.ascii	"Hibernate \015\000"
+  81      726E6174 
+  81      65200D00 
+  82              		.align	2
+  83              	.LC31:
+  84 01f8 4359424C 		.ascii	"CYBLE_EVT_GAP_DEVICE_CONNECTED: connIntv = %d ms \015"
+  84      455F4556 
+  84      545F4741 
+  84      505F4445 
+  84      56494345 
+  85 022a 0A00     		.ascii	"\012\000"
+  86              		.align	2
+  87              	.LC33:
+  88 022c 4359424C 		.ascii	"CYBLE_EVT_CONNECTION_UPDATE_COMPLETE: connIntv = %d"
+  88      455F4556 
+  88      545F434F 
+  88      4E4E4543 
+  88      54494F4E 
+  89 025f 206D7320 		.ascii	" ms \015\012\000"
+  89      0D0A00
+  90 0266 0000     		.align	2
+  91              	.LC35:
+  92 0268 4359424C 		.ascii	"CYBLE_EVT_GAP_DEVICE_DISCONNECTED: %x\015\012\000"
+  92      455F4556 
+  92      545F4741 
+  92      505F4445 
+  92      56494345 
+  93              		.align	2
+  94              	.LC37:
+  95 0290 4359424C 		.ascii	"CYBLE_EVT_GAP_ENCRYPT_CHANGE: %x \015\012\000"
+  95      455F4556 
+  95      545F4741 
+  95      505F454E 
+  95      43525950 
+  96              		.align	2
+  97              	.LC40:
+  98 02b4 4359424C 		.ascii	"CYBLE_EVT_GATT_CONNECT_IND: %x, %x \015\012\000"
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 4
+
+
+  98      455F4556 
+  98      545F4741 
+  98      54545F43 
+  98      4F4E4E45 
+  99 02da 0000     		.align	2
+ 100              	.LC42:
+ 101 02dc 4359424C 		.ascii	"CYBLE_EVT_GATT_DISCONNECT_IND \015\000"
+ 101      455F4556 
+ 101      545F4741 
+ 101      54545F44 
+ 101      4953434F 
+ 102              		.align	2
+ 103              	.LC44:
+ 104 02fc 4359424C 		.ascii	"CYBLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ: handle: %"
+ 104      455F4556 
+ 104      545F4741 
+ 104      5454535F 
+ 104      52454144 
+ 105 032f 78200D0A 		.ascii	"x \015\012\000"
+ 105      00
+ 106              		.align	2
+ 107              	.LC46:
+ 108 0334 4359424C 		.ascii	"CYBLE_EVT_PENDING_FLASH_WRITE\015\000"
+ 108      455F4556 
+ 108      545F5045 
+ 108      4E44494E 
+ 108      475F464C 
+ 109 0353 00       		.align	2
+ 110              	.LC48:
+ 111 0354 4F544845 		.ascii	"OTHER event: %lx \015\012\000"
+ 111      52206576 
+ 111      656E743A 
+ 111      20256C78 
+ 111      200D0A00 
+ 112              		.section	.text.AppCallBack,"ax",%progbits
+ 113              		.align	2
+ 114              		.global	AppCallBack
+ 115              		.code	16
+ 116              		.thumb_func
+ 117              		.type	AppCallBack, %function
+ 118              	AppCallBack:
+ 119              	.LFB37:
+ 120              		.file 1 ".\\main.c"
+   1:.\main.c      **** /*******************************************************************************
+   2:.\main.c      **** * File Name: main.c
+   3:.\main.c      **** *
+   4:.\main.c      **** * Version: 1.0
+   5:.\main.c      **** *
+   6:.\main.c      **** * Description:
+   7:.\main.c      **** *  BLE HID mouse example project that supports mouse movement and button click
+   8:.\main.c      **** *  HID reports in boot and protocol mode. The example also demonstrates handling
+   9:.\main.c      **** *  suspend event from the central device and enters low power mode when suspended.
+  10:.\main.c      **** *
+  11:.\main.c      **** * Note:
+  12:.\main.c      **** *
+  13:.\main.c      **** * Hardware Dependency:
+  14:.\main.c      **** *  CY8CKIT-042 BLE
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 5
+
+
+  15:.\main.c      **** *
+  16:.\main.c      **** ********************************************************************************
+  17:.\main.c      **** * Copyright 2015, Cypress Semiconductor Corporation.  All rights reserved.
+  18:.\main.c      **** * You may use this file only in accordance with the license, terms, conditions,
+  19:.\main.c      **** * disclaimers, and limitations in the end user license agreement accompanying
+  20:.\main.c      **** * the software package with which this file was provided.
+  21:.\main.c      **** *******************************************************************************/
+  22:.\main.c      **** 
+  23:.\main.c      **** #include "common.h"
+  24:.\main.c      **** #include "hids.h"
+  25:.\main.c      **** #include "bas.h"
+  26:.\main.c      **** #include "scps.h"
+  27:.\main.c      **** 
+  28:.\main.c      **** uint16 connIntv = CYBLE_GAPP_CONNECTION_INTERVAL_MIN;   /* in milliseconds / 1.25ms */
+  29:.\main.c      **** volatile uint32 mainTimer = 0;
+  30:.\main.c      **** uint8 authenticated = 0u;
+  31:.\main.c      **** 
+  32:.\main.c      **** /*******************************************************************************
+  33:.\main.c      **** * Function Name: AppCallBack()
+  34:.\main.c      **** ********************************************************************************
+  35:.\main.c      **** *
+  36:.\main.c      **** * Summary:
+  37:.\main.c      **** *   This is an event callback function to receive events from the BLE Component.
+  38:.\main.c      **** *
+  39:.\main.c      **** *******************************************************************************/
+  40:.\main.c      **** void AppCallBack(uint32 event, void* eventParam)
+  41:.\main.c      **** {
+ 121              		.loc 1 41 0
+ 122              		.cfi_startproc
+ 123 0000 B0B5     		push	{r4, r5, r7, lr}
+ 124              		.cfi_def_cfa_offset 16
+ 125              		.cfi_offset 4, -16
+ 126              		.cfi_offset 5, -12
+ 127              		.cfi_offset 7, -8
+ 128              		.cfi_offset 14, -4
+ 129 0002 88B0     		sub	sp, sp, #32
+ 130              		.cfi_def_cfa_offset 48
+ 131 0004 02AF     		add	r7, sp, #8
+ 132              		.cfi_def_cfa 7, 40
+ 133 0006 7860     		str	r0, [r7, #4]
+ 134 0008 3960     		str	r1, [r7]
+  42:.\main.c      ****     CYBLE_API_RESULT_T apiResult;
+  43:.\main.c      ****     CYBLE_GAP_BD_ADDR_T localAddr;
+  44:.\main.c      ****     CYBLE_GAP_AUTH_INFO_T *authInfo;
+  45:.\main.c      ****     uint8 i;
+  46:.\main.c      ****     
+  47:.\main.c      ****     switch (event)
+ 135              		.loc 1 47 0
+ 136 000a 7B68     		ldr	r3, [r7, #4]
+ 137 000c 262B     		cmp	r3, #38
+ 138 000e 00D1     		bne	.LCB18
+ 139 0010 DAE0     		b	.L3	@long jump
+ 140              	.LCB18:
+ 141 0012 1DD8     		bhi	.L4
+ 142 0014 212B     		cmp	r3, #33
+ 143 0016 00D1     		bne	.LCB22
+ 144 0018 8EE0     		b	.L5	@long jump
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 6
+
+
+ 145              	.LCB22:
+ 146 001a 0DD8     		bhi	.L6
+ 147 001c 022B     		cmp	r3, #2
+ 148 001e 00D1     		bne	.LCB26
+ 149 0020 7DE1     		b	.L36	@long jump
+ 150              	.LCB26:
+ 151 0022 02D8     		bhi	.L8
+ 152 0024 012B     		cmp	r3, #1
+ 153 0026 32D0     		beq	.L9
+ 154 0028 71E1     		b	.L2
+ 155              	.L8:
+ 156 002a 032B     		cmp	r3, #3
+ 157 002c 00D1     		bne	.LCB36
+ 158 002e 75E0     		b	.L10	@long jump
+ 159              	.LCB36:
+ 160 0030 052B     		cmp	r3, #5
+ 161 0032 00D1     		bne	.LCB38
+ 162 0034 77E0     		b	.L11	@long jump
+ 163              	.LCB38:
+ 164 0036 6AE1     		b	.L2
+ 165              	.L6:
+ 166 0038 232B     		cmp	r3, #35
+ 167 003a 00D1     		bne	.LCB44
+ 168 003c 95E0     		b	.L12	@long jump
+ 169              	.LCB44:
+ 170 003e 00D2     		bcs	.LCB46
+ 171 0040 8EE0     		b	.L13	@long jump
+ 172              	.LCB46:
+ 173 0042 242B     		cmp	r3, #36
+ 174 0044 00D1     		bne	.LCB48
+ 175 0046 9DE0     		b	.L14	@long jump
+ 176              	.LCB48:
+ 177 0048 252B     		cmp	r3, #37
+ 178 004a 00D1     		bne	.LCB50
+ 179 004c B3E0     		b	.L15	@long jump
+ 180              	.LCB50:
+ 181 004e 5EE1     		b	.L2
+ 182              	.L4:
+ 183 0050 2C2B     		cmp	r3, #44
+ 184 0052 00D1     		bne	.LCB56
+ 185 0054 91E0     		b	.L16	@long jump
+ 186              	.LCB56:
+ 187 0056 0BD8     		bhi	.L17
+ 188 0058 282B     		cmp	r3, #40
+ 189 005a 00D1     		bne	.LCB60
+ 190 005c 0CE1     		b	.L18	@long jump
+ 191              	.LCB60:
+ 192 005e 00D2     		bcs	.LCB62
+ 193 0060 E1E0     		b	.L19	@long jump
+ 194              	.LCB62:
+ 195 0062 292B     		cmp	r3, #41
+ 196 0064 00D1     		bne	.LCB64
+ 197 0066 25E1     		b	.L20	@long jump
+ 198              	.LCB64:
+ 199 0068 2A2B     		cmp	r3, #42
+ 200 006a 00D1     		bne	.LCB66
+ 201 006c F1E0     		b	.L21	@long jump
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 7
+
+
+ 202              	.LCB66:
+ 203 006e 4EE1     		b	.L2
+ 204              	.L17:
+ 205 0070 422B     		cmp	r3, #66
+ 206 0072 00D1     		bne	.LCB72
+ 207 0074 38E1     		b	.L22	@long jump
+ 208              	.LCB72:
+ 209 0076 03D8     		bhi	.L23
+ 210 0078 412B     		cmp	r3, #65
+ 211 007a 00D1     		bne	.LCB76
+ 212 007c 23E1     		b	.L24	@long jump
+ 213              	.LCB76:
+ 214 007e 46E1     		b	.L2
+ 215              	.L23:
+ 216 0080 572B     		cmp	r3, #87
+ 217 0082 00D1     		bne	.LCB82
+ 218 0084 35E1     		b	.L25	@long jump
+ 219              	.LCB82:
+ 220 0086 FA2B     		cmp	r3, #250
+ 221 0088 00D1     		bne	.LCB84
+ 222 008a 3BE1     		b	.L26	@long jump
+ 223              	.LCB84:
+ 224 008c 3FE1     		b	.L2
+ 225              	.L9:
+  48:.\main.c      **** 	{
+  49:.\main.c      ****         /**********************************************************
+  50:.\main.c      ****         *                       General Events
+  51:.\main.c      ****         ***********************************************************/
+  52:.\main.c      **** 		case CYBLE_EVT_STACK_ON: /* This event received when component is Started */
+  53:.\main.c      ****             /* Enter into discoverable mode so that remote can search it. */
+  54:.\main.c      ****             apiResult = CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
+ 226              		.loc 1 54 0
+ 227 008e 1423     		mov	r3, #20
+ 228 0090 FC18     		add	r4, r7, r3
+ 229 0092 0020     		mov	r0, #0
+ 230 0094 FFF7FEFF 		bl	CyBle_GappStartAdvertisement
+ 231 0098 031C     		mov	r3, r0
+ 232 009a 2380     		strh	r3, [r4]
+  55:.\main.c      ****             if(apiResult != CYBLE_ERROR_OK)
+ 233              		.loc 1 55 0
+ 234 009c 1423     		mov	r3, #20
+ 235 009e FB18     		add	r3, r7, r3
+ 236 00a0 1B88     		ldrh	r3, [r3]
+ 237 00a2 002B     		cmp	r3, #0
+ 238 00a4 07D0     		beq	.L27
+  56:.\main.c      ****             {
+  57:.\main.c      ****                 DBG_PRINTF("StartAdvertisement API Error: %d \r\n", apiResult);
+ 239              		.loc 1 57 0
+ 240 00a6 1423     		mov	r3, #20
+ 241 00a8 FB18     		add	r3, r7, r3
+ 242 00aa 1B88     		ldrh	r3, [r3]
+ 243 00ac 9E4A     		ldr	r2, .L37
+ 244 00ae 101C     		mov	r0, r2
+ 245 00b0 191C     		mov	r1, r3
+ 246 00b2 FFF7FEFF 		bl	printf
+ 247              	.L27:
+  58:.\main.c      ****             }
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 8
+
+
+  59:.\main.c      ****             Advertising_LED_Write(LED_ON);
+ 248              		.loc 1 59 0
+ 249 00b6 0020     		mov	r0, #0
+ 250 00b8 FFF7FEFF 		bl	Advertising_LED_Write
+  60:.\main.c      ****             DBG_PRINTF("Bluetooth On, StartAdvertisement with addr: ");
+ 251              		.loc 1 60 0
+ 252 00bc 9B4B     		ldr	r3, .L37+4
+ 253 00be 181C     		mov	r0, r3
+ 254 00c0 FFF7FEFF 		bl	printf
+  61:.\main.c      ****             localAddr.type = 0u;
+ 255              		.loc 1 61 0
+ 256 00c4 0823     		mov	r3, #8
+ 257 00c6 FB18     		add	r3, r7, r3
+ 258 00c8 0022     		mov	r2, #0
+ 259 00ca 9A71     		strb	r2, [r3, #6]
+  62:.\main.c      ****             CyBle_GetDeviceAddress(&localAddr);
+ 260              		.loc 1 62 0
+ 261 00cc 0823     		mov	r3, #8
+ 262 00ce FB18     		add	r3, r7, r3
+ 263 00d0 181C     		mov	r0, r3
+ 264 00d2 FFF7FEFF 		bl	CyBle_GetDeviceAddress
+  63:.\main.c      ****             for(i = CYBLE_GAP_BD_ADDR_SIZE; i > 0u; i--)
+ 265              		.loc 1 63 0
+ 266 00d6 1723     		mov	r3, #23
+ 267 00d8 FB18     		add	r3, r7, r3
+ 268 00da 0622     		mov	r2, #6
+ 269 00dc 1A70     		strb	r2, [r3]
+ 270 00de 13E0     		b	.L28
+ 271              	.L29:
+  64:.\main.c      ****             {
+  65:.\main.c      ****                 DBG_PRINTF("%2.2x", localAddr.bdAddr[i-1]);
+ 272              		.loc 1 65 0 discriminator 3
+ 273 00e0 1723     		mov	r3, #23
+ 274 00e2 FB18     		add	r3, r7, r3
+ 275 00e4 1B78     		ldrb	r3, [r3]
+ 276 00e6 013B     		sub	r3, r3, #1
+ 277 00e8 0822     		mov	r2, #8
+ 278 00ea BA18     		add	r2, r7, r2
+ 279 00ec D35C     		ldrb	r3, [r2, r3]
+ 280 00ee 1A1C     		mov	r2, r3
+ 281 00f0 8F4B     		ldr	r3, .L37+8
+ 282 00f2 181C     		mov	r0, r3
+ 283 00f4 111C     		mov	r1, r2
+ 284 00f6 FFF7FEFF 		bl	printf
+  63:.\main.c      ****             for(i = CYBLE_GAP_BD_ADDR_SIZE; i > 0u; i--)
+ 285              		.loc 1 63 0 discriminator 3
+ 286 00fa 1723     		mov	r3, #23
+ 287 00fc FB18     		add	r3, r7, r3
+ 288 00fe 1A78     		ldrb	r2, [r3]
+ 289 0100 1723     		mov	r3, #23
+ 290 0102 FB18     		add	r3, r7, r3
+ 291 0104 013A     		sub	r2, r2, #1
+ 292 0106 1A70     		strb	r2, [r3]
+ 293              	.L28:
+  63:.\main.c      ****             for(i = CYBLE_GAP_BD_ADDR_SIZE; i > 0u; i--)
+ 294              		.loc 1 63 0 is_stmt 0 discriminator 1
+ 295 0108 1723     		mov	r3, #23
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 9
+
+
+ 296 010a FB18     		add	r3, r7, r3
+ 297 010c 1B78     		ldrb	r3, [r3]
+ 298 010e 002B     		cmp	r3, #0
+ 299 0110 E6D1     		bne	.L29
+  66:.\main.c      ****             }
+  67:.\main.c      ****             DBG_PRINTF("\r\n");
+ 300              		.loc 1 67 0 is_stmt 1
+ 301 0112 884B     		ldr	r3, .L37+12
+ 302 0114 181C     		mov	r0, r3
+ 303 0116 FFF7FEFF 		bl	puts
+  68:.\main.c      ****             break;
+ 304              		.loc 1 68 0
+ 305 011a 01E1     		b	.L1
+ 306              	.L10:
+  69:.\main.c      **** 		case CYBLE_EVT_TIMEOUT: 
+  70:.\main.c      **** 			break;
+  71:.\main.c      **** 		case CYBLE_EVT_HARDWARE_ERROR:    /* This event indicates that some internal HW error has occurre
+  72:.\main.c      ****             DBG_PRINTF("Hardware Error \r\n");
+ 307              		.loc 1 72 0
+ 308 011c 864B     		ldr	r3, .L37+16
+ 309 011e 181C     		mov	r0, r3
+ 310 0120 FFF7FEFF 		bl	puts
+  73:.\main.c      **** 			break;
+ 311              		.loc 1 73 0
+ 312 0124 FCE0     		b	.L1
+ 313              	.L11:
+  74:.\main.c      ****         
+  75:.\main.c      ****     	/* This event will be triggered by host stack if BLE stack is busy or not busy.
+  76:.\main.c      ****     	 *  Parameter corresponding to this event will be the state of BLE stack.
+  77:.\main.c      ****     	 *  BLE stack busy = CYBLE_STACK_STATE_BUSY,
+  78:.\main.c      ****     	 *  BLE stack not busy = CYBLE_STACK_STATE_FREE 
+  79:.\main.c      ****          */
+  80:.\main.c      ****     	case CYBLE_EVT_STACK_BUSY_STATUS:
+  81:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_STACK_BUSY_STATUS: %x\r\n", *(uint8 *)eventParam);
+ 314              		.loc 1 81 0
+ 315 0126 3B68     		ldr	r3, [r7]
+ 316 0128 1B78     		ldrb	r3, [r3]
+ 317 012a 1A1C     		mov	r2, r3
+ 318 012c 834B     		ldr	r3, .L37+20
+ 319 012e 181C     		mov	r0, r3
+ 320 0130 111C     		mov	r1, r2
+ 321 0132 FFF7FEFF 		bl	printf
+  82:.\main.c      ****             break;
+ 322              		.loc 1 82 0
+ 323 0136 F3E0     		b	.L1
+ 324              	.L5:
+  83:.\main.c      ****             
+  84:.\main.c      ****         /**********************************************************
+  85:.\main.c      ****         *                       GAP Events
+  86:.\main.c      ****         ***********************************************************/
+  87:.\main.c      ****         case CYBLE_EVT_GAP_AUTH_REQ:
+  88:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_AUTH_REQ: security=%x, bonding=%x, ekeySize=%x, err=%x \r\n", 
+ 325              		.loc 1 88 0
+ 326 0138 3B68     		ldr	r3, [r7]
+ 327 013a 1B78     		ldrb	r3, [r3]
+ 328 013c 191C     		mov	r1, r3
+ 329 013e 3B68     		ldr	r3, [r7]
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 10
+
+
+ 330 0140 5B78     		ldrb	r3, [r3, #1]
+ 331 0142 1D1C     		mov	r5, r3
+ 332 0144 3B68     		ldr	r3, [r7]
+ 333 0146 9B78     		ldrb	r3, [r3, #2]
+ 334 0148 1C1C     		mov	r4, r3
+ 335 014a 3B68     		ldr	r3, [r7]
+ 336 014c DB78     		ldrb	r3, [r3, #3]
+ 337 014e 1A1C     		mov	r2, r3
+ 338 0150 7B4B     		ldr	r3, .L37+24
+ 339 0152 0092     		str	r2, [sp]
+ 340 0154 181C     		mov	r0, r3
+ 341 0156 2A1C     		mov	r2, r5
+ 342 0158 231C     		mov	r3, r4
+ 343 015a FFF7FEFF 		bl	printf
+  89:.\main.c      ****                 (*(CYBLE_GAP_AUTH_INFO_T *)eventParam).security, 
+  90:.\main.c      ****                 (*(CYBLE_GAP_AUTH_INFO_T *)eventParam).bonding, 
+  91:.\main.c      ****                 (*(CYBLE_GAP_AUTH_INFO_T *)eventParam).ekeySize, 
+  92:.\main.c      ****                 (*(CYBLE_GAP_AUTH_INFO_T *)eventParam).authErr);
+  93:.\main.c      ****             break;
+ 344              		.loc 1 93 0
+ 345 015e DFE0     		b	.L1
+ 346              	.L13:
+  94:.\main.c      ****         case CYBLE_EVT_GAP_PASSKEY_ENTRY_REQUEST:
+  95:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_PASSKEY_ENTRY_REQUEST press 'p' to enter passkey \r\n");
+ 347              		.loc 1 95 0
+ 348 0160 784B     		ldr	r3, .L37+28
+ 349 0162 181C     		mov	r0, r3
+ 350 0164 FFF7FEFF 		bl	puts
+  96:.\main.c      ****             break;
+ 351              		.loc 1 96 0
+ 352 0168 DAE0     		b	.L1
+ 353              	.L12:
+  97:.\main.c      ****         case CYBLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST:
+  98:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_PASSKEY_DISPLAY_REQUEST %6.6ld \r\n", *(uint32 *)eventParam);
+ 354              		.loc 1 98 0
+ 355 016a 3B68     		ldr	r3, [r7]
+ 356 016c 1B68     		ldr	r3, [r3]
+ 357 016e 764A     		ldr	r2, .L37+32
+ 358 0170 101C     		mov	r0, r2
+ 359 0172 191C     		mov	r1, r3
+ 360 0174 FFF7FEFF 		bl	printf
+  99:.\main.c      ****             break;
+ 361              		.loc 1 99 0
+ 362 0178 D2E0     		b	.L1
+ 363              	.L16:
+ 100:.\main.c      ****         case CYBLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT:
+ 101:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT \r\n");
+ 364              		.loc 1 101 0
+ 365 017a 744B     		ldr	r3, .L37+36
+ 366 017c 181C     		mov	r0, r3
+ 367 017e FFF7FEFF 		bl	puts
+ 102:.\main.c      ****             break;
+ 368              		.loc 1 102 0
+ 369 0182 CDE0     		b	.L1
+ 370              	.L14:
+ 103:.\main.c      ****         case CYBLE_EVT_GAP_AUTH_COMPLETE:
+ 104:.\main.c      ****             authInfo = (CYBLE_GAP_AUTH_INFO_T *)eventParam;
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 11
+
+
+ 371              		.loc 1 104 0
+ 372 0184 3B68     		ldr	r3, [r7]
+ 373 0186 3B61     		str	r3, [r7, #16]
+ 105:.\main.c      ****             (void)authInfo;
+ 106:.\main.c      ****             DBG_PRINTF("AUTH_COMPLETE: security:%x, bonding:%x, ekeySize:%x, authErr %x \r\n", 
+ 374              		.loc 1 106 0
+ 375 0188 3B69     		ldr	r3, [r7, #16]
+ 376 018a 1B78     		ldrb	r3, [r3]
+ 377 018c 191C     		mov	r1, r3
+ 378 018e 3B69     		ldr	r3, [r7, #16]
+ 379 0190 5B78     		ldrb	r3, [r3, #1]
+ 380 0192 1D1C     		mov	r5, r3
+ 381 0194 3B69     		ldr	r3, [r7, #16]
+ 382 0196 9B78     		ldrb	r3, [r3, #2]
+ 383 0198 1C1C     		mov	r4, r3
+ 384 019a 3B69     		ldr	r3, [r7, #16]
+ 385 019c DB78     		ldrb	r3, [r3, #3]
+ 386 019e 1A1C     		mov	r2, r3
+ 387 01a0 6B4B     		ldr	r3, .L37+40
+ 388 01a2 0092     		str	r2, [sp]
+ 389 01a4 181C     		mov	r0, r3
+ 390 01a6 2A1C     		mov	r2, r5
+ 391 01a8 231C     		mov	r3, r4
+ 392 01aa FFF7FEFF 		bl	printf
+ 107:.\main.c      ****                                     authInfo->security, authInfo->bonding, authInfo->ekeySize, auth
+ 108:.\main.c      ****             authenticated = 1;
+ 393              		.loc 1 108 0
+ 394 01ae 694B     		ldr	r3, .L37+44
+ 395 01b0 0122     		mov	r2, #1
+ 396 01b2 1A70     		strb	r2, [r3]
+ 109:.\main.c      ****             break;
+ 397              		.loc 1 109 0
+ 398 01b4 B4E0     		b	.L1
+ 399              	.L15:
+ 110:.\main.c      ****         case CYBLE_EVT_GAP_AUTH_FAILED:
+ 111:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_AUTH_FAILED: %x \r\n", *(uint8 *)eventParam);
+ 400              		.loc 1 111 0
+ 401 01b6 3B68     		ldr	r3, [r7]
+ 402 01b8 1B78     		ldrb	r3, [r3]
+ 403 01ba 1A1C     		mov	r2, r3
+ 404 01bc 664B     		ldr	r3, .L37+48
+ 405 01be 181C     		mov	r0, r3
+ 406 01c0 111C     		mov	r1, r2
+ 407 01c2 FFF7FEFF 		bl	printf
+ 112:.\main.c      ****             break;
+ 408              		.loc 1 112 0
+ 409 01c6 ABE0     		b	.L1
+ 410              	.L3:
+ 113:.\main.c      ****         case CYBLE_EVT_GAPP_ADVERTISEMENT_START_STOP:
+ 114:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_ADVERTISING \r\n");
+ 411              		.loc 1 114 0
+ 412 01c8 644B     		ldr	r3, .L37+52
+ 413 01ca 181C     		mov	r0, r3
+ 414 01cc FFF7FEFF 		bl	puts
+ 115:.\main.c      ****             if(CYBLE_STATE_DISCONNECTED == CyBle_GetState())
+ 415              		.loc 1 115 0
+ 416 01d0 634B     		ldr	r3, .L37+56
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 12
+
+
+ 417 01d2 1B78     		ldrb	r3, [r3]
+ 418 01d4 042B     		cmp	r3, #4
+ 419 01d6 25D1     		bne	.L31
+ 116:.\main.c      ****             {   
+ 117:.\main.c      ****                 /* Fast and slow advertising period complete, go to low power  
+ 118:.\main.c      ****                  * mode (Hibernate mode) and wait for an external
+ 119:.\main.c      ****                  * user event to wake up the device again */
+ 120:.\main.c      ****                 DBG_PRINTF("Hibernate \r\n");
+ 420              		.loc 1 120 0
+ 421 01d8 624B     		ldr	r3, .L37+60
+ 422 01da 181C     		mov	r0, r3
+ 423 01dc FFF7FEFF 		bl	puts
+ 121:.\main.c      ****                 Advertising_LED_Write(LED_OFF);
+ 424              		.loc 1 121 0
+ 425 01e0 0120     		mov	r0, #1
+ 426 01e2 FFF7FEFF 		bl	Advertising_LED_Write
+ 122:.\main.c      ****                 Disconnect_LED_Write(LED_ON);
+ 427              		.loc 1 122 0
+ 428 01e6 0020     		mov	r0, #0
+ 429 01e8 FFF7FEFF 		bl	Disconnect_LED_Write
+ 123:.\main.c      ****                 Simulation_LED_Write(LED_OFF);
+ 430              		.loc 1 123 0
+ 431 01ec 0120     		mov	r0, #1
+ 432 01ee FFF7FEFF 		bl	Simulation_LED_Write
+ 124:.\main.c      ****             #if (DEBUG_UART_ENABLED == ENABLED)
+ 125:.\main.c      ****                 while((UART_DEB_SpiUartGetTxBufferSize() + UART_DEB_GET_TX_FIFO_SR_VALID) != 0);
+ 433              		.loc 1 125 0
+ 434 01f2 C046     		mov	r8, r8
+ 435              	.L34:
+ 436              		.loc 1 125 0 is_stmt 0 discriminator 5
+ 437 01f4 FFF7FEFF 		bl	UART_DEB_SpiUartGetTxBufferSize
+ 438 01f8 011C     		mov	r1, r0
+ 439 01fa 5B4B     		ldr	r3, .L37+64
+ 440 01fc 1A68     		ldr	r2, [r3]
+ 441 01fe 8023     		mov	r3, #128
+ 442 0200 1B02     		lsl	r3, r3, #8
+ 443 0202 1340     		and	r3, r2
+ 444 0204 01D0     		beq	.L32
+ 445              		.loc 1 125 0 discriminator 1
+ 446 0206 0123     		mov	r3, #1
+ 447 0208 00E0     		b	.L33
+ 448              	.L32:
+ 449              		.loc 1 125 0 discriminator 2
+ 450 020a 0023     		mov	r3, #0
+ 451              	.L33:
+ 452              		.loc 1 125 0 discriminator 4
+ 453 020c CB18     		add	r3, r1, r3
+ 454 020e 002B     		cmp	r3, #0
+ 455 0210 F0D1     		bne	.L34
+ 126:.\main.c      ****             #endif /* (DEBUG_UART_ENABLED == ENABLED) */
+ 127:.\main.c      ****                 SW2_ClearInterrupt();
+ 456              		.loc 1 127 0 is_stmt 1
+ 457 0212 FFF7FEFF 		bl	SW2_ClearInterrupt
+ 128:.\main.c      ****                 Wakeup_Interrupt_ClearPending();
+ 458              		.loc 1 128 0
+ 459 0216 FFF7FEFF 		bl	Wakeup_Interrupt_ClearPending
+ 129:.\main.c      ****                 Wakeup_Interrupt_Start();
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 13
+
+
+ 460              		.loc 1 129 0
+ 461 021a FFF7FEFF 		bl	Wakeup_Interrupt_Start
+ 130:.\main.c      ****                 CySysPmHibernate();
+ 462              		.loc 1 130 0
+ 463 021e FFF7FEFF 		bl	CySysPmHibernate
+ 131:.\main.c      ****             }
+ 132:.\main.c      ****             break;
+ 464              		.loc 1 132 0
+ 465 0222 7DE0     		b	.L1
+ 466              	.L31:
+ 467              		.loc 1 132 0 is_stmt 0 discriminator 2
+ 468 0224 7CE0     		b	.L1
+ 469              	.L19:
+ 133:.\main.c      ****         case CYBLE_EVT_GAP_DEVICE_CONNECTED:
+ 134:.\main.c      ****             Advertising_LED_Write(LED_OFF);
+ 470              		.loc 1 134 0 is_stmt 1
+ 471 0226 0120     		mov	r0, #1
+ 472 0228 FFF7FEFF 		bl	Advertising_LED_Write
+ 135:.\main.c      ****             connIntv = ((CYBLE_GAP_CONN_PARAM_UPDATED_IN_CONTROLLER_T *)eventParam)->connIntv * 5u 
+ 473              		.loc 1 135 0
+ 474 022c 3B68     		ldr	r3, [r7]
+ 475 022e 5B88     		ldrh	r3, [r3, #2]
+ 476 0230 1A1C     		mov	r2, r3
+ 477 0232 131C     		mov	r3, r2
+ 478 0234 9B00     		lsl	r3, r3, #2
+ 479 0236 9B18     		add	r3, r3, r2
+ 480 0238 9B08     		lsr	r3, r3, #2
+ 481 023a 9AB2     		uxth	r2, r3
+ 482 023c 4B4B     		ldr	r3, .L37+68
+ 483 023e 1A80     		strh	r2, [r3]
+ 136:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_GAP_DEVICE_CONNECTED: connIntv = %d ms \r\n", connIntv);
+ 484              		.loc 1 136 0
+ 485 0240 4A4B     		ldr	r3, .L37+68
+ 486 0242 1B88     		ldrh	r3, [r3]
+ 487 0244 1A1C     		mov	r2, r3
+ 488 0246 4A4B     		ldr	r3, .L37+72
+ 489 0248 181C     		mov	r0, r3
+ 490 024a 111C     		mov	r1, r2
+ 491 024c FFF7FEFF 		bl	printf
+ 137:.\main.c      ****             break;
+ 492              		.loc 1 137 0
+ 493 0250 66E0     		b	.L1
+ 494              	.L21:
+ 138:.\main.c      ****         case CYBLE_EVT_GAPC_CONNECTION_UPDATE_COMPLETE:
+ 139:.\main.c      ****             connIntv = ((CYBLE_GAP_CONN_PARAM_UPDATED_IN_CONTROLLER_T *)eventParam)->connIntv * 5u 
+ 495              		.loc 1 139 0
+ 496 0252 3B68     		ldr	r3, [r7]
+ 497 0254 5B88     		ldrh	r3, [r3, #2]
+ 498 0256 1A1C     		mov	r2, r3
+ 499 0258 131C     		mov	r3, r2
+ 500 025a 9B00     		lsl	r3, r3, #2
+ 501 025c 9B18     		add	r3, r3, r2
+ 502 025e 9B08     		lsr	r3, r3, #2
+ 503 0260 9AB2     		uxth	r2, r3
+ 504 0262 424B     		ldr	r3, .L37+68
+ 505 0264 1A80     		strh	r2, [r3]
+ 140:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_CONNECTION_UPDATE_COMPLETE: connIntv = %d ms \r\n", connIntv);
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 14
+
+
+ 506              		.loc 1 140 0
+ 507 0266 414B     		ldr	r3, .L37+68
+ 508 0268 1B88     		ldrh	r3, [r3]
+ 509 026a 1A1C     		mov	r2, r3
+ 510 026c 414B     		ldr	r3, .L37+76
+ 511 026e 181C     		mov	r0, r3
+ 512 0270 111C     		mov	r1, r2
+ 513 0272 FFF7FEFF 		bl	printf
+ 141:.\main.c      ****             break;
+ 514              		.loc 1 141 0
+ 515 0276 53E0     		b	.L1
+ 516              	.L18:
+ 142:.\main.c      ****         case CYBLE_EVT_GAP_DEVICE_DISCONNECTED:
+ 143:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_GAP_DEVICE_DISCONNECTED: %x\r\n", *(uint8 *)eventParam);
+ 517              		.loc 1 143 0
+ 518 0278 3B68     		ldr	r3, [r7]
+ 519 027a 1B78     		ldrb	r3, [r3]
+ 520 027c 1A1C     		mov	r2, r3
+ 521 027e 3E4B     		ldr	r3, .L37+80
+ 522 0280 181C     		mov	r0, r3
+ 523 0282 111C     		mov	r1, r2
+ 524 0284 FFF7FEFF 		bl	printf
+ 144:.\main.c      ****             apiResult = CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
+ 525              		.loc 1 144 0
+ 526 0288 1423     		mov	r3, #20
+ 527 028a FC18     		add	r4, r7, r3
+ 528 028c 0020     		mov	r0, #0
+ 529 028e FFF7FEFF 		bl	CyBle_GappStartAdvertisement
+ 530 0292 031C     		mov	r3, r0
+ 531 0294 2380     		strh	r3, [r4]
+ 145:.\main.c      ****             if(apiResult != CYBLE_ERROR_OK)
+ 532              		.loc 1 145 0
+ 533 0296 1423     		mov	r3, #20
+ 534 0298 FB18     		add	r3, r7, r3
+ 535 029a 1B88     		ldrh	r3, [r3]
+ 536 029c 002B     		cmp	r3, #0
+ 537 029e 08D0     		beq	.L35
+ 146:.\main.c      ****             {
+ 147:.\main.c      ****                 DBG_PRINTF("StartAdvertisement API Error: %d \r\n", apiResult);
+ 538              		.loc 1 147 0
+ 539 02a0 1423     		mov	r3, #20
+ 540 02a2 FB18     		add	r3, r7, r3
+ 541 02a4 1B88     		ldrh	r3, [r3]
+ 542 02a6 204A     		ldr	r2, .L37
+ 543 02a8 101C     		mov	r0, r2
+ 544 02aa 191C     		mov	r1, r3
+ 545 02ac FFF7FEFF 		bl	printf
+ 148:.\main.c      ****             }
+ 149:.\main.c      ****             break;
+ 546              		.loc 1 149 0
+ 547 02b0 36E0     		b	.L1
+ 548              	.L35:
+ 549              		.loc 1 149 0 is_stmt 0 discriminator 3
+ 550 02b2 35E0     		b	.L1
+ 551              	.L20:
+ 150:.\main.c      ****         case CYBLE_EVT_GAP_ENCRYPT_CHANGE:
+ 151:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_GAP_ENCRYPT_CHANGE: %x \r\n", *(uint8 *)eventParam);
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 15
+
+
+ 552              		.loc 1 151 0 is_stmt 1
+ 553 02b4 3B68     		ldr	r3, [r7]
+ 554 02b6 1B78     		ldrb	r3, [r3]
+ 555 02b8 1A1C     		mov	r2, r3
+ 556 02ba 304B     		ldr	r3, .L37+84
+ 557 02bc 181C     		mov	r0, r3
+ 558 02be 111C     		mov	r1, r2
+ 559 02c0 FFF7FEFF 		bl	printf
+ 152:.\main.c      ****             break;
+ 560              		.loc 1 152 0
+ 561 02c4 2CE0     		b	.L1
+ 562              	.L24:
+ 153:.\main.c      **** 
+ 154:.\main.c      ****         /**********************************************************
+ 155:.\main.c      ****         *                       GATT Events
+ 156:.\main.c      ****         ***********************************************************/
+ 157:.\main.c      ****         case CYBLE_EVT_GATT_CONNECT_IND:
+ 158:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_GATT_CONNECT_IND: %x, %x \r\n", cyBle_connHandle.attId, cyBle_con
+ 563              		.loc 1 158 0
+ 564 02c6 2E4B     		ldr	r3, .L37+88
+ 565 02c8 5B78     		ldrb	r3, [r3, #1]
+ 566 02ca 191C     		mov	r1, r3
+ 567 02cc 2C4B     		ldr	r3, .L37+88
+ 568 02ce 1B78     		ldrb	r3, [r3]
+ 569 02d0 1A1C     		mov	r2, r3
+ 570 02d2 2C4B     		ldr	r3, .L37+92
+ 571 02d4 181C     		mov	r0, r3
+ 572 02d6 FFF7FEFF 		bl	printf
+ 159:.\main.c      ****             /* Register service specific callback functions and init CCCD values */
+ 160:.\main.c      ****             HidsInit();
+ 573              		.loc 1 160 0
+ 574 02da FFF7FEFF 		bl	HidsInit
+ 161:.\main.c      ****             BasInit();
+ 575              		.loc 1 161 0
+ 576 02de FFF7FEFF 		bl	BasInit
+ 162:.\main.c      ****             ScpsInit();
+ 577              		.loc 1 162 0
+ 578 02e2 FFF7FEFF 		bl	ScpsInit
+ 163:.\main.c      ****             break;
+ 579              		.loc 1 163 0
+ 580 02e6 1BE0     		b	.L1
+ 581              	.L22:
+ 164:.\main.c      ****         case CYBLE_EVT_GATT_DISCONNECT_IND:
+ 165:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_GATT_DISCONNECT_IND \r\n");
+ 582              		.loc 1 165 0
+ 583 02e8 274B     		ldr	r3, .L37+96
+ 584 02ea 181C     		mov	r0, r3
+ 585 02ec FFF7FEFF 		bl	puts
+ 166:.\main.c      ****             break;
+ 586              		.loc 1 166 0
+ 587 02f0 16E0     		b	.L1
+ 588              	.L25:
+ 167:.\main.c      ****         case CYBLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ:
+ 168:.\main.c      ****             /* Triggered on server side when client sends read request and when
+ 169:.\main.c      ****             * characteristic has CYBLE_GATT_DB_ATTR_CHAR_VAL_RD_EVENT property set.
+ 170:.\main.c      ****             * This event could be ignored by application unless it need to response
+ 171:.\main.c      ****             * by error response which needs to be set in gattErrorCode field of
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 16
+
+
+ 172:.\main.c      ****             * event parameter. */
+ 173:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ: handle: %x \r\n", 
+ 589              		.loc 1 173 0
+ 590 02f2 3B68     		ldr	r3, [r7]
+ 591 02f4 5B88     		ldrh	r3, [r3, #2]
+ 592 02f6 1A1C     		mov	r2, r3
+ 593 02f8 244B     		ldr	r3, .L37+100
+ 594 02fa 181C     		mov	r0, r3
+ 595 02fc 111C     		mov	r1, r2
+ 596 02fe FFF7FEFF 		bl	printf
+ 174:.\main.c      ****                 ((CYBLE_GATTS_CHAR_VAL_READ_REQ_T *)eventParam)->attrHandle);
+ 175:.\main.c      ****             break;
+ 597              		.loc 1 175 0
+ 598 0302 0DE0     		b	.L1
+ 599              	.L26:
+ 176:.\main.c      **** 
+ 177:.\main.c      ****         /**********************************************************
+ 178:.\main.c      ****         *                       Other Events
+ 179:.\main.c      ****         ***********************************************************/
+ 180:.\main.c      ****         case CYBLE_EVT_PENDING_FLASH_WRITE:
+ 181:.\main.c      ****             /* Inform application that flash write is pending. Stack internal data 
+ 182:.\main.c      ****             * structures are modified and require to be stored in Flash using 
+ 183:.\main.c      ****             * CyBle_StoreBondingData() */
+ 184:.\main.c      ****             DBG_PRINTF("CYBLE_EVT_PENDING_FLASH_WRITE\r\n");
+ 600              		.loc 1 184 0
+ 601 0304 224B     		ldr	r3, .L37+104
+ 602 0306 181C     		mov	r0, r3
+ 603 0308 FFF7FEFF 		bl	puts
+ 185:.\main.c      ****             break;
+ 604              		.loc 1 185 0
+ 605 030c 08E0     		b	.L1
+ 606              	.L2:
+ 186:.\main.c      ****         default:
+ 187:.\main.c      ****             DBG_PRINTF("OTHER event: %lx \r\n", event);
+ 607              		.loc 1 187 0
+ 608 030e 214A     		ldr	r2, .L37+108
+ 609 0310 7B68     		ldr	r3, [r7, #4]
+ 610 0312 101C     		mov	r0, r2
+ 611 0314 191C     		mov	r1, r3
+ 612 0316 FFF7FEFF 		bl	printf
+ 188:.\main.c      **** 			break;
+ 613              		.loc 1 188 0
+ 614 031a C046     		mov	r8, r8
+ 615 031c 00E0     		b	.L1
+ 616              	.L36:
+  70:.\main.c      **** 		case CYBLE_EVT_HARDWARE_ERROR:    /* This event indicates that some internal HW error has occurre
+ 617              		.loc 1 70 0
+ 618 031e C046     		mov	r8, r8
+ 619              	.L1:
+ 189:.\main.c      **** 	}
+ 190:.\main.c      **** 
+ 191:.\main.c      **** }
+ 620              		.loc 1 191 0
+ 621 0320 BD46     		mov	sp, r7
+ 622 0322 06B0     		add	sp, sp, #24
+ 623              		@ sp needed
+ 624 0324 B0BD     		pop	{r4, r5, r7, pc}
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 17
+
+
+ 625              	.L38:
+ 626 0326 C046     		.align	2
+ 627              	.L37:
+ 628 0328 00000000 		.word	.LC0
+ 629 032c 24000000 		.word	.LC2
+ 630 0330 54000000 		.word	.LC4
+ 631 0334 5C000000 		.word	.LC6
+ 632 0338 60000000 		.word	.LC8
+ 633 033c 74000000 		.word	.LC10
+ 634 0340 98000000 		.word	.LC12
+ 635 0344 DC000000 		.word	.LC14
+ 636 0348 1C010000 		.word	.LC16
+ 637 034c 48010000 		.word	.LC18
+ 638 0350 70010000 		.word	.LC20
+ 639 0354 00000000 		.word	authenticated
+ 640 0358 B4010000 		.word	.LC23
+ 641 035c D4010000 		.word	.LC25
+ 642 0360 00000000 		.word	cyBle_state
+ 643 0364 EC010000 		.word	.LC28
+ 644 0368 08022440 		.word	1076101640
+ 645 036c 00000000 		.word	connIntv
+ 646 0370 F8010000 		.word	.LC31
+ 647 0374 2C020000 		.word	.LC33
+ 648 0378 68020000 		.word	.LC35
+ 649 037c 90020000 		.word	.LC37
+ 650 0380 00000000 		.word	cyBle_connHandle
+ 651 0384 B4020000 		.word	.LC40
+ 652 0388 DC020000 		.word	.LC42
+ 653 038c FC020000 		.word	.LC44
+ 654 0390 34030000 		.word	.LC46
+ 655 0394 54030000 		.word	.LC48
+ 656              		.cfi_endproc
+ 657              	.LFE37:
+ 658              		.size	AppCallBack, .-AppCallBack
+ 659              		.section	.text.Timer_Interrupt,"ax",%progbits
+ 660              		.align	2
+ 661              		.global	Timer_Interrupt
+ 662              		.code	16
+ 663              		.thumb_func
+ 664              		.type	Timer_Interrupt, %function
+ 665              	Timer_Interrupt:
+ 666              	.LFB38:
+ 192:.\main.c      **** 
+ 193:.\main.c      **** 
+ 194:.\main.c      **** /*******************************************************************************
+ 195:.\main.c      **** * Function Name: Timer_Interrupt
+ 196:.\main.c      **** ********************************************************************************
+ 197:.\main.c      **** *
+ 198:.\main.c      **** * Summary:
+ 199:.\main.c      **** *  Handles the Interrupt Service Routine for the WDT timer.
+ 200:.\main.c      **** *
+ 201:.\main.c      **** *******************************************************************************/
+ 202:.\main.c      **** CY_ISR(Timer_Interrupt)
+ 203:.\main.c      **** {
+ 667              		.loc 1 203 0
+ 668              		.cfi_startproc
+ 669 0000 80B5     		push	{r7, lr}
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 18
+
+
+ 670              		.cfi_def_cfa_offset 8
+ 671              		.cfi_offset 7, -8
+ 672              		.cfi_offset 14, -4
+ 673 0002 00AF     		add	r7, sp, #0
+ 674              		.cfi_def_cfa_register 7
+ 204:.\main.c      ****     if(CySysWdtGetInterruptSource() & WDT_INTERRUPT_SOURCE)
+ 675              		.loc 1 204 0
+ 676 0004 FFF7FEFF 		bl	CySysWdtGetInterruptSource
+ 677 0008 021C     		mov	r2, r0
+ 678 000a 8023     		mov	r3, #128
+ 679 000c DB00     		lsl	r3, r3, #3
+ 680 000e 1340     		and	r3, r2
+ 681 0010 25D0     		beq	.L39
+ 682              	.LBB2:
+ 205:.\main.c      ****     {
+ 206:.\main.c      ****         static uint8 led = LED_OFF;
+ 207:.\main.c      ****         static uint32 ledTimer = LED_TIMEOUT;
+ 208:.\main.c      ****     
+ 209:.\main.c      ****         /* Blink green LED to indicate that device advertises */
+ 210:.\main.c      ****         if(CyBle_GetState() == CYBLE_STATE_ADVERTISING)
+ 683              		.loc 1 210 0
+ 684 0012 144B     		ldr	r3, .L42
+ 685 0014 1B78     		ldrb	r3, [r3]
+ 686 0016 032B     		cmp	r3, #3
+ 687 0018 17D1     		bne	.L41
+ 211:.\main.c      ****         {
+ 212:.\main.c      ****             if(--ledTimer == 0u) 
+ 688              		.loc 1 212 0
+ 689 001a 134B     		ldr	r3, .L42+4
+ 690 001c 1B68     		ldr	r3, [r3]
+ 691 001e 5A1E     		sub	r2, r3, #1
+ 692 0020 114B     		ldr	r3, .L42+4
+ 693 0022 1A60     		str	r2, [r3]
+ 694 0024 104B     		ldr	r3, .L42+4
+ 695 0026 1B68     		ldr	r3, [r3]
+ 696 0028 002B     		cmp	r3, #0
+ 697 002a 0ED1     		bne	.L41
+ 213:.\main.c      ****             {
+ 214:.\main.c      ****                 ledTimer = LED_TIMEOUT;
+ 698              		.loc 1 214 0
+ 699 002c 0E4B     		ldr	r3, .L42+4
+ 700 002e 0A22     		mov	r2, #10
+ 701 0030 1A60     		str	r2, [r3]
+ 215:.\main.c      ****                 led ^= LED_OFF;
+ 702              		.loc 1 215 0
+ 703 0032 0E4B     		ldr	r3, .L42+8
+ 704 0034 1B78     		ldrb	r3, [r3]
+ 705 0036 0122     		mov	r2, #1
+ 706 0038 5340     		eor	r3, r2
+ 707 003a DAB2     		uxtb	r2, r3
+ 708 003c 0B4B     		ldr	r3, .L42+8
+ 709 003e 1A70     		strb	r2, [r3]
+ 216:.\main.c      ****                 Advertising_LED_Write(led);
+ 710              		.loc 1 216 0
+ 711 0040 0A4B     		ldr	r3, .L42+8
+ 712 0042 1B78     		ldrb	r3, [r3]
+ 713 0044 181C     		mov	r0, r3
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 19
+
+
+ 714 0046 FFF7FEFF 		bl	Advertising_LED_Write
+ 715              	.L41:
+ 217:.\main.c      ****             }
+ 218:.\main.c      ****         }
+ 219:.\main.c      ****         
+ 220:.\main.c      ****         /* Indicate that timer is raised to the main loop */
+ 221:.\main.c      ****         mainTimer++;
+ 716              		.loc 1 221 0
+ 717 004a 094B     		ldr	r3, .L42+12
+ 718 004c 1B68     		ldr	r3, [r3]
+ 719 004e 5A1C     		add	r2, r3, #1
+ 720 0050 074B     		ldr	r3, .L42+12
+ 721 0052 1A60     		str	r2, [r3]
+ 222:.\main.c      ****         
+ 223:.\main.c      ****         /* Clears interrupt request  */
+ 224:.\main.c      ****         CySysWdtClearInterrupt(WDT_INTERRUPT_SOURCE);
+ 722              		.loc 1 224 0
+ 723 0054 8023     		mov	r3, #128
+ 724 0056 DB00     		lsl	r3, r3, #3
+ 725 0058 181C     		mov	r0, r3
+ 726 005a FFF7FEFF 		bl	CySysWdtClearInterrupt
+ 727              	.L39:
+ 728              	.LBE2:
+ 225:.\main.c      ****     }
+ 226:.\main.c      **** }
+ 729              		.loc 1 226 0
+ 730 005e BD46     		mov	sp, r7
+ 731              		@ sp needed
+ 732 0060 80BD     		pop	{r7, pc}
+ 733              	.L43:
+ 734 0062 C046     		.align	2
+ 735              	.L42:
+ 736 0064 00000000 		.word	cyBle_state
+ 737 0068 04000000 		.word	ledTimer.8146
+ 738 006c 08000000 		.word	led.8145
+ 739 0070 00000000 		.word	mainTimer
+ 740              		.cfi_endproc
+ 741              	.LFE38:
+ 742              		.size	Timer_Interrupt, .-Timer_Interrupt
+ 743              		.section	.text.WDT_Start,"ax",%progbits
+ 744              		.align	2
+ 745              		.global	WDT_Start
+ 746              		.code	16
+ 747              		.thumb_func
+ 748              		.type	WDT_Start, %function
+ 749              	WDT_Start:
+ 750              	.LFB39:
+ 227:.\main.c      **** 
+ 228:.\main.c      **** /*******************************************************************************
+ 229:.\main.c      **** * Function Name: WDT_Start
+ 230:.\main.c      **** ********************************************************************************
+ 231:.\main.c      **** *
+ 232:.\main.c      **** * Summary:
+ 233:.\main.c      **** *  Configures WDT to trigger an interrupt.
+ 234:.\main.c      **** *
+ 235:.\main.c      **** *******************************************************************************/
+ 236:.\main.c      **** 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 20
+
+
+ 237:.\main.c      **** void WDT_Start(void)
+ 238:.\main.c      **** {
+ 751              		.loc 1 238 0
+ 752              		.cfi_startproc
+ 753 0000 80B5     		push	{r7, lr}
+ 754              		.cfi_def_cfa_offset 8
+ 755              		.cfi_offset 7, -8
+ 756              		.cfi_offset 14, -4
+ 757 0002 00AF     		add	r7, sp, #0
+ 758              		.cfi_def_cfa_register 7
+ 239:.\main.c      ****     /* Unlock the WDT registers for modification */
+ 240:.\main.c      ****     CySysWdtUnlock(); 
+ 759              		.loc 1 240 0
+ 760 0004 FFF7FEFF 		bl	CySysWdtUnlock
+ 241:.\main.c      ****     /* Setup ISR */
+ 242:.\main.c      ****     WDT_Interrupt_StartEx(&Timer_Interrupt);
+ 761              		.loc 1 242 0
+ 762 0008 0E4B     		ldr	r3, .L45
+ 763 000a 181C     		mov	r0, r3
+ 764 000c FFF7FEFF 		bl	WDT_Interrupt_StartEx
+ 243:.\main.c      ****     /* Write the mode to generate interrupt on match */
+ 244:.\main.c      ****     CySysWdtWriteMode(WDT_COUNTER, CY_SYS_WDT_MODE_INT);
+ 765              		.loc 1 244 0
+ 766 0010 0120     		mov	r0, #1
+ 767 0012 0121     		mov	r1, #1
+ 768 0014 FFF7FEFF 		bl	CySysWdtSetMode
+ 245:.\main.c      ****     /* Configure the WDT counter clear on a match setting */
+ 246:.\main.c      ****     CySysWdtWriteClearOnMatch(WDT_COUNTER, WDT_COUNTER_ENABLE);
+ 769              		.loc 1 246 0
+ 770 0018 0120     		mov	r0, #1
+ 771 001a 0121     		mov	r1, #1
+ 772 001c FFF7FEFF 		bl	CySysWdtSetClearOnMatch
+ 247:.\main.c      ****     /* Configure the WDT counter match comparison value */
+ 248:.\main.c      ****     CySysWdtWriteMatch(WDT_COUNTER, WDT_TIMEOUT);
+ 773              		.loc 1 248 0
+ 774 0020 094B     		ldr	r3, .L45+4
+ 775 0022 0120     		mov	r0, #1
+ 776 0024 191C     		mov	r1, r3
+ 777 0026 FFF7FEFF 		bl	CySysWdtSetMatch
+ 249:.\main.c      ****     /* Reset WDT counter */
+ 250:.\main.c      ****     CySysWdtResetCounters(WDT_COUNTER);
+ 778              		.loc 1 250 0
+ 779 002a 0120     		mov	r0, #1
+ 780 002c FFF7FEFF 		bl	CySysWdtResetCounters
+ 251:.\main.c      ****     /* Enable the specified WDT counter */
+ 252:.\main.c      ****     CySysWdtEnable(WDT_COUNTER_MASK);
+ 781              		.loc 1 252 0
+ 782 0030 8023     		mov	r3, #128
+ 783 0032 5B00     		lsl	r3, r3, #1
+ 784 0034 181C     		mov	r0, r3
+ 785 0036 FFF7FEFF 		bl	CySysWdtEnable
+ 253:.\main.c      ****     /* Lock out configuration changes to the Watchdog timer registers */
+ 254:.\main.c      ****     CySysWdtLock();    
+ 786              		.loc 1 254 0
+ 787 003a FFF7FEFF 		bl	CySysWdtLock
+ 255:.\main.c      **** }
+ 788              		.loc 1 255 0
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 21
+
+
+ 789 003e BD46     		mov	sp, r7
+ 790              		@ sp needed
+ 791 0040 80BD     		pop	{r7, pc}
+ 792              	.L46:
+ 793 0042 C046     		.align	2
+ 794              	.L45:
+ 795 0044 00000000 		.word	Timer_Interrupt
+ 796 0048 CC0C0000 		.word	3276
+ 797              		.cfi_endproc
+ 798              	.LFE39:
+ 799              		.size	WDT_Start, .-WDT_Start
+ 800              		.section	.text.WDT_Stop,"ax",%progbits
+ 801              		.align	2
+ 802              		.global	WDT_Stop
+ 803              		.code	16
+ 804              		.thumb_func
+ 805              		.type	WDT_Stop, %function
+ 806              	WDT_Stop:
+ 807              	.LFB40:
+ 256:.\main.c      **** 
+ 257:.\main.c      **** 
+ 258:.\main.c      **** /*******************************************************************************
+ 259:.\main.c      **** * Function Name: WDT_Stop
+ 260:.\main.c      **** ********************************************************************************
+ 261:.\main.c      **** *
+ 262:.\main.c      **** * Summary:
+ 263:.\main.c      **** *  This API stops the WDT timer.
+ 264:.\main.c      **** *
+ 265:.\main.c      **** *******************************************************************************/
+ 266:.\main.c      **** void WDT_Stop(void)
+ 267:.\main.c      **** {
+ 808              		.loc 1 267 0
+ 809              		.cfi_startproc
+ 810 0000 80B5     		push	{r7, lr}
+ 811              		.cfi_def_cfa_offset 8
+ 812              		.cfi_offset 7, -8
+ 813              		.cfi_offset 14, -4
+ 814 0002 00AF     		add	r7, sp, #0
+ 815              		.cfi_def_cfa_register 7
+ 268:.\main.c      ****     /* Unlock the WDT registers for modification */
+ 269:.\main.c      ****     CySysWdtUnlock(); 
+ 816              		.loc 1 269 0
+ 817 0004 FFF7FEFF 		bl	CySysWdtUnlock
+ 270:.\main.c      ****     /* Disable the specified WDT counter */
+ 271:.\main.c      ****     CySysWdtDisable(WDT_COUNTER_MASK);
+ 818              		.loc 1 271 0
+ 819 0008 8023     		mov	r3, #128
+ 820 000a 5B00     		lsl	r3, r3, #1
+ 821 000c 181C     		mov	r0, r3
+ 822 000e FFF7FEFF 		bl	CySysWdtDisable
+ 272:.\main.c      ****     /* Locks out configuration changes to the Watchdog timer registers */
+ 273:.\main.c      ****     CySysWdtLock();    
+ 823              		.loc 1 273 0
+ 824 0012 FFF7FEFF 		bl	CySysWdtLock
+ 274:.\main.c      **** }
+ 825              		.loc 1 274 0
+ 826 0016 BD46     		mov	sp, r7
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 22
+
+
+ 827              		@ sp needed
+ 828 0018 80BD     		pop	{r7, pc}
+ 829              		.cfi_endproc
+ 830              	.LFE40:
+ 831              		.size	WDT_Stop, .-WDT_Stop
+ 832 001a C046     		.section	.text.LowPowerImplementation,"ax",%progbits
+ 833              		.align	2
+ 834              		.code	16
+ 835              		.thumb_func
+ 836              		.type	LowPowerImplementation, %function
+ 837              	LowPowerImplementation:
+ 838              	.LFB41:
+ 275:.\main.c      **** 
+ 276:.\main.c      **** 
+ 277:.\main.c      **** /*******************************************************************************
+ 278:.\main.c      **** * Function Name: LowPowerImplementation()
+ 279:.\main.c      **** ********************************************************************************
+ 280:.\main.c      **** * Summary:
+ 281:.\main.c      **** * Implements low power in the project.
+ 282:.\main.c      **** *
+ 283:.\main.c      **** * Parameters:
+ 284:.\main.c      **** * None
+ 285:.\main.c      **** *
+ 286:.\main.c      **** * Return:
+ 287:.\main.c      **** * None
+ 288:.\main.c      **** *
+ 289:.\main.c      **** * Theory:
+ 290:.\main.c      **** * The function tries to enter deep sleep as much as possible - whenever the 
+ 291:.\main.c      **** * BLE is idle and the UART transmission/reception is not happening. At all other
+ 292:.\main.c      **** * times, the function tries to enter CPU sleep.
+ 293:.\main.c      **** *
+ 294:.\main.c      **** *******************************************************************************/
+ 295:.\main.c      **** static void LowPowerImplementation(void)
+ 296:.\main.c      **** {
+ 839              		.loc 1 296 0
+ 840              		.cfi_startproc
+ 841 0000 90B5     		push	{r4, r7, lr}
+ 842              		.cfi_def_cfa_offset 12
+ 843              		.cfi_offset 4, -12
+ 844              		.cfi_offset 7, -8
+ 845              		.cfi_offset 14, -4
+ 846 0002 83B0     		sub	sp, sp, #12
+ 847              		.cfi_def_cfa_offset 24
+ 848 0004 00AF     		add	r7, sp, #0
+ 849              		.cfi_def_cfa_register 7
+ 297:.\main.c      ****     CYBLE_LP_MODE_T bleMode;
+ 298:.\main.c      ****     uint8 interruptStatus;
+ 299:.\main.c      ****     
+ 300:.\main.c      ****     /* For advertising and connected states, implement deep sleep 
+ 301:.\main.c      ****      * functionality to achieve low power in the system. For more details
+ 302:.\main.c      ****      * on the low power implementation, refer to the Low Power Application 
+ 303:.\main.c      ****      * Note.
+ 304:.\main.c      ****      */
+ 305:.\main.c      ****     if((CyBle_GetState() == CYBLE_STATE_ADVERTISING) || 
+ 850              		.loc 1 305 0
+ 851 0006 224B     		ldr	r3, .L58
+ 852 0008 1B78     		ldrb	r3, [r3]
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 23
+
+
+ 853 000a 032B     		cmp	r3, #3
+ 854 000c 03D0     		beq	.L49
+ 306:.\main.c      ****        (CyBle_GetState() == CYBLE_STATE_CONNECTED))
+ 855              		.loc 1 306 0 discriminator 1
+ 856 000e 204B     		ldr	r3, .L58
+ 857 0010 1B78     		ldrb	r3, [r3]
+ 305:.\main.c      ****        (CyBle_GetState() == CYBLE_STATE_CONNECTED))
+ 858              		.loc 1 305 0 discriminator 1
+ 859 0012 022B     		cmp	r3, #2
+ 860 0014 39D1     		bne	.L48
+ 861              	.L49:
+ 307:.\main.c      ****     {
+ 308:.\main.c      ****         /* Request BLE subsystem to enter into Deep-Sleep mode between connection and advertising i
+ 309:.\main.c      ****         bleMode = CyBle_EnterLPM(CYBLE_BLESS_DEEPSLEEP);
+ 862              		.loc 1 309 0
+ 863 0016 FC1D     		add	r4, r7, #7
+ 864 0018 0320     		mov	r0, #3
+ 865 001a FFF7FEFF 		bl	CyBle_EnterLPM
+ 866 001e 031C     		mov	r3, r0
+ 867 0020 2370     		strb	r3, [r4]
+ 310:.\main.c      ****         /* Disable global interrupts */
+ 311:.\main.c      ****         interruptStatus = CyEnterCriticalSection();
+ 868              		.loc 1 311 0
+ 869 0022 BC1D     		add	r4, r7, #6
+ 870 0024 FFF7FEFF 		bl	CyEnterCriticalSection
+ 871 0028 031C     		mov	r3, r0
+ 872 002a 2370     		strb	r3, [r4]
+ 312:.\main.c      ****         /* When BLE subsystem has been put into Deep-Sleep mode */
+ 313:.\main.c      ****         if(bleMode == CYBLE_BLESS_DEEPSLEEP)
+ 873              		.loc 1 313 0
+ 874 002c FB1D     		add	r3, r7, #7
+ 875 002e 1B78     		ldrb	r3, [r3]
+ 876 0030 032B     		cmp	r3, #3
+ 877 0032 1ED1     		bne	.L51
+ 314:.\main.c      ****         {
+ 315:.\main.c      ****             /* And it is still there or ECO is on */
+ 316:.\main.c      ****             if((CyBle_GetBleSsState() == CYBLE_BLESS_STATE_ECO_ON) || 
+ 878              		.loc 1 316 0
+ 879 0034 FFF7FEFF 		bl	CyBle_GetBleSsState
+ 880 0038 031E     		sub	r3, r0, #0
+ 881 003a 042B     		cmp	r3, #4
+ 882 003c 04D0     		beq	.L52
+ 317:.\main.c      ****                (CyBle_GetBleSsState() == CYBLE_BLESS_STATE_DEEPSLEEP))
+ 883              		.loc 1 317 0 discriminator 1
+ 884 003e FFF7FEFF 		bl	CyBle_GetBleSsState
+ 885 0042 031E     		sub	r3, r0, #0
+ 316:.\main.c      ****                (CyBle_GetBleSsState() == CYBLE_BLESS_STATE_DEEPSLEEP))
+ 886              		.loc 1 316 0 discriminator 1
+ 887 0044 062B     		cmp	r3, #6
+ 888 0046 1BD1     		bne	.L57
+ 889              	.L52:
+ 318:.\main.c      ****             {
+ 319:.\main.c      ****             #if (DEBUG_UART_ENABLED == ENABLED)
+ 320:.\main.c      ****                 /* Put the CPU into the Deep-Sleep mode when all debug information has been sent */
+ 321:.\main.c      ****                 if((UART_DEB_SpiUartGetTxBufferSize() + UART_DEB_GET_TX_FIFO_SR_VALID) == 0u)
+ 890              		.loc 1 321 0
+ 891 0048 FFF7FEFF 		bl	UART_DEB_SpiUartGetTxBufferSize
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 24
+
+
+ 892 004c 011C     		mov	r1, r0
+ 893 004e 114B     		ldr	r3, .L58+4
+ 894 0050 1A68     		ldr	r2, [r3]
+ 895 0052 8023     		mov	r3, #128
+ 896 0054 1B02     		lsl	r3, r3, #8
+ 897 0056 1340     		and	r3, r2
+ 898 0058 01D0     		beq	.L54
+ 899              		.loc 1 321 0 is_stmt 0 discriminator 1
+ 900 005a 0123     		mov	r3, #1
+ 901 005c 00E0     		b	.L55
+ 902              	.L54:
+ 903              		.loc 1 321 0 discriminator 2
+ 904 005e 0023     		mov	r3, #0
+ 905              	.L55:
+ 906              		.loc 1 321 0 discriminator 4
+ 907 0060 CB18     		add	r3, r1, r3
+ 908 0062 002B     		cmp	r3, #0
+ 909 0064 02D1     		bne	.L56
+ 322:.\main.c      ****                 {
+ 323:.\main.c      ****                     CySysPmDeepSleep();
+ 910              		.loc 1 323 0 is_stmt 1
+ 911 0066 FFF7FEFF 		bl	CySysPmDeepSleep
+ 912 006a 09E0     		b	.L57
+ 913              	.L56:
+ 324:.\main.c      ****                 }
+ 325:.\main.c      ****                 else /* Put the CPU into Sleep mode and let SCB to continue sending debug data */
+ 326:.\main.c      ****                 {
+ 327:.\main.c      ****                     CySysPmSleep();
+ 914              		.loc 1 327 0
+ 915 006c FFF7FEFF 		bl	CySysPmSleep
+ 916 0070 06E0     		b	.L57
+ 917              	.L51:
+ 328:.\main.c      ****                 }
+ 329:.\main.c      ****             #else
+ 330:.\main.c      ****                 CySysPmDeepSleep();
+ 331:.\main.c      ****             #endif /* (DEBUG_UART_ENABLED == ENABLED) */
+ 332:.\main.c      ****             }
+ 333:.\main.c      ****         }
+ 334:.\main.c      ****         else /* When BLE subsystem has been put into Sleep mode or is active */
+ 335:.\main.c      ****         {
+ 336:.\main.c      ****             /* And hardware doesn't finish Tx/Rx opeation - put the CPU into Sleep mode */
+ 337:.\main.c      ****             if(CyBle_GetBleSsState() != CYBLE_BLESS_STATE_EVENT_CLOSE)
+ 918              		.loc 1 337 0
+ 919 0072 FFF7FEFF 		bl	CyBle_GetBleSsState
+ 920 0076 031E     		sub	r3, r0, #0
+ 921 0078 022B     		cmp	r3, #2
+ 922 007a 01D0     		beq	.L57
+ 338:.\main.c      ****             {
+ 339:.\main.c      ****                 CySysPmSleep();
+ 923              		.loc 1 339 0
+ 924 007c FFF7FEFF 		bl	CySysPmSleep
+ 925              	.L57:
+ 340:.\main.c      ****             }
+ 341:.\main.c      ****         }
+ 342:.\main.c      ****         /* Enable global interrupt */
+ 343:.\main.c      ****         CyExitCriticalSection(interruptStatus);
+ 926              		.loc 1 343 0
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 25
+
+
+ 927 0080 BB1D     		add	r3, r7, #6
+ 928 0082 1B78     		ldrb	r3, [r3]
+ 929 0084 181C     		mov	r0, r3
+ 930 0086 FFF7FEFF 		bl	CyExitCriticalSection
+ 931              	.L48:
+ 344:.\main.c      ****     }
+ 345:.\main.c      **** }
+ 932              		.loc 1 345 0
+ 933 008a BD46     		mov	sp, r7
+ 934 008c 03B0     		add	sp, sp, #12
+ 935              		@ sp needed
+ 936 008e 90BD     		pop	{r4, r7, pc}
+ 937              	.L59:
+ 938              		.align	2
+ 939              	.L58:
+ 940 0090 00000000 		.word	cyBle_state
+ 941 0094 08022440 		.word	1076101640
+ 942              		.cfi_endproc
+ 943              	.LFE41:
+ 944              		.size	LowPowerImplementation, .-LowPowerImplementation
+ 945              		.section	.rodata
+ 946              		.align	2
+ 947              	.LC56:
+ 948 0368 424C4520 		.ascii	"BLE HID Mouse Example Project \015\000"
+ 948      48494420 
+ 948      4D6F7573 
+ 948      65204578 
+ 948      616D706C 
+ 949              		.align	2
+ 950              	.LC59:
+ 951 0388 4379426C 		.ascii	"CyBle_Start API Error: %x \015\012\000"
+ 951      655F5374 
+ 951      61727420 
+ 951      41504920 
+ 951      4572726F 
+ 952 03a5 000000   		.align	2
+ 953              	.LC61:
+ 954 03a8 4379426C 		.ascii	"CyBle_GetStackLibraryVersion API Error: 0x%2.2x \015"
+ 954      655F4765 
+ 954      74537461 
+ 954      636B4C69 
+ 954      62726172 
+ 955 03d9 0A00     		.ascii	"\012\000"
+ 956 03db 00       		.align	2
+ 957              	.LC63:
+ 958 03dc 53746163 		.ascii	"Stack Version: %d.%d.%d.%d \015\012\000"
+ 958      6B205665 
+ 958      7273696F 
+ 958      6E3A2025 
+ 958      642E2564 
+ 959 03fa 0000     		.align	2
+ 960              	.LC73:
+ 961 03fc 53746F72 		.ascii	"Store bonding data, status: %x \015\012\000"
+ 961      6520626F 
+ 961      6E64696E 
+ 961      67206461 
+ 961      74612C20 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 26
+
+
+ 962 041e 0000     		.section	.text.main,"ax",%progbits
+ 963              		.align	2
+ 964              		.global	main
+ 965              		.code	16
+ 966              		.thumb_func
+ 967              		.type	main, %function
+ 968              	main:
+ 969              	.LFB42:
+ 346:.\main.c      **** 
+ 347:.\main.c      **** 
+ 348:.\main.c      **** /*******************************************************************************
+ 349:.\main.c      **** * Function Name: main()
+ 350:.\main.c      **** ********************************************************************************
+ 351:.\main.c      **** * Summary:
+ 352:.\main.c      **** *  Main function for the project.
+ 353:.\main.c      **** *
+ 354:.\main.c      **** * Parameters:
+ 355:.\main.c      **** *  None
+ 356:.\main.c      **** *
+ 357:.\main.c      **** * Return:
+ 358:.\main.c      **** *  None
+ 359:.\main.c      **** *
+ 360:.\main.c      **** * Theory:
+ 361:.\main.c      **** *  The function starts BLE and UART components.
+ 362:.\main.c      **** *  This function process all BLE events and also implements the low power 
+ 363:.\main.c      **** *  functionality.
+ 364:.\main.c      **** *
+ 365:.\main.c      **** *******************************************************************************/
+ 366:.\main.c      **** int main()
+ 367:.\main.c      **** {
+ 970              		.loc 1 367 0
+ 971              		.cfi_startproc
+ 972 0000 B0B5     		push	{r4, r5, r7, lr}
+ 973              		.cfi_def_cfa_offset 16
+ 974              		.cfi_offset 4, -16
+ 975              		.cfi_offset 5, -12
+ 976              		.cfi_offset 7, -8
+ 977              		.cfi_offset 14, -4
+ 978 0002 86B0     		sub	sp, sp, #24
+ 979              		.cfi_def_cfa_offset 40
+ 980 0004 02AF     		add	r7, sp, #8
+ 981              		.cfi_def_cfa 7, 32
+ 368:.\main.c      ****     CYBLE_API_RESULT_T apiResult;
+ 369:.\main.c      ****     uint8 refresh = CYBLE_SCAN_REFRESH_ENABLED;
+ 982              		.loc 1 369 0
+ 983 0006 0B23     		mov	r3, #11
+ 984 0008 FB18     		add	r3, r7, r3
+ 985 000a 0022     		mov	r2, #0
+ 986 000c 1A70     		strb	r2, [r3]
+ 370:.\main.c      ****     CYBLE_STACK_LIB_VERSION_T stackVersion;
+ 371:.\main.c      ****     
+ 372:.\main.c      ****     CyGlobalIntEnable;  
+ 987              		.loc 1 372 0
+ 988              	@ 372 ".\main.c" 1
+ 989 000e 62B6     		CPSIE   i
+ 990              	@ 0 "" 2
+ 373:.\main.c      ****     
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 27
+
+
+ 374:.\main.c      ****     Disconnect_LED_Write(LED_OFF);
+ 991              		.loc 1 374 0
+ 992              		.code	16
+ 993 0010 0120     		mov	r0, #1
+ 994 0012 FFF7FEFF 		bl	Disconnect_LED_Write
+ 375:.\main.c      ****     Advertising_LED_Write(LED_OFF);
+ 995              		.loc 1 375 0
+ 996 0016 0120     		mov	r0, #1
+ 997 0018 FFF7FEFF 		bl	Advertising_LED_Write
+ 376:.\main.c      ****     Simulation_LED_Write(LED_OFF);
+ 998              		.loc 1 376 0
+ 999 001c 0120     		mov	r0, #1
+ 1000 001e FFF7FEFF 		bl	Simulation_LED_Write
+ 377:.\main.c      **** 
+ 378:.\main.c      **** #if (DEBUG_UART_ENABLED == ENABLED)
+ 379:.\main.c      ****     UART_DEB_Start();
+ 1001              		.loc 1 379 0
+ 1002 0022 FFF7FEFF 		bl	UART_DEB_Start
+ 380:.\main.c      **** #endif /* (DEBUG_UART_ENABLED == ENABLED) */ 
+ 381:.\main.c      ****     DBG_PRINTF("BLE HID Mouse Example Project \r\n");
+ 1003              		.loc 1 381 0
+ 1004 0026 574B     		ldr	r3, .L71
+ 1005 0028 181C     		mov	r0, r3
+ 1006 002a FFF7FEFF 		bl	puts
+ 382:.\main.c      ****     
+ 383:.\main.c      ****     /* Start CYBLE component and register generic event handler */
+ 384:.\main.c      ****     apiResult = CyBle_Start(AppCallBack);
+ 1007              		.loc 1 384 0
+ 1008 002e 0E23     		mov	r3, #14
+ 1009 0030 FC18     		add	r4, r7, r3
+ 1010 0032 554B     		ldr	r3, .L71+4
+ 1011 0034 181C     		mov	r0, r3
+ 1012 0036 FFF7FEFF 		bl	CyBle_Start
+ 1013 003a 031C     		mov	r3, r0
+ 1014 003c 2380     		strh	r3, [r4]
+ 385:.\main.c      ****     if(apiResult != CYBLE_ERROR_OK)
+ 1015              		.loc 1 385 0
+ 1016 003e 0E23     		mov	r3, #14
+ 1017 0040 FB18     		add	r3, r7, r3
+ 1018 0042 1B88     		ldrh	r3, [r3]
+ 1019 0044 002B     		cmp	r3, #0
+ 1020 0046 07D0     		beq	.L61
+ 386:.\main.c      ****     {
+ 387:.\main.c      ****         DBG_PRINTF("CyBle_Start API Error: %x \r\n", apiResult);
+ 1021              		.loc 1 387 0
+ 1022 0048 0E23     		mov	r3, #14
+ 1023 004a FB18     		add	r3, r7, r3
+ 1024 004c 1B88     		ldrh	r3, [r3]
+ 1025 004e 4F4A     		ldr	r2, .L71+8
+ 1026 0050 101C     		mov	r0, r2
+ 1027 0052 191C     		mov	r1, r3
+ 1028 0054 FFF7FEFF 		bl	printf
+ 1029              	.L61:
+ 388:.\main.c      ****     }
+ 389:.\main.c      ****     
+ 390:.\main.c      ****     apiResult = CyBle_GetStackLibraryVersion(&stackVersion);
+ 1030              		.loc 1 390 0
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 28
+
+
+ 1031 0058 0E23     		mov	r3, #14
+ 1032 005a FC18     		add	r4, r7, r3
+ 1033 005c 3B1D     		add	r3, r7, #4
+ 1034 005e 181C     		mov	r0, r3
+ 1035 0060 FFF7FEFF 		bl	CyBle_GetStackLibraryVersion
+ 1036 0064 031C     		mov	r3, r0
+ 1037 0066 2380     		strh	r3, [r4]
+ 391:.\main.c      ****     if(apiResult != CYBLE_ERROR_OK)
+ 1038              		.loc 1 391 0
+ 1039 0068 0E23     		mov	r3, #14
+ 1040 006a FB18     		add	r3, r7, r3
+ 1041 006c 1B88     		ldrh	r3, [r3]
+ 1042 006e 002B     		cmp	r3, #0
+ 1043 0070 08D0     		beq	.L62
+ 392:.\main.c      ****     {
+ 393:.\main.c      ****         DBG_PRINTF("CyBle_GetStackLibraryVersion API Error: 0x%2.2x \r\n", apiResult);
+ 1044              		.loc 1 393 0
+ 1045 0072 0E23     		mov	r3, #14
+ 1046 0074 FB18     		add	r3, r7, r3
+ 1047 0076 1B88     		ldrh	r3, [r3]
+ 1048 0078 454A     		ldr	r2, .L71+12
+ 1049 007a 101C     		mov	r0, r2
+ 1050 007c 191C     		mov	r1, r3
+ 1051 007e FFF7FEFF 		bl	printf
+ 1052 0082 12E0     		b	.L63
+ 1053              	.L62:
+ 394:.\main.c      ****     }
+ 395:.\main.c      ****     else
+ 396:.\main.c      ****     {
+ 397:.\main.c      ****         DBG_PRINTF("Stack Version: %d.%d.%d.%d \r\n", stackVersion.majorVersion, 
+ 1054              		.loc 1 397 0
+ 1055 0084 3B1D     		add	r3, r7, #4
+ 1056 0086 1B78     		ldrb	r3, [r3]
+ 1057 0088 191C     		mov	r1, r3
+ 1058 008a 3B1D     		add	r3, r7, #4
+ 1059 008c 5B78     		ldrb	r3, [r3, #1]
+ 1060 008e 1D1C     		mov	r5, r3
+ 1061 0090 3B1D     		add	r3, r7, #4
+ 1062 0092 9B78     		ldrb	r3, [r3, #2]
+ 1063 0094 1C1C     		mov	r4, r3
+ 1064 0096 3B1D     		add	r3, r7, #4
+ 1065 0098 DB78     		ldrb	r3, [r3, #3]
+ 1066 009a 1A1C     		mov	r2, r3
+ 1067 009c 3D4B     		ldr	r3, .L71+16
+ 1068 009e 0092     		str	r2, [sp]
+ 1069 00a0 181C     		mov	r0, r3
+ 1070 00a2 2A1C     		mov	r2, r5
+ 1071 00a4 231C     		mov	r3, r4
+ 1072 00a6 FFF7FEFF 		bl	printf
+ 1073              	.L63:
+ 398:.\main.c      ****             stackVersion.minorVersion, stackVersion.patch, stackVersion.buildNumber);
+ 399:.\main.c      ****     }
+ 400:.\main.c      **** 
+ 401:.\main.c      ****     WDT_Start();
+ 1074              		.loc 1 401 0
+ 1075 00aa FFF7FEFF 		bl	WDT_Start
+ 1076              	.L70:
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 29
+
+
+ 402:.\main.c      ****     
+ 403:.\main.c      **** #if (BAS_MEASURE_ENABLE != 0)
+ 404:.\main.c      ****     ADC_Start();
+ 405:.\main.c      **** #endif /* BAS_MEASURE_ENABLE != 0 */
+ 406:.\main.c      **** 
+ 407:.\main.c      **** 
+ 408:.\main.c      **** 	while(1) 
+ 409:.\main.c      ****     {              
+ 410:.\main.c      ****         /* CyBle_ProcessEvents() allows BLE stack to process pending events */
+ 411:.\main.c      ****         CyBle_ProcessEvents();
+ 1077              		.loc 1 411 0
+ 1078 00ae FFF7FEFF 		bl	CyBle_ProcessEvents
+ 412:.\main.c      **** 
+ 413:.\main.c      ****         /* To achieve low power in the device */
+ 414:.\main.c      ****         LowPowerImplementation();
+ 1079              		.loc 1 414 0
+ 1080 00b2 FFF7FEFF 		bl	LowPowerImplementation
+ 415:.\main.c      **** 
+ 416:.\main.c      ****         if((CyBle_GetState() == CYBLE_STATE_CONNECTED) && (suspend != CYBLE_HIDS_CP_SUSPEND) && (au
+ 1081              		.loc 1 416 0
+ 1082 00b6 384B     		ldr	r3, .L71+20
+ 1083 00b8 1B78     		ldrb	r3, [r3]
+ 1084 00ba 022B     		cmp	r3, #2
+ 1085 00bc 61D1     		bne	.L64
+ 1086              		.loc 1 416 0 is_stmt 0 discriminator 1
+ 1087 00be 374B     		ldr	r3, .L71+24
+ 1088 00c0 1B78     		ldrb	r3, [r3]
+ 1089 00c2 002B     		cmp	r3, #0
+ 1090 00c4 5DD0     		beq	.L64
+ 1091              		.loc 1 416 0 discriminator 2
+ 1092 00c6 364B     		ldr	r3, .L71+28
+ 1093 00c8 1B78     		ldrb	r3, [r3]
+ 1094 00ca 002B     		cmp	r3, #0
+ 1095 00cc 59D0     		beq	.L64
+ 417:.\main.c      ****         {
+ 418:.\main.c      ****             if(mainTimer != 0u)
+ 1096              		.loc 1 418 0 is_stmt 1
+ 1097 00ce 354B     		ldr	r3, .L71+32
+ 1098 00d0 1B68     		ldr	r3, [r3]
+ 1099 00d2 002B     		cmp	r3, #0
+ 1100 00d4 0ED0     		beq	.L65
+ 419:.\main.c      ****             {
+ 420:.\main.c      ****                 mainTimer = 0u;                
+ 1101              		.loc 1 420 0
+ 1102 00d6 334B     		ldr	r3, .L71+32
+ 1103 00d8 0022     		mov	r2, #0
+ 1104 00da 1A60     		str	r2, [r3]
+ 421:.\main.c      ****             #if (BAS_SIMULATE_ENABLE != 0)
+ 422:.\main.c      ****                 SimulateBattery();
+ 1105              		.loc 1 422 0
+ 1106 00dc FFF7FEFF 		bl	SimulateBattery
+ 423:.\main.c      ****                 CyBle_ProcessEvents();
+ 1107              		.loc 1 423 0
+ 1108 00e0 FFF7FEFF 		bl	CyBle_ProcessEvents
+ 424:.\main.c      ****             #endif /* BAS_SIMULATE_ENABLE != 0 */    
+ 425:.\main.c      ****             #if (BAS_MEASURE_ENABLE != 0)
+ 426:.\main.c      ****                 MeasureBattery();
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 30
+
+
+ 427:.\main.c      ****                 CyBle_ProcessEvents();
+ 428:.\main.c      ****             #endif /* BAS_MEASURE_ENABLE != 0 */
+ 429:.\main.c      ****                 if(mouseSimulation == ENABLED)
+ 1109              		.loc 1 429 0
+ 1110 00e4 304B     		ldr	r3, .L71+36
+ 1111 00e6 1B88     		ldrh	r3, [r3]
+ 1112 00e8 012B     		cmp	r3, #1
+ 1113 00ea 03D1     		bne	.L65
+ 430:.\main.c      ****                 {
+ 431:.\main.c      ****                     SimulateMouse();
+ 1114              		.loc 1 431 0
+ 1115 00ec FFF7FEFF 		bl	SimulateMouse
+ 432:.\main.c      ****                     CyBle_ProcessEvents();
+ 1116              		.loc 1 432 0
+ 1117 00f0 FFF7FEFF 		bl	CyBle_ProcessEvents
+ 1118              	.L65:
+ 433:.\main.c      ****                 }
+ 434:.\main.c      ****             }
+ 435:.\main.c      ****             if(requestScanRefresh == ENABLED)
+ 1119              		.loc 1 435 0
+ 1120 00f4 2D4B     		ldr	r3, .L71+40
+ 1121 00f6 1B88     		ldrh	r3, [r3]
+ 1122 00f8 012B     		cmp	r3, #1
+ 1123 00fa 20D1     		bne	.L66
+ 436:.\main.c      ****             {
+ 437:.\main.c      ****                 /* Send notification to request update connection parameters */
+ 438:.\main.c      ****                 apiResult = CyBle_ScpssSendNotification(cyBle_connHandle, CYBLE_SCPS_SCAN_REFRESH, 
+ 1124              		.loc 1 438 0
+ 1125 00fc 0E23     		mov	r3, #14
+ 1126 00fe FC18     		add	r4, r7, r3
+ 1127 0100 2B4B     		ldr	r3, .L71+44
+ 1128 0102 0B22     		mov	r2, #11
+ 1129 0104 BD18     		add	r5, r7, r2
+ 1130 0106 1A78     		ldrb	r2, [r3]
+ 1131 0108 5B78     		ldrb	r3, [r3, #1]
+ 1132 010a 1B02     		lsl	r3, r3, #8
+ 1133 010c 1A43     		orr	r2, r3
+ 1134 010e 0023     		mov	r3, #0
+ 1135 0110 1204     		lsl	r2, r2, #16
+ 1136 0112 120C     		lsr	r2, r2, #16
+ 1137 0114 1B0C     		lsr	r3, r3, #16
+ 1138 0116 1B04     		lsl	r3, r3, #16
+ 1139 0118 1343     		orr	r3, r2
+ 1140 011a 181C     		mov	r0, r3
+ 1141 011c 0121     		mov	r1, #1
+ 1142 011e 0122     		mov	r2, #1
+ 1143 0120 2B1C     		mov	r3, r5
+ 1144 0122 FFF7FEFF 		bl	CyBle_ScpssSendNotification
+ 1145 0126 031C     		mov	r3, r0
+ 1146 0128 2380     		strh	r3, [r4]
+ 439:.\main.c      ****                     sizeof(refresh), &refresh);
+ 440:.\main.c      ****                 if(apiResult != CYBLE_ERROR_OK)
+ 1147              		.loc 1 440 0
+ 1148 012a 0E23     		mov	r3, #14
+ 1149 012c FB18     		add	r3, r7, r3
+ 1150 012e 1B88     		ldrh	r3, [r3]
+ 1151 0130 002B     		cmp	r3, #0
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 31
+
+
+ 1152 0132 01D0     		beq	.L67
+ 441:.\main.c      ****                 {
+ 442:.\main.c      ****                     /* Error condition */
+ 443:.\main.c      ****                     ShowError();
+ 1153              		.loc 1 443 0
+ 1154 0134 FFF7FEFF 		bl	ShowError
+ 1155              	.L67:
+ 444:.\main.c      ****                 }
+ 445:.\main.c      ****                 requestScanRefresh = DISABLED;
+ 1156              		.loc 1 445 0
+ 1157 0138 1C4B     		ldr	r3, .L71+40
+ 1158 013a 0022     		mov	r2, #0
+ 1159 013c 1A80     		strh	r2, [r3]
+ 1160              	.L66:
+ 446:.\main.c      ****             }
+ 447:.\main.c      ****             /* Store bonding data to flash only when all debug information has been sent */
+ 448:.\main.c      ****         #if(CYBLE_BONDING_REQUIREMENT == CYBLE_BONDING_YES)
+ 449:.\main.c      ****         #if (DEBUG_UART_ENABLED == ENABLED)
+ 450:.\main.c      ****             if((cyBle_pendingFlashWrite != 0u) &&
+ 1161              		.loc 1 450 0
+ 1162 013e 1D4B     		ldr	r3, .L71+48
+ 1163 0140 1B78     		ldrb	r3, [r3]
+ 1164 0142 002B     		cmp	r3, #0
+ 1165 0144 1DD0     		beq	.L64
+ 451:.\main.c      ****                ((UART_DEB_SpiUartGetTxBufferSize() + UART_DEB_GET_TX_FIFO_SR_VALID) == 0u))
+ 1166              		.loc 1 451 0
+ 1167 0146 FFF7FEFF 		bl	UART_DEB_SpiUartGetTxBufferSize
+ 1168 014a 011C     		mov	r1, r0
+ 1169 014c 1A4B     		ldr	r3, .L71+52
+ 1170 014e 1A68     		ldr	r2, [r3]
+ 1171 0150 8023     		mov	r3, #128
+ 1172 0152 1B02     		lsl	r3, r3, #8
+ 1173 0154 1340     		and	r3, r2
+ 1174 0156 01D0     		beq	.L68
+ 1175              		.loc 1 451 0 is_stmt 0 discriminator 1
+ 1176 0158 0123     		mov	r3, #1
+ 1177 015a 00E0     		b	.L69
+ 1178              	.L68:
+ 1179              		.loc 1 451 0 discriminator 2
+ 1180 015c 0023     		mov	r3, #0
+ 1181              	.L69:
+ 1182              		.loc 1 451 0 discriminator 4
+ 1183 015e CB18     		add	r3, r1, r3
+ 450:.\main.c      ****                ((UART_DEB_SpiUartGetTxBufferSize() + UART_DEB_GET_TX_FIFO_SR_VALID) == 0u))
+ 1184              		.loc 1 450 0 is_stmt 1 discriminator 4
+ 1185 0160 002B     		cmp	r3, #0
+ 1186 0162 0ED1     		bne	.L64
+ 1187              	.LBB3:
+ 452:.\main.c      ****         #else
+ 453:.\main.c      ****             if(cyBle_pendingFlashWrite != 0u)
+ 454:.\main.c      ****         #endif /* (DEBUG_UART_ENABLED == ENABLED) */
+ 455:.\main.c      ****             {
+ 456:.\main.c      ****                 CYBLE_API_RESULT_T apiResult;
+ 457:.\main.c      ****                 apiResult = CyBle_StoreBondingData(0u);
+ 1188              		.loc 1 457 0
+ 1189 0164 0C23     		mov	r3, #12
+ 1190 0166 FC18     		add	r4, r7, r3
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 32
+
+
+ 1191 0168 0020     		mov	r0, #0
+ 1192 016a FFF7FEFF 		bl	CyBle_StoreBondingData
+ 1193 016e 031C     		mov	r3, r0
+ 1194 0170 2380     		strh	r3, [r4]
+ 458:.\main.c      ****                 (void)apiResult;
+ 459:.\main.c      ****                 DBG_PRINTF("Store bonding data, status: %x \r\n", apiResult);
+ 1195              		.loc 1 459 0
+ 1196 0172 0C23     		mov	r3, #12
+ 1197 0174 FB18     		add	r3, r7, r3
+ 1198 0176 1B88     		ldrh	r3, [r3]
+ 1199 0178 104A     		ldr	r2, .L71+56
+ 1200 017a 101C     		mov	r0, r2
+ 1201 017c 191C     		mov	r1, r3
+ 1202 017e FFF7FEFF 		bl	printf
+ 1203              	.L64:
+ 1204              	.LBE3:
+ 460:.\main.c      ****             }
+ 461:.\main.c      ****         #endif /* CYBLE_BONDING_REQUIREMENT == CYBLE_BONDING_YES */
+ 462:.\main.c      ****         }
+ 463:.\main.c      ****     }
+ 1205              		.loc 1 463 0
+ 1206 0182 94E7     		b	.L70
+ 1207              	.L72:
+ 1208              		.align	2
+ 1209              	.L71:
+ 1210 0184 68030000 		.word	.LC56
+ 1211 0188 00000000 		.word	AppCallBack
+ 1212 018c 88030000 		.word	.LC59
+ 1213 0190 A8030000 		.word	.LC61
+ 1214 0194 DC030000 		.word	.LC63
+ 1215 0198 00000000 		.word	cyBle_state
+ 1216 019c 00000000 		.word	suspend
+ 1217 01a0 00000000 		.word	authenticated
+ 1218 01a4 00000000 		.word	mainTimer
+ 1219 01a8 00000000 		.word	mouseSimulation
+ 1220 01ac 00000000 		.word	requestScanRefresh
+ 1221 01b0 00000000 		.word	cyBle_connHandle
+ 1222 01b4 00000000 		.word	cyBle_pendingFlashWrite
+ 1223 01b8 08022440 		.word	1076101640
+ 1224 01bc FC030000 		.word	.LC73
+ 1225              		.cfi_endproc
+ 1226              	.LFE42:
+ 1227              		.size	main, .-main
+ 1228              		.data
+ 1229 0002 0000     		.align	2
+ 1230              		.type	ledTimer.8146, %object
+ 1231              		.size	ledTimer.8146, 4
+ 1232              	ledTimer.8146:
+ 1233 0004 0A000000 		.word	10
+ 1234              		.type	led.8145, %object
+ 1235              		.size	led.8145, 1
+ 1236              	led.8145:
+ 1237 0008 01       		.byte	1
+ 1238 0009 000000   		.text
+ 1239              	.Letext0:
+ 1240              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 1241              		.file 3 "Generated_Source\\PSoC4/BLE_Stack.h"
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 33
+
+
+ 1242              		.file 4 "Generated_Source\\PSoC4/BLE_StackGap.h"
+ 1243              		.file 5 "Generated_Source\\PSoC4/BLE_StackGatt.h"
+ 1244              		.file 6 "Generated_Source\\PSoC4/BLE_StackGattServer.h"
+ 1245              		.file 7 "Generated_Source\\PSoC4/BLE_dis.h"
+ 1246              		.file 8 "Generated_Source\\PSoC4/BLE_scps.h"
+ 1247              		.file 9 "Generated_Source\\PSoC4/BLE_eventHandler.h"
+ 1248              		.file 10 "Generated_Source\\PSoC4/BLE.h"
+ 1249              		.file 11 ".\\hids.h"
+ 1250              		.file 12 ".\\scps.h"
+ 1251              		.section	.debug_info,"",%progbits
+ 1252              	.Ldebug_info0:
+ 1253 0000 61090000 		.4byte	0x961
+ 1254 0004 0400     		.2byte	0x4
+ 1255 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1256 000a 04       		.byte	0x4
+ 1257 000b 01       		.uleb128 0x1
+ 1258 000c 9D140000 		.4byte	.LASF256
+ 1259 0010 01       		.byte	0x1
+ 1260 0011 DF190000 		.4byte	.LASF257
+ 1261 0015 34110000 		.4byte	.LASF258
+ 1262 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1263 001d 00000000 		.4byte	0
+ 1264 0021 00000000 		.4byte	.Ldebug_line0
+ 1265 0025 02       		.uleb128 0x2
+ 1266 0026 01       		.byte	0x1
+ 1267 0027 06       		.byte	0x6
+ 1268 0028 3E050000 		.4byte	.LASF0
+ 1269 002c 02       		.uleb128 0x2
+ 1270 002d 01       		.byte	0x1
+ 1271 002e 08       		.byte	0x8
+ 1272 002f F2050000 		.4byte	.LASF1
+ 1273 0033 02       		.uleb128 0x2
+ 1274 0034 02       		.byte	0x2
+ 1275 0035 05       		.byte	0x5
+ 1276 0036 A9160000 		.4byte	.LASF2
+ 1277 003a 02       		.uleb128 0x2
+ 1278 003b 02       		.byte	0x2
+ 1279 003c 07       		.byte	0x7
+ 1280 003d 141A0000 		.4byte	.LASF3
+ 1281 0041 02       		.uleb128 0x2
+ 1282 0042 04       		.byte	0x4
+ 1283 0043 05       		.byte	0x5
+ 1284 0044 B5030000 		.4byte	.LASF4
+ 1285 0048 02       		.uleb128 0x2
+ 1286 0049 04       		.byte	0x4
+ 1287 004a 07       		.byte	0x7
+ 1288 004b 2D0B0000 		.4byte	.LASF5
+ 1289 004f 02       		.uleb128 0x2
+ 1290 0050 08       		.byte	0x8
+ 1291 0051 05       		.byte	0x5
+ 1292 0052 9D0D0000 		.4byte	.LASF6
+ 1293 0056 02       		.uleb128 0x2
+ 1294 0057 08       		.byte	0x8
+ 1295 0058 07       		.byte	0x7
+ 1296 0059 4C130000 		.4byte	.LASF7
+ 1297 005d 03       		.uleb128 0x3
+ 1298 005e 04       		.byte	0x4
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 34
+
+
+ 1299 005f 05       		.byte	0x5
+ 1300 0060 696E7400 		.ascii	"int\000"
+ 1301 0064 02       		.uleb128 0x2
+ 1302 0065 04       		.byte	0x4
+ 1303 0066 07       		.byte	0x7
+ 1304 0067 C20F0000 		.4byte	.LASF8
+ 1305 006b 04       		.uleb128 0x4
+ 1306 006c 5B160000 		.4byte	.LASF9
+ 1307 0070 02       		.byte	0x2
+ 1308 0071 9801     		.2byte	0x198
+ 1309 0073 2C000000 		.4byte	0x2c
+ 1310 0077 04       		.uleb128 0x4
+ 1311 0078 961B0000 		.4byte	.LASF10
+ 1312 007c 02       		.byte	0x2
+ 1313 007d 9901     		.2byte	0x199
+ 1314 007f 3A000000 		.4byte	0x3a
+ 1315 0083 04       		.uleb128 0x4
+ 1316 0084 D3000000 		.4byte	.LASF11
+ 1317 0088 02       		.byte	0x2
+ 1318 0089 9A01     		.2byte	0x19a
+ 1319 008b 48000000 		.4byte	0x48
+ 1320 008f 02       		.uleb128 0x2
+ 1321 0090 04       		.byte	0x4
+ 1322 0091 04       		.byte	0x4
+ 1323 0092 4F0F0000 		.4byte	.LASF12
+ 1324 0096 02       		.uleb128 0x2
+ 1325 0097 08       		.byte	0x8
+ 1326 0098 04       		.byte	0x4
+ 1327 0099 4C0E0000 		.4byte	.LASF13
+ 1328 009d 02       		.uleb128 0x2
+ 1329 009e 01       		.byte	0x1
+ 1330 009f 08       		.byte	0x8
+ 1331 00a0 44070000 		.4byte	.LASF14
+ 1332 00a4 04       		.uleb128 0x4
+ 1333 00a5 9F130000 		.4byte	.LASF15
+ 1334 00a9 02       		.byte	0x2
+ 1335 00aa 4402     		.2byte	0x244
+ 1336 00ac B0000000 		.4byte	0xb0
+ 1337 00b0 05       		.uleb128 0x5
+ 1338 00b1 83000000 		.4byte	0x83
+ 1339 00b5 02       		.uleb128 0x2
+ 1340 00b6 04       		.byte	0x4
+ 1341 00b7 07       		.byte	0x7
+ 1342 00b8 30000000 		.4byte	.LASF16
+ 1343 00bc 06       		.uleb128 0x6
+ 1344 00bd 04       		.byte	0x4
+ 1345 00be 07       		.uleb128 0x7
+ 1346 00bf 01       		.byte	0x1
+ 1347 00c0 03       		.byte	0x3
+ 1348 00c1 4201     		.2byte	0x142
+ 1349 00c3 7B020000 		.4byte	0x27b
+ 1350 00c7 08       		.uleb128 0x8
+ 1351 00c8 7E070000 		.4byte	.LASF17
+ 1352 00cc 00       		.sleb128 0
+ 1353 00cd 08       		.uleb128 0x8
+ 1354 00ce BE030000 		.4byte	.LASF18
+ 1355 00d2 01       		.sleb128 1
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 35
+
+
+ 1356 00d3 08       		.uleb128 0x8
+ 1357 00d4 8D130000 		.4byte	.LASF19
+ 1358 00d8 02       		.sleb128 2
+ 1359 00d9 08       		.uleb128 0x8
+ 1360 00da 4A050000 		.4byte	.LASF20
+ 1361 00de 03       		.sleb128 3
+ 1362 00df 08       		.uleb128 0x8
+ 1363 00e0 A51A0000 		.4byte	.LASF21
+ 1364 00e4 04       		.sleb128 4
+ 1365 00e5 08       		.uleb128 0x8
+ 1366 00e6 27190000 		.4byte	.LASF22
+ 1367 00ea 05       		.sleb128 5
+ 1368 00eb 08       		.uleb128 0x8
+ 1369 00ec 40120000 		.4byte	.LASF23
+ 1370 00f0 06       		.sleb128 6
+ 1371 00f1 08       		.uleb128 0x8
+ 1372 00f2 99170000 		.4byte	.LASF24
+ 1373 00f6 20       		.sleb128 32
+ 1374 00f7 08       		.uleb128 0x8
+ 1375 00f8 8E020000 		.4byte	.LASF25
+ 1376 00fc 21       		.sleb128 33
+ 1377 00fd 08       		.uleb128 0x8
+ 1378 00fe C30C0000 		.4byte	.LASF26
+ 1379 0102 22       		.sleb128 34
+ 1380 0103 08       		.uleb128 0x8
+ 1381 0104 6D110000 		.4byte	.LASF27
+ 1382 0108 23       		.sleb128 35
+ 1383 0109 08       		.uleb128 0x8
+ 1384 010a 850A0000 		.4byte	.LASF28
+ 1385 010e 24       		.sleb128 36
+ 1386 010f 08       		.uleb128 0x8
+ 1387 0110 A10A0000 		.4byte	.LASF29
+ 1388 0114 25       		.sleb128 37
+ 1389 0115 08       		.uleb128 0x8
+ 1390 0116 33160000 		.4byte	.LASF30
+ 1391 011a 26       		.sleb128 38
+ 1392 011b 08       		.uleb128 0x8
+ 1393 011c 80000000 		.4byte	.LASF31
+ 1394 0120 27       		.sleb128 39
+ 1395 0121 08       		.uleb128 0x8
+ 1396 0122 531B0000 		.4byte	.LASF32
+ 1397 0126 28       		.sleb128 40
+ 1398 0127 08       		.uleb128 0x8
+ 1399 0128 73120000 		.4byte	.LASF33
+ 1400 012c 29       		.sleb128 41
+ 1401 012d 08       		.uleb128 0x8
+ 1402 012e 390C0000 		.4byte	.LASF34
+ 1403 0132 2A       		.sleb128 42
+ 1404 0133 08       		.uleb128 0x8
+ 1405 0134 C2100000 		.4byte	.LASF35
+ 1406 0138 2B       		.sleb128 43
+ 1407 0139 08       		.uleb128 0x8
+ 1408 013a 7E190000 		.4byte	.LASF36
+ 1409 013e 2C       		.sleb128 44
+ 1410 013f 08       		.uleb128 0x8
+ 1411 0140 42000000 		.4byte	.LASF37
+ 1412 0144 2D       		.sleb128 45
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 36
+
+
+ 1413 0145 08       		.uleb128 0x8
+ 1414 0146 61160000 		.4byte	.LASF38
+ 1415 014a 2E       		.sleb128 46
+ 1416 014b 08       		.uleb128 0x8
+ 1417 014c F1020000 		.4byte	.LASF39
+ 1418 0150 2F       		.sleb128 47
+ 1419 0151 08       		.uleb128 0x8
+ 1420 0152 23070000 		.4byte	.LASF40
+ 1421 0156 30       		.sleb128 48
+ 1422 0157 08       		.uleb128 0x8
+ 1423 0158 E90E0000 		.4byte	.LASF41
+ 1424 015c 31       		.sleb128 49
+ 1425 015d 08       		.uleb128 0x8
+ 1426 015e B3070000 		.4byte	.LASF42
+ 1427 0162 32       		.sleb128 50
+ 1428 0163 08       		.uleb128 0x8
+ 1429 0164 30060000 		.4byte	.LASF43
+ 1430 0168 33       		.sleb128 51
+ 1431 0169 08       		.uleb128 0x8
+ 1432 016a 34170000 		.4byte	.LASF44
+ 1433 016e C000     		.sleb128 64
+ 1434 0170 08       		.uleb128 0x8
+ 1435 0171 9F000000 		.4byte	.LASF45
+ 1436 0175 C100     		.sleb128 65
+ 1437 0177 08       		.uleb128 0x8
+ 1438 0178 BA1A0000 		.4byte	.LASF46
+ 1439 017c C200     		.sleb128 66
+ 1440 017e 08       		.uleb128 0x8
+ 1441 017f 90120000 		.4byte	.LASF47
+ 1442 0183 C300     		.sleb128 67
+ 1443 0185 08       		.uleb128 0x8
+ 1444 0186 00060000 		.4byte	.LASF48
+ 1445 018a C400     		.sleb128 68
+ 1446 018c 08       		.uleb128 0x8
+ 1447 018d 7A050000 		.4byte	.LASF49
+ 1448 0191 C500     		.sleb128 69
+ 1449 0193 08       		.uleb128 0x8
+ 1450 0194 97150000 		.4byte	.LASF50
+ 1451 0198 C600     		.sleb128 70
+ 1452 019a 08       		.uleb128 0x8
+ 1453 019b 79150000 		.4byte	.LASF51
+ 1454 019f C700     		.sleb128 71
+ 1455 01a1 08       		.uleb128 0x8
+ 1456 01a2 EC060000 		.4byte	.LASF52
+ 1457 01a6 C800     		.sleb128 72
+ 1458 01a8 08       		.uleb128 0x8
+ 1459 01a9 C5110000 		.4byte	.LASF53
+ 1460 01ad C900     		.sleb128 73
+ 1461 01af 08       		.uleb128 0x8
+ 1462 01b0 F1070000 		.4byte	.LASF54
+ 1463 01b4 CA00     		.sleb128 74
+ 1464 01b6 08       		.uleb128 0x8
+ 1465 01b7 49070000 		.4byte	.LASF55
+ 1466 01bb CB00     		.sleb128 75
+ 1467 01bd 08       		.uleb128 0x8
+ 1468 01be 00110000 		.4byte	.LASF56
+ 1469 01c2 CC00     		.sleb128 76
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 37
+
+
+ 1470 01c4 08       		.uleb128 0x8
+ 1471 01c5 00160000 		.4byte	.LASF57
+ 1472 01c9 CD00     		.sleb128 77
+ 1473 01cb 08       		.uleb128 0x8
+ 1474 01cc 97030000 		.4byte	.LASF58
+ 1475 01d0 CE00     		.sleb128 78
+ 1476 01d2 08       		.uleb128 0x8
+ 1477 01d3 CF0F0000 		.4byte	.LASF59
+ 1478 01d7 CF00     		.sleb128 79
+ 1479 01d9 08       		.uleb128 0x8
+ 1480 01da 7A170000 		.4byte	.LASF60
+ 1481 01de D000     		.sleb128 80
+ 1482 01e0 08       		.uleb128 0x8
+ 1483 01e1 19080000 		.4byte	.LASF61
+ 1484 01e5 D100     		.sleb128 81
+ 1485 01e7 08       		.uleb128 0x8
+ 1486 01e8 6D020000 		.4byte	.LASF62
+ 1487 01ec D200     		.sleb128 82
+ 1488 01ee 08       		.uleb128 0x8
+ 1489 01ef E7180000 		.4byte	.LASF63
+ 1490 01f3 D300     		.sleb128 83
+ 1491 01f5 08       		.uleb128 0x8
+ 1492 01f6 751B0000 		.4byte	.LASF64
+ 1493 01fa D400     		.sleb128 84
+ 1494 01fc 08       		.uleb128 0x8
+ 1495 01fd B6010000 		.4byte	.LASF65
+ 1496 0201 D500     		.sleb128 85
+ 1497 0203 08       		.uleb128 0x8
+ 1498 0204 A7080000 		.4byte	.LASF66
+ 1499 0208 D600     		.sleb128 86
+ 1500 020a 08       		.uleb128 0x8
+ 1501 020b 7A0F0000 		.4byte	.LASF67
+ 1502 020f D700     		.sleb128 87
+ 1503 0211 08       		.uleb128 0x8
+ 1504 0212 301B0000 		.4byte	.LASF68
+ 1505 0216 D800     		.sleb128 88
+ 1506 0218 08       		.uleb128 0x8
+ 1507 0219 B9190000 		.4byte	.LASF69
+ 1508 021d F000     		.sleb128 112
+ 1509 021f 08       		.uleb128 0x8
+ 1510 0220 F6090000 		.4byte	.LASF70
+ 1511 0224 F100     		.sleb128 113
+ 1512 0226 08       		.uleb128 0x8
+ 1513 0227 D5040000 		.4byte	.LASF71
+ 1514 022b F200     		.sleb128 114
+ 1515 022d 08       		.uleb128 0x8
+ 1516 022e 5C170000 		.4byte	.LASF72
+ 1517 0232 F300     		.sleb128 115
+ 1518 0234 08       		.uleb128 0x8
+ 1519 0235 FC110000 		.4byte	.LASF73
+ 1520 0239 F400     		.sleb128 116
+ 1521 023b 08       		.uleb128 0x8
+ 1522 023c A20C0000 		.4byte	.LASF74
+ 1523 0240 F500     		.sleb128 117
+ 1524 0242 08       		.uleb128 0x8
+ 1525 0243 CB060000 		.4byte	.LASF75
+ 1526 0247 F600     		.sleb128 118
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 38
+
+
+ 1527 0249 08       		.uleb128 0x8
+ 1528 024a F6130000 		.4byte	.LASF76
+ 1529 024e F700     		.sleb128 119
+ 1530 0250 08       		.uleb128 0x8
+ 1531 0251 DA010000 		.4byte	.LASF77
+ 1532 0255 F800     		.sleb128 120
+ 1533 0257 08       		.uleb128 0x8
+ 1534 0258 57060000 		.4byte	.LASF78
+ 1535 025c F900     		.sleb128 121
+ 1536 025e 08       		.uleb128 0x8
+ 1537 025f E61A0000 		.4byte	.LASF79
+ 1538 0263 FA00     		.sleb128 122
+ 1539 0265 08       		.uleb128 0x8
+ 1540 0266 750E0000 		.4byte	.LASF80
+ 1541 026a FA01     		.sleb128 250
+ 1542 026c 08       		.uleb128 0x8
+ 1543 026d 95180000 		.4byte	.LASF81
+ 1544 0271 FB01     		.sleb128 251
+ 1545 0273 08       		.uleb128 0x8
+ 1546 0274 B4100000 		.4byte	.LASF82
+ 1547 0278 FF01     		.sleb128 255
+ 1548 027a 00       		.byte	0
+ 1549 027b 07       		.uleb128 0x7
+ 1550 027c 02       		.byte	0x2
+ 1551 027d 03       		.byte	0x3
+ 1552 027e FF02     		.2byte	0x2ff
+ 1553 0280 4B030000 		.4byte	0x34b
+ 1554 0284 08       		.uleb128 0x8
+ 1555 0285 63050000 		.4byte	.LASF83
+ 1556 0289 00       		.sleb128 0
+ 1557 028a 08       		.uleb128 0x8
+ 1558 028b 32090000 		.4byte	.LASF84
+ 1559 028f 01       		.sleb128 1
+ 1560 0290 08       		.uleb128 0x8
+ 1561 0291 871A0000 		.4byte	.LASF85
+ 1562 0295 02       		.sleb128 2
+ 1563 0296 08       		.uleb128 0x8
+ 1564 0297 8D090000 		.4byte	.LASF86
+ 1565 029b 03       		.sleb128 3
+ 1566 029c 08       		.uleb128 0x8
+ 1567 029d E50A0000 		.4byte	.LASF87
+ 1568 02a1 04       		.sleb128 4
+ 1569 02a2 08       		.uleb128 0x8
+ 1570 02a3 2E0E0000 		.4byte	.LASF88
+ 1571 02a7 05       		.sleb128 5
+ 1572 02a8 08       		.uleb128 0x8
+ 1573 02a9 65180000 		.4byte	.LASF89
+ 1574 02ad 06       		.sleb128 6
+ 1575 02ae 08       		.uleb128 0x8
+ 1576 02af D4070000 		.4byte	.LASF90
+ 1577 02b3 07       		.sleb128 7
+ 1578 02b4 08       		.uleb128 0x8
+ 1579 02b5 310F0000 		.4byte	.LASF91
+ 1580 02b9 08       		.sleb128 8
+ 1581 02ba 08       		.uleb128 0x8
+ 1582 02bb 03180000 		.4byte	.LASF92
+ 1583 02bf 09       		.sleb128 9
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 39
+
+
+ 1584 02c0 08       		.uleb128 0x8
+ 1585 02c1 9D1B0000 		.4byte	.LASF93
+ 1586 02c5 0A       		.sleb128 10
+ 1587 02c6 08       		.uleb128 0x8
+ 1588 02c7 B9020000 		.4byte	.LASF94
+ 1589 02cb 0B       		.sleb128 11
+ 1590 02cc 08       		.uleb128 0x8
+ 1591 02cd 08190000 		.4byte	.LASF95
+ 1592 02d1 0C       		.sleb128 12
+ 1593 02d2 08       		.uleb128 0x8
+ 1594 02d3 6C100000 		.4byte	.LASF96
+ 1595 02d7 0D       		.sleb128 13
+ 1596 02d8 08       		.uleb128 0x8
+ 1597 02d9 D40B0000 		.4byte	.LASF97
+ 1598 02dd 0E       		.sleb128 14
+ 1599 02de 08       		.uleb128 0x8
+ 1600 02df 090E0000 		.4byte	.LASF98
+ 1601 02e3 0F       		.sleb128 15
+ 1602 02e4 08       		.uleb128 0x8
+ 1603 02e5 63010000 		.4byte	.LASF99
+ 1604 02e9 10       		.sleb128 16
+ 1605 02ea 08       		.uleb128 0x8
+ 1606 02eb 0D0F0000 		.4byte	.LASF100
+ 1607 02ef 11       		.sleb128 17
+ 1608 02f0 08       		.uleb128 0x8
+ 1609 02f1 D1030000 		.4byte	.LASF101
+ 1610 02f5 12       		.sleb128 18
+ 1611 02f6 08       		.uleb128 0x8
+ 1612 02f7 16050000 		.4byte	.LASF102
+ 1613 02fb 13       		.sleb128 19
+ 1614 02fc 08       		.uleb128 0x8
+ 1615 02fd 530E0000 		.4byte	.LASF103
+ 1616 0301 27       		.sleb128 39
+ 1617 0302 08       		.uleb128 0x8
+ 1618 0303 550F0000 		.4byte	.LASF104
+ 1619 0307 28       		.sleb128 40
+ 1620 0308 08       		.uleb128 0x8
+ 1621 0309 9A010000 		.4byte	.LASF105
+ 1622 030d 29       		.sleb128 41
+ 1623 030e 08       		.uleb128 0x8
+ 1624 030f BB160000 		.4byte	.LASF106
+ 1625 0313 2A       		.sleb128 42
+ 1626 0314 08       		.uleb128 0x8
+ 1627 0315 460B0000 		.4byte	.LASF107
+ 1628 0319 2B       		.sleb128 43
+ 1629 031a 08       		.uleb128 0x8
+ 1630 031b 39140000 		.4byte	.LASF108
+ 1631 031f 2C       		.sleb128 44
+ 1632 0320 08       		.uleb128 0x8
+ 1633 0321 16090000 		.4byte	.LASF109
+ 1634 0325 FE01     		.sleb128 254
+ 1635 0327 08       		.uleb128 0x8
+ 1636 0328 E6090000 		.4byte	.LASF110
+ 1637 032c FF01     		.sleb128 255
+ 1638 032e 08       		.uleb128 0x8
+ 1639 032f AC110000 		.4byte	.LASF111
+ 1640 0333 8002     		.sleb128 256
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 40
+
+
+ 1641 0335 08       		.uleb128 0x8
+ 1642 0336 93110000 		.4byte	.LASF112
+ 1643 033a 8102     		.sleb128 257
+ 1644 033c 08       		.uleb128 0x8
+ 1645 033d 94040000 		.4byte	.LASF113
+ 1646 0341 8202     		.sleb128 258
+ 1647 0343 08       		.uleb128 0x8
+ 1648 0344 C0130000 		.4byte	.LASF114
+ 1649 0348 8302     		.sleb128 259
+ 1650 034a 00       		.byte	0
+ 1651 034b 04       		.uleb128 0x4
+ 1652 034c B4180000 		.4byte	.LASF115
+ 1653 0350 03       		.byte	0x3
+ 1654 0351 6B03     		.2byte	0x36b
+ 1655 0353 7B020000 		.4byte	0x27b
+ 1656 0357 07       		.uleb128 0x7
+ 1657 0358 01       		.byte	0x1
+ 1658 0359 03       		.byte	0x3
+ 1659 035a 6F03     		.2byte	0x36f
+ 1660 035c 80030000 		.4byte	0x380
+ 1661 0360 08       		.uleb128 0x8
+ 1662 0361 0C130000 		.4byte	.LASF116
+ 1663 0365 01       		.sleb128 1
+ 1664 0366 08       		.uleb128 0x8
+ 1665 0367 1E060000 		.4byte	.LASF117
+ 1666 036b 02       		.sleb128 2
+ 1667 036c 08       		.uleb128 0x8
+ 1668 036d AB0D0000 		.4byte	.LASF118
+ 1669 0371 03       		.sleb128 3
+ 1670 0372 08       		.uleb128 0x8
+ 1671 0373 7F180000 		.4byte	.LASF119
+ 1672 0377 04       		.sleb128 4
+ 1673 0378 08       		.uleb128 0x8
+ 1674 0379 430A0000 		.4byte	.LASF120
+ 1675 037d FF01     		.sleb128 255
+ 1676 037f 00       		.byte	0
+ 1677 0380 04       		.uleb128 0x4
+ 1678 0381 13070000 		.4byte	.LASF121
+ 1679 0385 03       		.byte	0x3
+ 1680 0386 8B03     		.2byte	0x38b
+ 1681 0388 57030000 		.4byte	0x357
+ 1682 038c 07       		.uleb128 0x7
+ 1683 038d 01       		.byte	0x1
+ 1684 038e 03       		.byte	0x3
+ 1685 038f 8F03     		.2byte	0x38f
+ 1686 0391 C7030000 		.4byte	0x3c7
+ 1687 0395 08       		.uleb128 0x8
+ 1688 0396 B2060000 		.4byte	.LASF122
+ 1689 039a 01       		.sleb128 1
+ 1690 039b 08       		.uleb128 0x8
+ 1691 039c B7040000 		.4byte	.LASF123
+ 1692 03a0 02       		.sleb128 2
+ 1693 03a1 08       		.uleb128 0x8
+ 1694 03a2 10040000 		.4byte	.LASF124
+ 1695 03a6 03       		.sleb128 3
+ 1696 03a7 08       		.uleb128 0x8
+ 1697 03a8 BA000000 		.4byte	.LASF125
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 41
+
+
+ 1698 03ac 04       		.sleb128 4
+ 1699 03ad 08       		.uleb128 0x8
+ 1700 03ae 48180000 		.4byte	.LASF126
+ 1701 03b2 05       		.sleb128 5
+ 1702 03b3 08       		.uleb128 0x8
+ 1703 03b4 BF1B0000 		.4byte	.LASF127
+ 1704 03b8 06       		.sleb128 6
+ 1705 03b9 08       		.uleb128 0x8
+ 1706 03ba DA000000 		.4byte	.LASF128
+ 1707 03be 07       		.sleb128 7
+ 1708 03bf 08       		.uleb128 0x8
+ 1709 03c0 C7180000 		.4byte	.LASF129
+ 1710 03c4 FF01     		.sleb128 255
+ 1711 03c6 00       		.byte	0
+ 1712 03c7 09       		.uleb128 0x9
+ 1713 03c8 04       		.byte	0x4
+ 1714 03c9 03       		.byte	0x3
+ 1715 03ca 1304     		.2byte	0x413
+ 1716 03cc 05040000 		.4byte	0x405
+ 1717 03d0 0A       		.uleb128 0xa
+ 1718 03d1 31100000 		.4byte	.LASF130
+ 1719 03d5 03       		.byte	0x3
+ 1720 03d6 1604     		.2byte	0x416
+ 1721 03d8 6B000000 		.4byte	0x6b
+ 1722 03dc 00       		.byte	0
+ 1723 03dd 0A       		.uleb128 0xa
+ 1724 03de 50090000 		.4byte	.LASF131
+ 1725 03e2 03       		.byte	0x3
+ 1726 03e3 1804     		.2byte	0x418
+ 1727 03e5 6B000000 		.4byte	0x6b
+ 1728 03e9 01       		.byte	0x1
+ 1729 03ea 0A       		.uleb128 0xa
+ 1730 03eb E1180000 		.4byte	.LASF132
+ 1731 03ef 03       		.byte	0x3
+ 1732 03f0 1A04     		.2byte	0x41a
+ 1733 03f2 6B000000 		.4byte	0x6b
+ 1734 03f6 02       		.byte	0x2
+ 1735 03f7 0A       		.uleb128 0xa
+ 1736 03f8 A30F0000 		.4byte	.LASF133
+ 1737 03fc 03       		.byte	0x3
+ 1738 03fd 1C04     		.2byte	0x41c
+ 1739 03ff 6B000000 		.4byte	0x6b
+ 1740 0403 03       		.byte	0x3
+ 1741 0404 00       		.byte	0
+ 1742 0405 04       		.uleb128 0x4
+ 1743 0406 1A110000 		.4byte	.LASF134
+ 1744 040a 03       		.byte	0x3
+ 1745 040b 1E04     		.2byte	0x41e
+ 1746 040d C7030000 		.4byte	0x3c7
+ 1747 0411 09       		.uleb128 0x9
+ 1748 0412 07       		.byte	0x7
+ 1749 0413 03       		.byte	0x3
+ 1750 0414 2804     		.2byte	0x428
+ 1751 0416 35040000 		.4byte	0x435
+ 1752 041a 0A       		.uleb128 0xa
+ 1753 041b 18180000 		.4byte	.LASF135
+ 1754 041f 03       		.byte	0x3
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 42
+
+
+ 1755 0420 2B04     		.2byte	0x42b
+ 1756 0422 35040000 		.4byte	0x435
+ 1757 0426 00       		.byte	0
+ 1758 0427 0A       		.uleb128 0xa
+ 1759 0428 FD010000 		.4byte	.LASF136
+ 1760 042c 03       		.byte	0x3
+ 1761 042d 2D04     		.2byte	0x42d
+ 1762 042f 6B000000 		.4byte	0x6b
+ 1763 0433 06       		.byte	0x6
+ 1764 0434 00       		.byte	0
+ 1765 0435 0B       		.uleb128 0xb
+ 1766 0436 6B000000 		.4byte	0x6b
+ 1767 043a 45040000 		.4byte	0x445
+ 1768 043e 0C       		.uleb128 0xc
+ 1769 043f B5000000 		.4byte	0xb5
+ 1770 0443 05       		.byte	0x5
+ 1771 0444 00       		.byte	0
+ 1772 0445 04       		.uleb128 0x4
+ 1773 0446 89140000 		.4byte	.LASF137
+ 1774 044a 03       		.byte	0x3
+ 1775 044b 2E04     		.2byte	0x42e
+ 1776 044d 11040000 		.4byte	0x411
+ 1777 0451 07       		.uleb128 0x7
+ 1778 0452 01       		.byte	0x1
+ 1779 0453 04       		.byte	0x4
+ 1780 0454 2D01     		.2byte	0x12d
+ 1781 0456 C1040000 		.4byte	0x4c1
+ 1782 045a 08       		.uleb128 0x8
+ 1783 045b 59120000 		.4byte	.LASF138
+ 1784 045f 00       		.sleb128 0
+ 1785 0460 08       		.uleb128 0x8
+ 1786 0461 49030000 		.4byte	.LASF139
+ 1787 0465 01       		.sleb128 1
+ 1788 0466 08       		.uleb128 0x8
+ 1789 0467 AE120000 		.4byte	.LASF140
+ 1790 046b 02       		.sleb128 2
+ 1791 046c 08       		.uleb128 0x8
+ 1792 046d A40B0000 		.4byte	.LASF141
+ 1793 0471 03       		.sleb128 3
+ 1794 0472 08       		.uleb128 0x8
+ 1795 0473 67040000 		.4byte	.LASF142
+ 1796 0477 04       		.sleb128 4
+ 1797 0478 08       		.uleb128 0x8
+ 1798 0479 36150000 		.4byte	.LASF143
+ 1799 047d 05       		.sleb128 5
+ 1800 047e 08       		.uleb128 0x8
+ 1801 047f 3D0D0000 		.4byte	.LASF144
+ 1802 0483 06       		.sleb128 6
+ 1803 0484 08       		.uleb128 0x8
+ 1804 0485 790B0000 		.4byte	.LASF145
+ 1805 0489 07       		.sleb128 7
+ 1806 048a 08       		.uleb128 0x8
+ 1807 048b 2E020000 		.4byte	.LASF146
+ 1808 048f 08       		.sleb128 8
+ 1809 0490 08       		.uleb128 0x8
+ 1810 0491 7B0C0000 		.4byte	.LASF147
+ 1811 0495 09       		.sleb128 9
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 43
+
+
+ 1812 0496 08       		.uleb128 0x8
+ 1813 0497 8A060000 		.4byte	.LASF148
+ 1814 049b 0A       		.sleb128 10
+ 1815 049c 08       		.uleb128 0x8
+ 1816 049d F50C0000 		.4byte	.LASF149
+ 1817 04a1 0B       		.sleb128 11
+ 1818 04a2 08       		.uleb128 0x8
+ 1819 04a3 4F190000 		.4byte	.LASF150
+ 1820 04a7 0C       		.sleb128 12
+ 1821 04a8 08       		.uleb128 0x8
+ 1822 04a9 5D090000 		.4byte	.LASF151
+ 1823 04ad 0D       		.sleb128 13
+ 1824 04ae 08       		.uleb128 0x8
+ 1825 04af A1050000 		.4byte	.LASF152
+ 1826 04b3 0E       		.sleb128 14
+ 1827 04b4 08       		.uleb128 0x8
+ 1828 04b5 02020000 		.4byte	.LASF153
+ 1829 04b9 15       		.sleb128 21
+ 1830 04ba 08       		.uleb128 0x8
+ 1831 04bb 1C0A0000 		.4byte	.LASF154
+ 1832 04bf 18       		.sleb128 24
+ 1833 04c0 00       		.byte	0
+ 1834 04c1 04       		.uleb128 0x4
+ 1835 04c2 E1100000 		.4byte	.LASF155
+ 1836 04c6 04       		.byte	0x4
+ 1837 04c7 6C01     		.2byte	0x16c
+ 1838 04c9 51040000 		.4byte	0x451
+ 1839 04cd 09       		.uleb128 0x9
+ 1840 04ce 05       		.byte	0x5
+ 1841 04cf 04       		.byte	0x4
+ 1842 04d0 B901     		.2byte	0x1b9
+ 1843 04d2 18050000 		.4byte	0x518
+ 1844 04d6 0A       		.uleb128 0xa
+ 1845 04d7 D80D0000 		.4byte	.LASF156
+ 1846 04db 04       		.byte	0x4
+ 1847 04dc C301     		.2byte	0x1c3
+ 1848 04de 6B000000 		.4byte	0x6b
+ 1849 04e2 00       		.byte	0
+ 1850 04e3 0A       		.uleb128 0xa
+ 1851 04e4 BA0F0000 		.4byte	.LASF157
+ 1852 04e8 04       		.byte	0x4
+ 1853 04e9 C901     		.2byte	0x1c9
+ 1854 04eb 6B000000 		.4byte	0x6b
+ 1855 04ef 01       		.byte	0x1
+ 1856 04f0 0A       		.uleb128 0xa
+ 1857 04f1 39000000 		.4byte	.LASF158
+ 1858 04f5 04       		.byte	0x4
+ 1859 04f6 D001     		.2byte	0x1d0
+ 1860 04f8 6B000000 		.4byte	0x6b
+ 1861 04fc 02       		.byte	0x2
+ 1862 04fd 0A       		.uleb128 0xa
+ 1863 04fe B3160000 		.4byte	.LASF159
+ 1864 0502 04       		.byte	0x4
+ 1865 0503 D401     		.2byte	0x1d4
+ 1866 0505 C1040000 		.4byte	0x4c1
+ 1867 0509 03       		.byte	0x3
+ 1868 050a 0A       		.uleb128 0xa
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 44
+
+
+ 1869 050b EE150000 		.4byte	.LASF160
+ 1870 050f 04       		.byte	0x4
+ 1871 0510 DE01     		.2byte	0x1de
+ 1872 0512 6B000000 		.4byte	0x6b
+ 1873 0516 04       		.byte	0x4
+ 1874 0517 00       		.byte	0
+ 1875 0518 04       		.uleb128 0x4
+ 1876 0519 68070000 		.4byte	.LASF161
+ 1877 051d 04       		.byte	0x4
+ 1878 051e E001     		.2byte	0x1e0
+ 1879 0520 CD040000 		.4byte	0x4cd
+ 1880 0524 09       		.uleb128 0x9
+ 1881 0525 08       		.byte	0x8
+ 1882 0526 04       		.byte	0x4
+ 1883 0527 5A03     		.2byte	0x35a
+ 1884 0529 62050000 		.4byte	0x562
+ 1885 052d 0A       		.uleb128 0xa
+ 1886 052e 3F0B0000 		.4byte	.LASF162
+ 1887 0532 04       		.byte	0x4
+ 1888 0533 5E03     		.2byte	0x35e
+ 1889 0535 6B000000 		.4byte	0x6b
+ 1890 0539 00       		.byte	0
+ 1891 053a 0A       		.uleb128 0xa
+ 1892 053b 0B1A0000 		.4byte	.LASF163
+ 1893 053f 04       		.byte	0x4
+ 1894 0540 6403     		.2byte	0x364
+ 1895 0542 77000000 		.4byte	0x77
+ 1896 0546 02       		.byte	0x2
+ 1897 0547 0A       		.uleb128 0xa
+ 1898 0548 43190000 		.4byte	.LASF164
+ 1899 054c 04       		.byte	0x4
+ 1900 054d 6903     		.2byte	0x369
+ 1901 054f 77000000 		.4byte	0x77
+ 1902 0553 04       		.byte	0x4
+ 1903 0554 0A       		.uleb128 0xa
+ 1904 0555 D81A0000 		.4byte	.LASF165
+ 1905 0559 04       		.byte	0x4
+ 1906 055a 6F03     		.2byte	0x36f
+ 1907 055c 77000000 		.4byte	0x77
+ 1908 0560 06       		.byte	0x6
+ 1909 0561 00       		.byte	0
+ 1910 0562 04       		.uleb128 0x4
+ 1911 0563 1F130000 		.4byte	.LASF166
+ 1912 0567 04       		.byte	0x4
+ 1913 0568 7103     		.2byte	0x371
+ 1914 056a 24050000 		.4byte	0x524
+ 1915 056e 0D       		.uleb128 0xd
+ 1916 056f 01       		.byte	0x1
+ 1917 0570 05       		.byte	0x5
+ 1918 0571 AB       		.byte	0xab
+ 1919 0572 6F060000 		.4byte	0x66f
+ 1920 0576 08       		.uleb128 0x8
+ 1921 0577 15140000 		.4byte	.LASF167
+ 1922 057b 00       		.sleb128 0
+ 1923 057c 08       		.uleb128 0x8
+ 1924 057d 6F130000 		.4byte	.LASF168
+ 1925 0581 01       		.sleb128 1
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 45
+
+
+ 1926 0582 08       		.uleb128 0x8
+ 1927 0583 F6000000 		.4byte	.LASF169
+ 1928 0587 02       		.sleb128 2
+ 1929 0588 08       		.uleb128 0x8
+ 1930 0589 E8190000 		.4byte	.LASF170
+ 1931 058d 03       		.sleb128 3
+ 1932 058e 08       		.uleb128 0x8
+ 1933 058f 4C040000 		.4byte	.LASF171
+ 1934 0593 04       		.sleb128 4
+ 1935 0594 08       		.uleb128 0x8
+ 1936 0595 EE0F0000 		.4byte	.LASF172
+ 1937 0599 05       		.sleb128 5
+ 1938 059a 08       		.uleb128 0x8
+ 1939 059b 0F170000 		.4byte	.LASF173
+ 1940 059f 06       		.sleb128 6
+ 1941 05a0 08       		.uleb128 0x8
+ 1942 05a1 DE110000 		.4byte	.LASF174
+ 1943 05a5 07       		.sleb128 7
+ 1944 05a6 08       		.uleb128 0x8
+ 1945 05a7 730D0000 		.4byte	.LASF175
+ 1946 05ab 08       		.sleb128 8
+ 1947 05ac 08       		.uleb128 0x8
+ 1948 05ad E10D0000 		.4byte	.LASF176
+ 1949 05b1 09       		.sleb128 9
+ 1950 05b2 08       		.uleb128 0x8
+ 1951 05b3 91100000 		.4byte	.LASF177
+ 1952 05b7 0A       		.sleb128 10
+ 1953 05b8 08       		.uleb128 0x8
+ 1954 05b9 6E080000 		.4byte	.LASF178
+ 1955 05bd 0B       		.sleb128 11
+ 1956 05be 08       		.uleb128 0x8
+ 1957 05bf 930E0000 		.4byte	.LASF179
+ 1958 05c3 0C       		.sleb128 12
+ 1959 05c4 08       		.uleb128 0x8
+ 1960 05c5 F1040000 		.4byte	.LASF180
+ 1961 05c9 0D       		.sleb128 13
+ 1962 05ca 08       		.uleb128 0x8
+ 1963 05cb 95070000 		.4byte	.LASF181
+ 1964 05cf 0E       		.sleb128 14
+ 1965 05d0 08       		.uleb128 0x8
+ 1966 05d1 271A0000 		.4byte	.LASF182
+ 1967 05d5 0F       		.sleb128 15
+ 1968 05d6 08       		.uleb128 0x8
+ 1969 05d7 3D010000 		.4byte	.LASF183
+ 1970 05db 10       		.sleb128 16
+ 1971 05dc 08       		.uleb128 0x8
+ 1972 05dd 18010000 		.4byte	.LASF184
+ 1973 05e1 11       		.sleb128 17
+ 1974 05e2 08       		.uleb128 0x8
+ 1975 05e3 38080000 		.4byte	.LASF185
+ 1976 05e7 8001     		.sleb128 128
+ 1977 05e9 08       		.uleb128 0x8
+ 1978 05ea 570A0000 		.4byte	.LASF186
+ 1979 05ee 8001     		.sleb128 128
+ 1980 05f0 08       		.uleb128 0x8
+ 1981 05f1 D8160000 		.4byte	.LASF187
+ 1982 05f5 8001     		.sleb128 128
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 46
+
+
+ 1983 05f7 08       		.uleb128 0x8
+ 1984 05f8 51140000 		.4byte	.LASF188
+ 1985 05fc 8001     		.sleb128 128
+ 1986 05fe 08       		.uleb128 0x8
+ 1987 05ff 3E100000 		.4byte	.LASF189
+ 1988 0603 8001     		.sleb128 128
+ 1989 0605 08       		.uleb128 0x8
+ 1990 0606 080B0000 		.4byte	.LASF190
+ 1991 060a 8001     		.sleb128 128
+ 1992 060c 08       		.uleb128 0x8
+ 1993 060d A5130000 		.4byte	.LASF191
+ 1994 0611 8001     		.sleb128 128
+ 1995 0613 08       		.uleb128 0x8
+ 1996 0614 BB090000 		.4byte	.LASF192
+ 1997 0618 8101     		.sleb128 129
+ 1998 061a 08       		.uleb128 0x8
+ 1999 061b C1150000 		.4byte	.LASF193
+ 2000 061f 8101     		.sleb128 129
+ 2001 0621 08       		.uleb128 0x8
+ 2002 0622 00000000 		.4byte	.LASF194
+ 2003 0626 8101     		.sleb128 129
+ 2004 0628 08       		.uleb128 0x8
+ 2005 0629 28040000 		.4byte	.LASF195
+ 2006 062d 8101     		.sleb128 129
+ 2007 062f 08       		.uleb128 0x8
+ 2008 0630 23030000 		.4byte	.LASF196
+ 2009 0634 8201     		.sleb128 130
+ 2010 0636 08       		.uleb128 0x8
+ 2011 0637 1F180000 		.4byte	.LASF197
+ 2012 063b A001     		.sleb128 160
+ 2013 063d 08       		.uleb128 0x8
+ 2014 063e FD0B0000 		.4byte	.LASF198
+ 2015 0642 A001     		.sleb128 160
+ 2016 0644 08       		.uleb128 0x8
+ 2017 0645 73030000 		.4byte	.LASF199
+ 2018 0649 A101     		.sleb128 161
+ 2019 064b 08       		.uleb128 0x8
+ 2020 064c DD170000 		.4byte	.LASF200
+ 2021 0650 A201     		.sleb128 162
+ 2022 0652 08       		.uleb128 0x8
+ 2023 0653 C9080000 		.4byte	.LASF201
+ 2024 0657 A301     		.sleb128 163
+ 2025 0659 08       		.uleb128 0x8
+ 2026 065a BB0A0000 		.4byte	.LASF202
+ 2027 065e FD01     		.sleb128 253
+ 2028 0660 08       		.uleb128 0x8
+ 2029 0661 BC0E0000 		.4byte	.LASF203
+ 2030 0665 FE01     		.sleb128 254
+ 2031 0667 08       		.uleb128 0x8
+ 2032 0668 1A120000 		.4byte	.LASF204
+ 2033 066c FF01     		.sleb128 255
+ 2034 066e 00       		.byte	0
+ 2035 066f 04       		.uleb128 0x4
+ 2036 0670 C7170000 		.4byte	.LASF205
+ 2037 0674 05       		.byte	0x5
+ 2038 0675 6201     		.2byte	0x162
+ 2039 0677 6E050000 		.4byte	0x56e
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 47
+
+
+ 2040 067b 04       		.uleb128 0x4
+ 2041 067c DA130000 		.4byte	.LASF206
+ 2042 0680 05       		.byte	0x5
+ 2043 0681 9201     		.2byte	0x192
+ 2044 0683 77000000 		.4byte	0x77
+ 2045 0687 09       		.uleb128 0x9
+ 2046 0688 02       		.byte	0x2
+ 2047 0689 05       		.byte	0x5
+ 2048 068a 9C01     		.2byte	0x19c
+ 2049 068c AB060000 		.4byte	0x6ab
+ 2050 0690 0A       		.uleb128 0xa
+ 2051 0691 1A030000 		.4byte	.LASF207
+ 2052 0695 05       		.byte	0x5
+ 2053 0696 A301     		.2byte	0x1a3
+ 2054 0698 6B000000 		.4byte	0x6b
+ 2055 069c 00       		.byte	0
+ 2056 069d 0A       		.uleb128 0xa
+ 2057 069e 811A0000 		.4byte	.LASF208
+ 2058 06a2 05       		.byte	0x5
+ 2059 06a3 A901     		.2byte	0x1a9
+ 2060 06a5 6B000000 		.4byte	0x6b
+ 2061 06a9 01       		.byte	0x1
+ 2062 06aa 00       		.byte	0
+ 2063 06ab 04       		.uleb128 0x4
+ 2064 06ac A5020000 		.4byte	.LASF209
+ 2065 06b0 05       		.byte	0x5
+ 2066 06b1 AB01     		.2byte	0x1ab
+ 2067 06b3 87060000 		.4byte	0x687
+ 2068 06b7 0E       		.uleb128 0xe
+ 2069 06b8 06       		.byte	0x6
+ 2070 06b9 06       		.byte	0x6
+ 2071 06ba A2       		.byte	0xa2
+ 2072 06bb E4060000 		.4byte	0x6e4
+ 2073 06bf 0F       		.uleb128 0xf
+ 2074 06c0 2B150000 		.4byte	.LASF210
+ 2075 06c4 06       		.byte	0x6
+ 2076 06c5 A5       		.byte	0xa5
+ 2077 06c6 AB060000 		.4byte	0x6ab
+ 2078 06ca 00       		.byte	0
+ 2079 06cb 0F       		.uleb128 0xf
+ 2080 06cc AF0F0000 		.4byte	.LASF211
+ 2081 06d0 06       		.byte	0x6
+ 2082 06d1 A8       		.byte	0xa8
+ 2083 06d2 7B060000 		.4byte	0x67b
+ 2084 06d6 02       		.byte	0x2
+ 2085 06d7 0F       		.uleb128 0xf
+ 2086 06d8 E70C0000 		.4byte	.LASF212
+ 2087 06dc 06       		.byte	0x6
+ 2088 06dd AE       		.byte	0xae
+ 2089 06de 6F060000 		.4byte	0x66f
+ 2090 06e2 04       		.byte	0x4
+ 2091 06e3 00       		.byte	0
+ 2092 06e4 10       		.uleb128 0x10
+ 2093 06e5 1D0D0000 		.4byte	.LASF213
+ 2094 06e9 06       		.byte	0x6
+ 2095 06ea B0       		.byte	0xb0
+ 2096 06eb B7060000 		.4byte	0x6b7
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 48
+
+
+ 2097 06ef 0D       		.uleb128 0xd
+ 2098 06f0 01       		.byte	0x1
+ 2099 06f1 07       		.byte	0x7
+ 2100 06f2 22       		.byte	0x22
+ 2101 06f3 34070000 		.4byte	0x734
+ 2102 06f7 08       		.uleb128 0x8
+ 2103 06f8 F0120000 		.4byte	.LASF214
+ 2104 06fc 00       		.sleb128 0
+ 2105 06fd 08       		.uleb128 0x8
+ 2106 06fe EB080000 		.4byte	.LASF215
+ 2107 0702 01       		.sleb128 1
+ 2108 0703 08       		.uleb128 0x8
+ 2109 0704 210C0000 		.4byte	.LASF216
+ 2110 0708 02       		.sleb128 2
+ 2111 0709 08       		.uleb128 0x8
+ 2112 070a F4030000 		.4byte	.LASF217
+ 2113 070e 03       		.sleb128 3
+ 2114 070f 08       		.uleb128 0x8
+ 2115 0710 56020000 		.4byte	.LASF218
+ 2116 0714 04       		.sleb128 4
+ 2117 0715 08       		.uleb128 0x8
+ 2118 0716 90080000 		.4byte	.LASF219
+ 2119 071a 05       		.sleb128 5
+ 2120 071b 08       		.uleb128 0x8
+ 2121 071c 02090000 		.4byte	.LASF220
+ 2122 0720 06       		.sleb128 6
+ 2123 0721 08       		.uleb128 0x8
+ 2124 0722 19100000 		.4byte	.LASF221
+ 2125 0726 07       		.sleb128 7
+ 2126 0727 08       		.uleb128 0x8
+ 2127 0728 C70D0000 		.4byte	.LASF222
+ 2128 072c 08       		.sleb128 8
+ 2129 072d 08       		.uleb128 0x8
+ 2130 072e 1B000000 		.4byte	.LASF223
+ 2131 0732 09       		.sleb128 9
+ 2132 0733 00       		.byte	0
+ 2133 0734 0D       		.uleb128 0xd
+ 2134 0735 01       		.byte	0x1
+ 2135 0736 08       		.byte	0x8
+ 2136 0737 22       		.byte	0x22
+ 2137 0738 4F070000 		.4byte	0x74f
+ 2138 073c 08       		.uleb128 0x8
+ 2139 073d 71140000 		.4byte	.LASF224
+ 2140 0741 00       		.sleb128 0
+ 2141 0742 08       		.uleb128 0x8
+ 2142 0743 181B0000 		.4byte	.LASF225
+ 2143 0747 01       		.sleb128 1
+ 2144 0748 08       		.uleb128 0x8
+ 2145 0749 DA120000 		.4byte	.LASF226
+ 2146 074d 02       		.sleb128 2
+ 2147 074e 00       		.byte	0
+ 2148 074f 07       		.uleb128 0x7
+ 2149 0750 01       		.byte	0x1
+ 2150 0751 09       		.byte	0x9
+ 2151 0752 BF07     		.2byte	0x7bf
+ 2152 0754 77070000 		.4byte	0x777
+ 2153 0758 08       		.uleb128 0x8
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 49
+
+
+ 2154 0759 DE050000 		.4byte	.LASF227
+ 2155 075d 00       		.sleb128 0
+ 2156 075e 08       		.uleb128 0x8
+ 2157 075f 620C0000 		.4byte	.LASF228
+ 2158 0763 01       		.sleb128 1
+ 2159 0764 08       		.uleb128 0x8
+ 2160 0765 5B1A0000 		.4byte	.LASF229
+ 2161 0769 02       		.sleb128 2
+ 2162 076a 08       		.uleb128 0x8
+ 2163 076b D9020000 		.4byte	.LASF230
+ 2164 076f 03       		.sleb128 3
+ 2165 0770 08       		.uleb128 0x8
+ 2166 0771 1A160000 		.4byte	.LASF231
+ 2167 0775 04       		.sleb128 4
+ 2168 0776 00       		.byte	0
+ 2169 0777 04       		.uleb128 0x4
+ 2170 0778 4E170000 		.4byte	.LASF232
+ 2171 077c 09       		.byte	0x9
+ 2172 077d CD07     		.2byte	0x7cd
+ 2173 077f 4F070000 		.4byte	0x74f
+ 2174 0783 11       		.uleb128 0x11
+ 2175 0784 63130000 		.4byte	.LASF238
+ 2176 0788 01       		.byte	0x1
+ 2177 0789 28       		.byte	0x28
+ 2178 078a 00000000 		.4byte	.LFB37
+ 2179 078e 98030000 		.4byte	.LFE37-.LFB37
+ 2180 0792 01       		.uleb128 0x1
+ 2181 0793 9C       		.byte	0x9c
+ 2182 0794 EB070000 		.4byte	0x7eb
+ 2183 0798 12       		.uleb128 0x12
+ 2184 0799 C10D0000 		.4byte	.LASF233
+ 2185 079d 01       		.byte	0x1
+ 2186 079e 28       		.byte	0x28
+ 2187 079f 83000000 		.4byte	0x83
+ 2188 07a3 02       		.uleb128 0x2
+ 2189 07a4 91       		.byte	0x91
+ 2190 07a5 5C       		.sleb128 -36
+ 2191 07a6 12       		.uleb128 0x12
+ 2192 07a7 75000000 		.4byte	.LASF234
+ 2193 07ab 01       		.byte	0x1
+ 2194 07ac 28       		.byte	0x28
+ 2195 07ad BC000000 		.4byte	0xbc
+ 2196 07b1 02       		.uleb128 0x2
+ 2197 07b2 91       		.byte	0x91
+ 2198 07b3 58       		.sleb128 -40
+ 2199 07b4 13       		.uleb128 0x13
+ 2200 07b5 6B000000 		.4byte	.LASF235
+ 2201 07b9 01       		.byte	0x1
+ 2202 07ba 2A       		.byte	0x2a
+ 2203 07bb 4B030000 		.4byte	0x34b
+ 2204 07bf 02       		.uleb128 0x2
+ 2205 07c0 91       		.byte	0x91
+ 2206 07c1 6C       		.sleb128 -20
+ 2207 07c2 13       		.uleb128 0x13
+ 2208 07c3 0F080000 		.4byte	.LASF236
+ 2209 07c7 01       		.byte	0x1
+ 2210 07c8 2B       		.byte	0x2b
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 50
+
+
+ 2211 07c9 45040000 		.4byte	0x445
+ 2212 07cd 02       		.uleb128 0x2
+ 2213 07ce 91       		.byte	0x91
+ 2214 07cf 60       		.sleb128 -32
+ 2215 07d0 13       		.uleb128 0x13
+ 2216 07d1 B8150000 		.4byte	.LASF237
+ 2217 07d5 01       		.byte	0x1
+ 2218 07d6 2C       		.byte	0x2c
+ 2219 07d7 EB070000 		.4byte	0x7eb
+ 2220 07db 02       		.uleb128 0x2
+ 2221 07dc 91       		.byte	0x91
+ 2222 07dd 68       		.sleb128 -24
+ 2223 07de 14       		.uleb128 0x14
+ 2224 07df 6900     		.ascii	"i\000"
+ 2225 07e1 01       		.byte	0x1
+ 2226 07e2 2D       		.byte	0x2d
+ 2227 07e3 6B000000 		.4byte	0x6b
+ 2228 07e7 02       		.uleb128 0x2
+ 2229 07e8 91       		.byte	0x91
+ 2230 07e9 6F       		.sleb128 -17
+ 2231 07ea 00       		.byte	0
+ 2232 07eb 15       		.uleb128 0x15
+ 2233 07ec 04       		.byte	0x4
+ 2234 07ed 18050000 		.4byte	0x518
+ 2235 07f1 11       		.uleb128 0x11
+ 2236 07f2 711A0000 		.4byte	.LASF239
+ 2237 07f6 01       		.byte	0x1
+ 2238 07f7 CA       		.byte	0xca
+ 2239 07f8 00000000 		.4byte	.LFB38
+ 2240 07fc 74000000 		.4byte	.LFE38-.LFB38
+ 2241 0800 01       		.uleb128 0x1
+ 2242 0801 9C       		.byte	0x9c
+ 2243 0802 33080000 		.4byte	0x833
+ 2244 0806 16       		.uleb128 0x16
+ 2245 0807 12000000 		.4byte	.LBB2
+ 2246 080b 4C000000 		.4byte	.LBE2-.LBB2
+ 2247 080f 14       		.uleb128 0x14
+ 2248 0810 6C656400 		.ascii	"led\000"
+ 2249 0814 01       		.byte	0x1
+ 2250 0815 CE       		.byte	0xce
+ 2251 0816 6B000000 		.4byte	0x6b
+ 2252 081a 05       		.uleb128 0x5
+ 2253 081b 03       		.byte	0x3
+ 2254 081c 08000000 		.4byte	led.8145
+ 2255 0820 13       		.uleb128 0x13
+ 2256 0821 91010000 		.4byte	.LASF240
+ 2257 0825 01       		.byte	0x1
+ 2258 0826 CF       		.byte	0xcf
+ 2259 0827 83000000 		.4byte	0x83
+ 2260 082b 05       		.uleb128 0x5
+ 2261 082c 03       		.byte	0x3
+ 2262 082d 04000000 		.4byte	ledTimer.8146
+ 2263 0831 00       		.byte	0
+ 2264 0832 00       		.byte	0
+ 2265 0833 17       		.uleb128 0x17
+ 2266 0834 BD170000 		.4byte	.LASF241
+ 2267 0838 01       		.byte	0x1
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 51
+
+
+ 2268 0839 ED       		.byte	0xed
+ 2269 083a 00000000 		.4byte	.LFB39
+ 2270 083e 4C000000 		.4byte	.LFE39-.LFB39
+ 2271 0842 01       		.uleb128 0x1
+ 2272 0843 9C       		.byte	0x9c
+ 2273 0844 18       		.uleb128 0x18
+ 2274 0845 B2090000 		.4byte	.LASF242
+ 2275 0849 01       		.byte	0x1
+ 2276 084a 0A01     		.2byte	0x10a
+ 2277 084c 00000000 		.4byte	.LFB40
+ 2278 0850 1A000000 		.4byte	.LFE40-.LFB40
+ 2279 0854 01       		.uleb128 0x1
+ 2280 0855 9C       		.byte	0x9c
+ 2281 0856 19       		.uleb128 0x19
+ 2282 0857 A2190000 		.4byte	.LASF259
+ 2283 085b 01       		.byte	0x1
+ 2284 085c 2701     		.2byte	0x127
+ 2285 085e 00000000 		.4byte	.LFB41
+ 2286 0862 98000000 		.4byte	.LFE41-.LFB41
+ 2287 0866 01       		.uleb128 0x1
+ 2288 0867 9C       		.byte	0x9c
+ 2289 0868 8B080000 		.4byte	0x88b
+ 2290 086c 1A       		.uleb128 0x1a
+ 2291 086d 1F190000 		.4byte	.LASF243
+ 2292 0871 01       		.byte	0x1
+ 2293 0872 2901     		.2byte	0x129
+ 2294 0874 80030000 		.4byte	0x380
+ 2295 0878 02       		.uleb128 0x2
+ 2296 0879 91       		.byte	0x91
+ 2297 087a 6F       		.sleb128 -17
+ 2298 087b 1A       		.uleb128 0x1a
+ 2299 087c 7A060000 		.4byte	.LASF244
+ 2300 0880 01       		.byte	0x1
+ 2301 0881 2A01     		.2byte	0x12a
+ 2302 0883 6B000000 		.4byte	0x6b
+ 2303 0887 02       		.uleb128 0x2
+ 2304 0888 91       		.byte	0x91
+ 2305 0889 6E       		.sleb128 -18
+ 2306 088a 00       		.byte	0
+ 2307 088b 1B       		.uleb128 0x1b
+ 2308 088c 0B040000 		.4byte	.LASF245
+ 2309 0890 01       		.byte	0x1
+ 2310 0891 6E01     		.2byte	0x16e
+ 2311 0893 5D000000 		.4byte	0x5d
+ 2312 0897 00000000 		.4byte	.LFB42
+ 2313 089b C0010000 		.4byte	.LFE42-.LFB42
+ 2314 089f 01       		.uleb128 0x1
+ 2315 08a0 9C       		.byte	0x9c
+ 2316 08a1 EC080000 		.4byte	0x8ec
+ 2317 08a5 1A       		.uleb128 0x1a
+ 2318 08a6 6B000000 		.4byte	.LASF235
+ 2319 08aa 01       		.byte	0x1
+ 2320 08ab 7001     		.2byte	0x170
+ 2321 08ad 4B030000 		.4byte	0x34b
+ 2322 08b1 02       		.uleb128 0x2
+ 2323 08b2 91       		.byte	0x91
+ 2324 08b3 6E       		.sleb128 -18
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 52
+
+
+ 2325 08b4 1A       		.uleb128 0x1a
+ 2326 08b5 72050000 		.4byte	.LASF246
+ 2327 08b9 01       		.byte	0x1
+ 2328 08ba 7101     		.2byte	0x171
+ 2329 08bc 6B000000 		.4byte	0x6b
+ 2330 08c0 02       		.uleb128 0x2
+ 2331 08c1 91       		.byte	0x91
+ 2332 08c2 6B       		.sleb128 -21
+ 2333 08c3 1A       		.uleb128 0x1a
+ 2334 08c4 4E1A0000 		.4byte	.LASF247
+ 2335 08c8 01       		.byte	0x1
+ 2336 08c9 7201     		.2byte	0x172
+ 2337 08cb 05040000 		.4byte	0x405
+ 2338 08cf 02       		.uleb128 0x2
+ 2339 08d0 91       		.byte	0x91
+ 2340 08d1 64       		.sleb128 -28
+ 2341 08d2 16       		.uleb128 0x16
+ 2342 08d3 64010000 		.4byte	.LBB3
+ 2343 08d7 1E000000 		.4byte	.LBE3-.LBB3
+ 2344 08db 1A       		.uleb128 0x1a
+ 2345 08dc 6B000000 		.4byte	.LASF235
+ 2346 08e0 01       		.byte	0x1
+ 2347 08e1 C801     		.2byte	0x1c8
+ 2348 08e3 4B030000 		.4byte	0x34b
+ 2349 08e7 02       		.uleb128 0x2
+ 2350 08e8 91       		.byte	0x91
+ 2351 08e9 6C       		.sleb128 -20
+ 2352 08ea 00       		.byte	0
+ 2353 08eb 00       		.byte	0
+ 2354 08ec 1C       		.uleb128 0x1c
+ 2355 08ed 61150000 		.4byte	.LASF248
+ 2356 08f1 0A       		.byte	0xa
+ 2357 08f2 A702     		.2byte	0x2a7
+ 2358 08f4 6B000000 		.4byte	0x6b
+ 2359 08f8 1C       		.uleb128 0x1c
+ 2360 08f9 E2150000 		.4byte	.LASF249
+ 2361 08fd 09       		.byte	0x9
+ 2362 08fe DA09     		.2byte	0x9da
+ 2363 0900 77070000 		.4byte	0x777
+ 2364 0904 1C       		.uleb128 0x1c
+ 2365 0905 98160000 		.4byte	.LASF250
+ 2366 0909 09       		.byte	0x9
+ 2367 090a DB09     		.2byte	0x9db
+ 2368 090c AB060000 		.4byte	0x6ab
+ 2369 0910 1D       		.uleb128 0x1d
+ 2370 0911 0B1A0000 		.4byte	.LASF163
+ 2371 0915 01       		.byte	0x1
+ 2372 0916 1C       		.byte	0x1c
+ 2373 0917 77000000 		.4byte	0x77
+ 2374 091b 05       		.uleb128 0x5
+ 2375 091c 03       		.byte	0x3
+ 2376 091d 00000000 		.4byte	connIntv
+ 2377 0921 1E       		.uleb128 0x1e
+ 2378 0922 29140000 		.4byte	.LASF251
+ 2379 0926 0B       		.byte	0xb
+ 2380 0927 30       		.byte	0x30
+ 2381 0928 77000000 		.4byte	0x77
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 53
+
+
+ 2382 092c 1E       		.uleb128 0x1e
+ 2383 092d B71B0000 		.4byte	.LASF252
+ 2384 0931 0B       		.byte	0xb
+ 2385 0932 32       		.byte	0x32
+ 2386 0933 6B000000 		.4byte	0x6b
+ 2387 0937 1E       		.uleb128 0x1e
+ 2388 0938 85160000 		.4byte	.LASF253
+ 2389 093c 0C       		.byte	0xc
+ 2390 093d 1E       		.byte	0x1e
+ 2391 093e 77000000 		.4byte	0x77
+ 2392 0942 1D       		.uleb128 0x1d
+ 2393 0943 36120000 		.4byte	.LASF254
+ 2394 0947 01       		.byte	0x1
+ 2395 0948 1D       		.byte	0x1d
+ 2396 0949 B0000000 		.4byte	0xb0
+ 2397 094d 05       		.uleb128 0x5
+ 2398 094e 03       		.byte	0x3
+ 2399 094f 00000000 		.4byte	mainTimer
+ 2400 0953 1D       		.uleb128 0x1d
+ 2401 0954 0A1B0000 		.4byte	.LASF255
+ 2402 0958 01       		.byte	0x1
+ 2403 0959 1E       		.byte	0x1e
+ 2404 095a 6B000000 		.4byte	0x6b
+ 2405 095e 05       		.uleb128 0x5
+ 2406 095f 03       		.byte	0x3
+ 2407 0960 00000000 		.4byte	authenticated
+ 2408 0964 00       		.byte	0
+ 2409              		.section	.debug_abbrev,"",%progbits
+ 2410              	.Ldebug_abbrev0:
+ 2411 0000 01       		.uleb128 0x1
+ 2412 0001 11       		.uleb128 0x11
+ 2413 0002 01       		.byte	0x1
+ 2414 0003 25       		.uleb128 0x25
+ 2415 0004 0E       		.uleb128 0xe
+ 2416 0005 13       		.uleb128 0x13
+ 2417 0006 0B       		.uleb128 0xb
+ 2418 0007 03       		.uleb128 0x3
+ 2419 0008 0E       		.uleb128 0xe
+ 2420 0009 1B       		.uleb128 0x1b
+ 2421 000a 0E       		.uleb128 0xe
+ 2422 000b 55       		.uleb128 0x55
+ 2423 000c 17       		.uleb128 0x17
+ 2424 000d 11       		.uleb128 0x11
+ 2425 000e 01       		.uleb128 0x1
+ 2426 000f 10       		.uleb128 0x10
+ 2427 0010 17       		.uleb128 0x17
+ 2428 0011 00       		.byte	0
+ 2429 0012 00       		.byte	0
+ 2430 0013 02       		.uleb128 0x2
+ 2431 0014 24       		.uleb128 0x24
+ 2432 0015 00       		.byte	0
+ 2433 0016 0B       		.uleb128 0xb
+ 2434 0017 0B       		.uleb128 0xb
+ 2435 0018 3E       		.uleb128 0x3e
+ 2436 0019 0B       		.uleb128 0xb
+ 2437 001a 03       		.uleb128 0x3
+ 2438 001b 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 54
+
+
+ 2439 001c 00       		.byte	0
+ 2440 001d 00       		.byte	0
+ 2441 001e 03       		.uleb128 0x3
+ 2442 001f 24       		.uleb128 0x24
+ 2443 0020 00       		.byte	0
+ 2444 0021 0B       		.uleb128 0xb
+ 2445 0022 0B       		.uleb128 0xb
+ 2446 0023 3E       		.uleb128 0x3e
+ 2447 0024 0B       		.uleb128 0xb
+ 2448 0025 03       		.uleb128 0x3
+ 2449 0026 08       		.uleb128 0x8
+ 2450 0027 00       		.byte	0
+ 2451 0028 00       		.byte	0
+ 2452 0029 04       		.uleb128 0x4
+ 2453 002a 16       		.uleb128 0x16
+ 2454 002b 00       		.byte	0
+ 2455 002c 03       		.uleb128 0x3
+ 2456 002d 0E       		.uleb128 0xe
+ 2457 002e 3A       		.uleb128 0x3a
+ 2458 002f 0B       		.uleb128 0xb
+ 2459 0030 3B       		.uleb128 0x3b
+ 2460 0031 05       		.uleb128 0x5
+ 2461 0032 49       		.uleb128 0x49
+ 2462 0033 13       		.uleb128 0x13
+ 2463 0034 00       		.byte	0
+ 2464 0035 00       		.byte	0
+ 2465 0036 05       		.uleb128 0x5
+ 2466 0037 35       		.uleb128 0x35
+ 2467 0038 00       		.byte	0
+ 2468 0039 49       		.uleb128 0x49
+ 2469 003a 13       		.uleb128 0x13
+ 2470 003b 00       		.byte	0
+ 2471 003c 00       		.byte	0
+ 2472 003d 06       		.uleb128 0x6
+ 2473 003e 0F       		.uleb128 0xf
+ 2474 003f 00       		.byte	0
+ 2475 0040 0B       		.uleb128 0xb
+ 2476 0041 0B       		.uleb128 0xb
+ 2477 0042 00       		.byte	0
+ 2478 0043 00       		.byte	0
+ 2479 0044 07       		.uleb128 0x7
+ 2480 0045 04       		.uleb128 0x4
+ 2481 0046 01       		.byte	0x1
+ 2482 0047 0B       		.uleb128 0xb
+ 2483 0048 0B       		.uleb128 0xb
+ 2484 0049 3A       		.uleb128 0x3a
+ 2485 004a 0B       		.uleb128 0xb
+ 2486 004b 3B       		.uleb128 0x3b
+ 2487 004c 05       		.uleb128 0x5
+ 2488 004d 01       		.uleb128 0x1
+ 2489 004e 13       		.uleb128 0x13
+ 2490 004f 00       		.byte	0
+ 2491 0050 00       		.byte	0
+ 2492 0051 08       		.uleb128 0x8
+ 2493 0052 28       		.uleb128 0x28
+ 2494 0053 00       		.byte	0
+ 2495 0054 03       		.uleb128 0x3
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 55
+
+
+ 2496 0055 0E       		.uleb128 0xe
+ 2497 0056 1C       		.uleb128 0x1c
+ 2498 0057 0D       		.uleb128 0xd
+ 2499 0058 00       		.byte	0
+ 2500 0059 00       		.byte	0
+ 2501 005a 09       		.uleb128 0x9
+ 2502 005b 13       		.uleb128 0x13
+ 2503 005c 01       		.byte	0x1
+ 2504 005d 0B       		.uleb128 0xb
+ 2505 005e 0B       		.uleb128 0xb
+ 2506 005f 3A       		.uleb128 0x3a
+ 2507 0060 0B       		.uleb128 0xb
+ 2508 0061 3B       		.uleb128 0x3b
+ 2509 0062 05       		.uleb128 0x5
+ 2510 0063 01       		.uleb128 0x1
+ 2511 0064 13       		.uleb128 0x13
+ 2512 0065 00       		.byte	0
+ 2513 0066 00       		.byte	0
+ 2514 0067 0A       		.uleb128 0xa
+ 2515 0068 0D       		.uleb128 0xd
+ 2516 0069 00       		.byte	0
+ 2517 006a 03       		.uleb128 0x3
+ 2518 006b 0E       		.uleb128 0xe
+ 2519 006c 3A       		.uleb128 0x3a
+ 2520 006d 0B       		.uleb128 0xb
+ 2521 006e 3B       		.uleb128 0x3b
+ 2522 006f 05       		.uleb128 0x5
+ 2523 0070 49       		.uleb128 0x49
+ 2524 0071 13       		.uleb128 0x13
+ 2525 0072 38       		.uleb128 0x38
+ 2526 0073 0B       		.uleb128 0xb
+ 2527 0074 00       		.byte	0
+ 2528 0075 00       		.byte	0
+ 2529 0076 0B       		.uleb128 0xb
+ 2530 0077 01       		.uleb128 0x1
+ 2531 0078 01       		.byte	0x1
+ 2532 0079 49       		.uleb128 0x49
+ 2533 007a 13       		.uleb128 0x13
+ 2534 007b 01       		.uleb128 0x1
+ 2535 007c 13       		.uleb128 0x13
+ 2536 007d 00       		.byte	0
+ 2537 007e 00       		.byte	0
+ 2538 007f 0C       		.uleb128 0xc
+ 2539 0080 21       		.uleb128 0x21
+ 2540 0081 00       		.byte	0
+ 2541 0082 49       		.uleb128 0x49
+ 2542 0083 13       		.uleb128 0x13
+ 2543 0084 2F       		.uleb128 0x2f
+ 2544 0085 0B       		.uleb128 0xb
+ 2545 0086 00       		.byte	0
+ 2546 0087 00       		.byte	0
+ 2547 0088 0D       		.uleb128 0xd
+ 2548 0089 04       		.uleb128 0x4
+ 2549 008a 01       		.byte	0x1
+ 2550 008b 0B       		.uleb128 0xb
+ 2551 008c 0B       		.uleb128 0xb
+ 2552 008d 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 56
+
+
+ 2553 008e 0B       		.uleb128 0xb
+ 2554 008f 3B       		.uleb128 0x3b
+ 2555 0090 0B       		.uleb128 0xb
+ 2556 0091 01       		.uleb128 0x1
+ 2557 0092 13       		.uleb128 0x13
+ 2558 0093 00       		.byte	0
+ 2559 0094 00       		.byte	0
+ 2560 0095 0E       		.uleb128 0xe
+ 2561 0096 13       		.uleb128 0x13
+ 2562 0097 01       		.byte	0x1
+ 2563 0098 0B       		.uleb128 0xb
+ 2564 0099 0B       		.uleb128 0xb
+ 2565 009a 3A       		.uleb128 0x3a
+ 2566 009b 0B       		.uleb128 0xb
+ 2567 009c 3B       		.uleb128 0x3b
+ 2568 009d 0B       		.uleb128 0xb
+ 2569 009e 01       		.uleb128 0x1
+ 2570 009f 13       		.uleb128 0x13
+ 2571 00a0 00       		.byte	0
+ 2572 00a1 00       		.byte	0
+ 2573 00a2 0F       		.uleb128 0xf
+ 2574 00a3 0D       		.uleb128 0xd
+ 2575 00a4 00       		.byte	0
+ 2576 00a5 03       		.uleb128 0x3
+ 2577 00a6 0E       		.uleb128 0xe
+ 2578 00a7 3A       		.uleb128 0x3a
+ 2579 00a8 0B       		.uleb128 0xb
+ 2580 00a9 3B       		.uleb128 0x3b
+ 2581 00aa 0B       		.uleb128 0xb
+ 2582 00ab 49       		.uleb128 0x49
+ 2583 00ac 13       		.uleb128 0x13
+ 2584 00ad 38       		.uleb128 0x38
+ 2585 00ae 0B       		.uleb128 0xb
+ 2586 00af 00       		.byte	0
+ 2587 00b0 00       		.byte	0
+ 2588 00b1 10       		.uleb128 0x10
+ 2589 00b2 16       		.uleb128 0x16
+ 2590 00b3 00       		.byte	0
+ 2591 00b4 03       		.uleb128 0x3
+ 2592 00b5 0E       		.uleb128 0xe
+ 2593 00b6 3A       		.uleb128 0x3a
+ 2594 00b7 0B       		.uleb128 0xb
+ 2595 00b8 3B       		.uleb128 0x3b
+ 2596 00b9 0B       		.uleb128 0xb
+ 2597 00ba 49       		.uleb128 0x49
+ 2598 00bb 13       		.uleb128 0x13
+ 2599 00bc 00       		.byte	0
+ 2600 00bd 00       		.byte	0
+ 2601 00be 11       		.uleb128 0x11
+ 2602 00bf 2E       		.uleb128 0x2e
+ 2603 00c0 01       		.byte	0x1
+ 2604 00c1 3F       		.uleb128 0x3f
+ 2605 00c2 19       		.uleb128 0x19
+ 2606 00c3 03       		.uleb128 0x3
+ 2607 00c4 0E       		.uleb128 0xe
+ 2608 00c5 3A       		.uleb128 0x3a
+ 2609 00c6 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 57
+
+
+ 2610 00c7 3B       		.uleb128 0x3b
+ 2611 00c8 0B       		.uleb128 0xb
+ 2612 00c9 27       		.uleb128 0x27
+ 2613 00ca 19       		.uleb128 0x19
+ 2614 00cb 11       		.uleb128 0x11
+ 2615 00cc 01       		.uleb128 0x1
+ 2616 00cd 12       		.uleb128 0x12
+ 2617 00ce 06       		.uleb128 0x6
+ 2618 00cf 40       		.uleb128 0x40
+ 2619 00d0 18       		.uleb128 0x18
+ 2620 00d1 9642     		.uleb128 0x2116
+ 2621 00d3 19       		.uleb128 0x19
+ 2622 00d4 01       		.uleb128 0x1
+ 2623 00d5 13       		.uleb128 0x13
+ 2624 00d6 00       		.byte	0
+ 2625 00d7 00       		.byte	0
+ 2626 00d8 12       		.uleb128 0x12
+ 2627 00d9 05       		.uleb128 0x5
+ 2628 00da 00       		.byte	0
+ 2629 00db 03       		.uleb128 0x3
+ 2630 00dc 0E       		.uleb128 0xe
+ 2631 00dd 3A       		.uleb128 0x3a
+ 2632 00de 0B       		.uleb128 0xb
+ 2633 00df 3B       		.uleb128 0x3b
+ 2634 00e0 0B       		.uleb128 0xb
+ 2635 00e1 49       		.uleb128 0x49
+ 2636 00e2 13       		.uleb128 0x13
+ 2637 00e3 02       		.uleb128 0x2
+ 2638 00e4 18       		.uleb128 0x18
+ 2639 00e5 00       		.byte	0
+ 2640 00e6 00       		.byte	0
+ 2641 00e7 13       		.uleb128 0x13
+ 2642 00e8 34       		.uleb128 0x34
+ 2643 00e9 00       		.byte	0
+ 2644 00ea 03       		.uleb128 0x3
+ 2645 00eb 0E       		.uleb128 0xe
+ 2646 00ec 3A       		.uleb128 0x3a
+ 2647 00ed 0B       		.uleb128 0xb
+ 2648 00ee 3B       		.uleb128 0x3b
+ 2649 00ef 0B       		.uleb128 0xb
+ 2650 00f0 49       		.uleb128 0x49
+ 2651 00f1 13       		.uleb128 0x13
+ 2652 00f2 02       		.uleb128 0x2
+ 2653 00f3 18       		.uleb128 0x18
+ 2654 00f4 00       		.byte	0
+ 2655 00f5 00       		.byte	0
+ 2656 00f6 14       		.uleb128 0x14
+ 2657 00f7 34       		.uleb128 0x34
+ 2658 00f8 00       		.byte	0
+ 2659 00f9 03       		.uleb128 0x3
+ 2660 00fa 08       		.uleb128 0x8
+ 2661 00fb 3A       		.uleb128 0x3a
+ 2662 00fc 0B       		.uleb128 0xb
+ 2663 00fd 3B       		.uleb128 0x3b
+ 2664 00fe 0B       		.uleb128 0xb
+ 2665 00ff 49       		.uleb128 0x49
+ 2666 0100 13       		.uleb128 0x13
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 58
+
+
+ 2667 0101 02       		.uleb128 0x2
+ 2668 0102 18       		.uleb128 0x18
+ 2669 0103 00       		.byte	0
+ 2670 0104 00       		.byte	0
+ 2671 0105 15       		.uleb128 0x15
+ 2672 0106 0F       		.uleb128 0xf
+ 2673 0107 00       		.byte	0
+ 2674 0108 0B       		.uleb128 0xb
+ 2675 0109 0B       		.uleb128 0xb
+ 2676 010a 49       		.uleb128 0x49
+ 2677 010b 13       		.uleb128 0x13
+ 2678 010c 00       		.byte	0
+ 2679 010d 00       		.byte	0
+ 2680 010e 16       		.uleb128 0x16
+ 2681 010f 0B       		.uleb128 0xb
+ 2682 0110 01       		.byte	0x1
+ 2683 0111 11       		.uleb128 0x11
+ 2684 0112 01       		.uleb128 0x1
+ 2685 0113 12       		.uleb128 0x12
+ 2686 0114 06       		.uleb128 0x6
+ 2687 0115 00       		.byte	0
+ 2688 0116 00       		.byte	0
+ 2689 0117 17       		.uleb128 0x17
+ 2690 0118 2E       		.uleb128 0x2e
+ 2691 0119 00       		.byte	0
+ 2692 011a 3F       		.uleb128 0x3f
+ 2693 011b 19       		.uleb128 0x19
+ 2694 011c 03       		.uleb128 0x3
+ 2695 011d 0E       		.uleb128 0xe
+ 2696 011e 3A       		.uleb128 0x3a
+ 2697 011f 0B       		.uleb128 0xb
+ 2698 0120 3B       		.uleb128 0x3b
+ 2699 0121 0B       		.uleb128 0xb
+ 2700 0122 27       		.uleb128 0x27
+ 2701 0123 19       		.uleb128 0x19
+ 2702 0124 11       		.uleb128 0x11
+ 2703 0125 01       		.uleb128 0x1
+ 2704 0126 12       		.uleb128 0x12
+ 2705 0127 06       		.uleb128 0x6
+ 2706 0128 40       		.uleb128 0x40
+ 2707 0129 18       		.uleb128 0x18
+ 2708 012a 9642     		.uleb128 0x2116
+ 2709 012c 19       		.uleb128 0x19
+ 2710 012d 00       		.byte	0
+ 2711 012e 00       		.byte	0
+ 2712 012f 18       		.uleb128 0x18
+ 2713 0130 2E       		.uleb128 0x2e
+ 2714 0131 00       		.byte	0
+ 2715 0132 3F       		.uleb128 0x3f
+ 2716 0133 19       		.uleb128 0x19
+ 2717 0134 03       		.uleb128 0x3
+ 2718 0135 0E       		.uleb128 0xe
+ 2719 0136 3A       		.uleb128 0x3a
+ 2720 0137 0B       		.uleb128 0xb
+ 2721 0138 3B       		.uleb128 0x3b
+ 2722 0139 05       		.uleb128 0x5
+ 2723 013a 27       		.uleb128 0x27
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 59
+
+
+ 2724 013b 19       		.uleb128 0x19
+ 2725 013c 11       		.uleb128 0x11
+ 2726 013d 01       		.uleb128 0x1
+ 2727 013e 12       		.uleb128 0x12
+ 2728 013f 06       		.uleb128 0x6
+ 2729 0140 40       		.uleb128 0x40
+ 2730 0141 18       		.uleb128 0x18
+ 2731 0142 9642     		.uleb128 0x2116
+ 2732 0144 19       		.uleb128 0x19
+ 2733 0145 00       		.byte	0
+ 2734 0146 00       		.byte	0
+ 2735 0147 19       		.uleb128 0x19
+ 2736 0148 2E       		.uleb128 0x2e
+ 2737 0149 01       		.byte	0x1
+ 2738 014a 03       		.uleb128 0x3
+ 2739 014b 0E       		.uleb128 0xe
+ 2740 014c 3A       		.uleb128 0x3a
+ 2741 014d 0B       		.uleb128 0xb
+ 2742 014e 3B       		.uleb128 0x3b
+ 2743 014f 05       		.uleb128 0x5
+ 2744 0150 27       		.uleb128 0x27
+ 2745 0151 19       		.uleb128 0x19
+ 2746 0152 11       		.uleb128 0x11
+ 2747 0153 01       		.uleb128 0x1
+ 2748 0154 12       		.uleb128 0x12
+ 2749 0155 06       		.uleb128 0x6
+ 2750 0156 40       		.uleb128 0x40
+ 2751 0157 18       		.uleb128 0x18
+ 2752 0158 9642     		.uleb128 0x2116
+ 2753 015a 19       		.uleb128 0x19
+ 2754 015b 01       		.uleb128 0x1
+ 2755 015c 13       		.uleb128 0x13
+ 2756 015d 00       		.byte	0
+ 2757 015e 00       		.byte	0
+ 2758 015f 1A       		.uleb128 0x1a
+ 2759 0160 34       		.uleb128 0x34
+ 2760 0161 00       		.byte	0
+ 2761 0162 03       		.uleb128 0x3
+ 2762 0163 0E       		.uleb128 0xe
+ 2763 0164 3A       		.uleb128 0x3a
+ 2764 0165 0B       		.uleb128 0xb
+ 2765 0166 3B       		.uleb128 0x3b
+ 2766 0167 05       		.uleb128 0x5
+ 2767 0168 49       		.uleb128 0x49
+ 2768 0169 13       		.uleb128 0x13
+ 2769 016a 02       		.uleb128 0x2
+ 2770 016b 18       		.uleb128 0x18
+ 2771 016c 00       		.byte	0
+ 2772 016d 00       		.byte	0
+ 2773 016e 1B       		.uleb128 0x1b
+ 2774 016f 2E       		.uleb128 0x2e
+ 2775 0170 01       		.byte	0x1
+ 2776 0171 3F       		.uleb128 0x3f
+ 2777 0172 19       		.uleb128 0x19
+ 2778 0173 03       		.uleb128 0x3
+ 2779 0174 0E       		.uleb128 0xe
+ 2780 0175 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 60
+
+
+ 2781 0176 0B       		.uleb128 0xb
+ 2782 0177 3B       		.uleb128 0x3b
+ 2783 0178 05       		.uleb128 0x5
+ 2784 0179 49       		.uleb128 0x49
+ 2785 017a 13       		.uleb128 0x13
+ 2786 017b 11       		.uleb128 0x11
+ 2787 017c 01       		.uleb128 0x1
+ 2788 017d 12       		.uleb128 0x12
+ 2789 017e 06       		.uleb128 0x6
+ 2790 017f 40       		.uleb128 0x40
+ 2791 0180 18       		.uleb128 0x18
+ 2792 0181 9642     		.uleb128 0x2116
+ 2793 0183 19       		.uleb128 0x19
+ 2794 0184 01       		.uleb128 0x1
+ 2795 0185 13       		.uleb128 0x13
+ 2796 0186 00       		.byte	0
+ 2797 0187 00       		.byte	0
+ 2798 0188 1C       		.uleb128 0x1c
+ 2799 0189 34       		.uleb128 0x34
+ 2800 018a 00       		.byte	0
+ 2801 018b 03       		.uleb128 0x3
+ 2802 018c 0E       		.uleb128 0xe
+ 2803 018d 3A       		.uleb128 0x3a
+ 2804 018e 0B       		.uleb128 0xb
+ 2805 018f 3B       		.uleb128 0x3b
+ 2806 0190 05       		.uleb128 0x5
+ 2807 0191 49       		.uleb128 0x49
+ 2808 0192 13       		.uleb128 0x13
+ 2809 0193 3F       		.uleb128 0x3f
+ 2810 0194 19       		.uleb128 0x19
+ 2811 0195 3C       		.uleb128 0x3c
+ 2812 0196 19       		.uleb128 0x19
+ 2813 0197 00       		.byte	0
+ 2814 0198 00       		.byte	0
+ 2815 0199 1D       		.uleb128 0x1d
+ 2816 019a 34       		.uleb128 0x34
+ 2817 019b 00       		.byte	0
+ 2818 019c 03       		.uleb128 0x3
+ 2819 019d 0E       		.uleb128 0xe
+ 2820 019e 3A       		.uleb128 0x3a
+ 2821 019f 0B       		.uleb128 0xb
+ 2822 01a0 3B       		.uleb128 0x3b
+ 2823 01a1 0B       		.uleb128 0xb
+ 2824 01a2 49       		.uleb128 0x49
+ 2825 01a3 13       		.uleb128 0x13
+ 2826 01a4 3F       		.uleb128 0x3f
+ 2827 01a5 19       		.uleb128 0x19
+ 2828 01a6 02       		.uleb128 0x2
+ 2829 01a7 18       		.uleb128 0x18
+ 2830 01a8 00       		.byte	0
+ 2831 01a9 00       		.byte	0
+ 2832 01aa 1E       		.uleb128 0x1e
+ 2833 01ab 34       		.uleb128 0x34
+ 2834 01ac 00       		.byte	0
+ 2835 01ad 03       		.uleb128 0x3
+ 2836 01ae 0E       		.uleb128 0xe
+ 2837 01af 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 61
+
+
+ 2838 01b0 0B       		.uleb128 0xb
+ 2839 01b1 3B       		.uleb128 0x3b
+ 2840 01b2 0B       		.uleb128 0xb
+ 2841 01b3 49       		.uleb128 0x49
+ 2842 01b4 13       		.uleb128 0x13
+ 2843 01b5 3F       		.uleb128 0x3f
+ 2844 01b6 19       		.uleb128 0x19
+ 2845 01b7 3C       		.uleb128 0x3c
+ 2846 01b8 19       		.uleb128 0x19
+ 2847 01b9 00       		.byte	0
+ 2848 01ba 00       		.byte	0
+ 2849 01bb 00       		.byte	0
+ 2850              		.section	.debug_aranges,"",%progbits
+ 2851 0000 44000000 		.4byte	0x44
+ 2852 0004 0200     		.2byte	0x2
+ 2853 0006 00000000 		.4byte	.Ldebug_info0
+ 2854 000a 04       		.byte	0x4
+ 2855 000b 00       		.byte	0
+ 2856 000c 0000     		.2byte	0
+ 2857 000e 0000     		.2byte	0
+ 2858 0010 00000000 		.4byte	.LFB37
+ 2859 0014 98030000 		.4byte	.LFE37-.LFB37
+ 2860 0018 00000000 		.4byte	.LFB38
+ 2861 001c 74000000 		.4byte	.LFE38-.LFB38
+ 2862 0020 00000000 		.4byte	.LFB39
+ 2863 0024 4C000000 		.4byte	.LFE39-.LFB39
+ 2864 0028 00000000 		.4byte	.LFB40
+ 2865 002c 1A000000 		.4byte	.LFE40-.LFB40
+ 2866 0030 00000000 		.4byte	.LFB41
+ 2867 0034 98000000 		.4byte	.LFE41-.LFB41
+ 2868 0038 00000000 		.4byte	.LFB42
+ 2869 003c C0010000 		.4byte	.LFE42-.LFB42
+ 2870 0040 00000000 		.4byte	0
+ 2871 0044 00000000 		.4byte	0
+ 2872              		.section	.debug_ranges,"",%progbits
+ 2873              	.Ldebug_ranges0:
+ 2874 0000 00000000 		.4byte	.LFB37
+ 2875 0004 98030000 		.4byte	.LFE37
+ 2876 0008 00000000 		.4byte	.LFB38
+ 2877 000c 74000000 		.4byte	.LFE38
+ 2878 0010 00000000 		.4byte	.LFB39
+ 2879 0014 4C000000 		.4byte	.LFE39
+ 2880 0018 00000000 		.4byte	.LFB40
+ 2881 001c 1A000000 		.4byte	.LFE40
+ 2882 0020 00000000 		.4byte	.LFB41
+ 2883 0024 98000000 		.4byte	.LFE41
+ 2884 0028 00000000 		.4byte	.LFB42
+ 2885 002c C0010000 		.4byte	.LFE42
+ 2886 0030 00000000 		.4byte	0
+ 2887 0034 00000000 		.4byte	0
+ 2888              		.section	.debug_line,"",%progbits
+ 2889              	.Ldebug_line0:
+ 2890 0000 62020000 		.section	.debug_str,"MS",%progbits,1
+ 2890      0200E200 
+ 2890      00000201 
+ 2890      FB0E0D00 
+ 2890      01010101 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 62
+
+
+ 2891              	.LASF194:
+ 2892 0000 4359424C 		.ascii	"CYBLE_GATT_ERR_INVALID_CRC\000"
+ 2892      455F4741 
+ 2892      54545F45 
+ 2892      52525F49 
+ 2892      4E56414C 
+ 2893              	.LASF223:
+ 2894 001b 4359424C 		.ascii	"CYBLE_DIS_CHAR_COUNT\000"
+ 2894      455F4449 
+ 2894      535F4348 
+ 2894      41525F43 
+ 2894      4F554E54 
+ 2895              	.LASF16:
+ 2896 0030 73697A65 		.ascii	"sizetype\000"
+ 2896      74797065 
+ 2896      00
+ 2897              	.LASF158:
+ 2898 0039 656B6579 		.ascii	"ekeySize\000"
+ 2898      53697A65 
+ 2898      00
+ 2899              	.LASF37:
+ 2900 0042 4359424C 		.ascii	"CYBLE_EVT_GAP_NUMERIC_COMPARISON_REQUEST\000"
+ 2900      455F4556 
+ 2900      545F4741 
+ 2900      505F4E55 
+ 2900      4D455249 
+ 2901              	.LASF235:
+ 2902 006b 61706952 		.ascii	"apiResult\000"
+ 2902      6573756C 
+ 2902      7400
+ 2903              	.LASF234:
+ 2904 0075 6576656E 		.ascii	"eventParam\000"
+ 2904      74506172 
+ 2904      616D00
+ 2905              	.LASF31:
+ 2906 0080 4359424C 		.ascii	"CYBLE_EVT_GAP_DEVICE_CONNECTED\000"
+ 2906      455F4556 
+ 2906      545F4741 
+ 2906      505F4445 
+ 2906      56494345 
+ 2907              	.LASF45:
+ 2908 009f 4359424C 		.ascii	"CYBLE_EVT_GATT_CONNECT_IND\000"
+ 2908      455F4556 
+ 2908      545F4741 
+ 2908      54545F43 
+ 2908      4F4E4E45 
+ 2909              	.LASF125:
+ 2910 00ba 4359424C 		.ascii	"CYBLE_BLESS_STATE_ECO_ON\000"
+ 2910      455F424C 
+ 2910      4553535F 
+ 2910      53544154 
+ 2910      455F4543 
+ 2911              	.LASF11:
+ 2912 00d3 75696E74 		.ascii	"uint32\000"
+ 2912      333200
+ 2913              	.LASF128:
+ 2914 00da 4359424C 		.ascii	"CYBLE_BLESS_STATE_HIBERNATE\000"
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 63
+
+
+ 2914      455F424C 
+ 2914      4553535F 
+ 2914      53544154 
+ 2914      455F4849 
+ 2915              	.LASF169:
+ 2916 00f6 4359424C 		.ascii	"CYBLE_GATT_ERR_READ_NOT_PERMITTED\000"
+ 2916      455F4741 
+ 2916      54545F45 
+ 2916      52525F52 
+ 2916      4541445F 
+ 2917              	.LASF184:
+ 2918 0118 4359424C 		.ascii	"CYBLE_GATT_ERR_INSUFFICIENT_RESOURCE\000"
+ 2918      455F4741 
+ 2918      54545F45 
+ 2918      52525F49 
+ 2918      4E535546 
+ 2919              	.LASF183:
+ 2920 013d 4359424C 		.ascii	"CYBLE_GATT_ERR_UNSUPPORTED_GROUP_TYPE\000"
+ 2920      455F4741 
+ 2920      54545F45 
+ 2920      52525F55 
+ 2920      4E535550 
+ 2921              	.LASF99:
+ 2922 0163 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_CONNECTION_ENTITY_NOT_FOUND\000"
+ 2922      455F4552 
+ 2922      524F525F 
+ 2922      4C324341 
+ 2922      505F434F 
+ 2923              	.LASF240:
+ 2924 0191 6C656454 		.ascii	"ledTimer\000"
+ 2924      696D6572 
+ 2924      00
+ 2925              	.LASF105:
+ 2926 019a 4359424C 		.ascii	"CYBLE_ERROR_MIC_AUTH_FAILED\000"
+ 2926      455F4552 
+ 2926      524F525F 
+ 2926      4D49435F 
+ 2926      41555448 
+ 2927              	.LASF65:
+ 2928 01b6 4359424C 		.ascii	"CYBLE_EVT_GATTS_DATA_SIGNED_CMD_REQ\000"
+ 2928      455F4556 
+ 2928      545F4741 
+ 2928      5454535F 
+ 2928      44415441 
+ 2929              	.LASF77:
+ 2930 01da 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_RX_CREDIT_IND\000"
+ 2930      455F4556 
+ 2930      545F4C32 
+ 2930      4341505F 
+ 2930      43424643 
+ 2931              	.LASF136:
+ 2932 01fd 74797065 		.ascii	"type\000"
+ 2932      00
+ 2933              	.LASF153:
+ 2934 0202 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_AUTHENTICATION_TIMEOUT\000"
+ 2934      455F4741 
+ 2934      505F4155 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 64
+
+
+ 2934      54485F45 
+ 2934      52524F52 
+ 2935              	.LASF146:
+ 2936 022e 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_UNSPECIFIED_REASON\000"
+ 2936      455F4741 
+ 2936      505F4155 
+ 2936      54485F45 
+ 2936      52524F52 
+ 2937              	.LASF218:
+ 2938 0256 4359424C 		.ascii	"CYBLE_DIS_FIRMWARE_REV\000"
+ 2938      455F4449 
+ 2938      535F4649 
+ 2938      524D5741 
+ 2938      52455F52 
+ 2939              	.LASF62:
+ 2940 026d 4359424C 		.ascii	"CYBLE_EVT_GATTC_HANDLE_VALUE_NTF\000"
+ 2940      455F4556 
+ 2940      545F4741 
+ 2940      5454435F 
+ 2940      48414E44 
+ 2941              	.LASF25:
+ 2942 028e 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_REQ\000"
+ 2942      455F4556 
+ 2942      545F4741 
+ 2942      505F4155 
+ 2942      54485F52 
+ 2943              	.LASF209:
+ 2944 02a5 4359424C 		.ascii	"CYBLE_CONN_HANDLE_T\000"
+ 2944      455F434F 
+ 2944      4E4E5F48 
+ 2944      414E444C 
+ 2944      455F5400 
+ 2945              	.LASF94:
+ 2946 02b9 4359424C 		.ascii	"CYBLE_ERROR_BT_ON_NOT_COMPLETED\000"
+ 2946      455F4552 
+ 2946      524F525F 
+ 2946      42545F4F 
+ 2946      4E5F4E4F 
+ 2947              	.LASF230:
+ 2948 02d9 4359424C 		.ascii	"CYBLE_STATE_ADVERTISING\000"
+ 2948      455F5354 
+ 2948      4154455F 
+ 2948      41445645 
+ 2948      52544953 
+ 2949              	.LASF39:
+ 2950 02f1 4359424C 		.ascii	"CYBLE_EVT_GAP_OOB_GENERATED_NOTIFICATION\000"
+ 2950      455F4556 
+ 2950      545F4741 
+ 2950      505F4F4F 
+ 2950      425F4745 
+ 2951              	.LASF207:
+ 2952 031a 62644861 		.ascii	"bdHandle\000"
+ 2952      6E646C65 
+ 2952      00
+ 2953              	.LASF196:
+ 2954 0323 4359424C 		.ascii	"CYBLE_GATTS_ERR_NETWORK_NOT_AVAILABLE\000"
+ 2954      455F4741 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 65
+
+
+ 2954      5454535F 
+ 2954      4552525F 
+ 2954      4E455457 
+ 2955              	.LASF139:
+ 2956 0349 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_PASSKEY_ENTRY_FAILED\000"
+ 2956      455F4741 
+ 2956      505F4155 
+ 2956      54485F45 
+ 2956      52524F52 
+ 2957              	.LASF199:
+ 2958 0373 4359424C 		.ascii	"CYBLE_GATT_ERR_ANCS_INVALID_COMMAND\000"
+ 2958      455F4741 
+ 2958      54545F45 
+ 2958      52525F41 
+ 2958      4E43535F 
+ 2959              	.LASF58:
+ 2960 0397 4359424C 		.ascii	"CYBLE_EVT_GATTS_WRITE_CMD_REQ\000"
+ 2960      455F4556 
+ 2960      545F4741 
+ 2960      5454535F 
+ 2960      57524954 
+ 2961              	.LASF4:
+ 2962 03b5 6C6F6E67 		.ascii	"long int\000"
+ 2962      20696E74 
+ 2962      00
+ 2963              	.LASF18:
+ 2964 03be 4359424C 		.ascii	"CYBLE_EVT_STACK_ON\000"
+ 2964      455F4556 
+ 2964      545F5354 
+ 2964      41434B5F 
+ 2964      4F4E00
+ 2965              	.LASF101:
+ 2966 03d1 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_PSM_NOT_IN_RANGE\000"
+ 2966      455F4552 
+ 2966      524F525F 
+ 2966      4C324341 
+ 2966      505F5053 
+ 2967              	.LASF217:
+ 2968 03f4 4359424C 		.ascii	"CYBLE_DIS_HARDWARE_REV\000"
+ 2968      455F4449 
+ 2968      535F4841 
+ 2968      52445741 
+ 2968      52455F52 
+ 2969              	.LASF245:
+ 2970 040b 6D61696E 		.ascii	"main\000"
+ 2970      00
+ 2971              	.LASF124:
+ 2972 0410 4359424C 		.ascii	"CYBLE_BLESS_STATE_SLEEP\000"
+ 2972      455F424C 
+ 2972      4553535F 
+ 2972      53544154 
+ 2972      455F534C 
+ 2973              	.LASF195:
+ 2974 0428 4359424C 		.ascii	"CYBLE_GATTS_ERR_HPS_INVALID_REQUEST\000"
+ 2974      455F4741 
+ 2974      5454535F 
+ 2974      4552525F 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 66
+
+
+ 2974      4850535F 
+ 2975              	.LASF171:
+ 2976 044c 4359424C 		.ascii	"CYBLE_GATT_ERR_INVALID_PDU\000"
+ 2976      455F4741 
+ 2976      54545F45 
+ 2976      52525F49 
+ 2976      4E56414C 
+ 2977              	.LASF142:
+ 2978 0467 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_CONFIRM_VALUE_NOT_MATCH\000"
+ 2978      455F4741 
+ 2978      505F4155 
+ 2978      54485F45 
+ 2978      52524F52 
+ 2979              	.LASF113:
+ 2980 0494 4359424C 		.ascii	"CYBLE_ERROR_CHAR_IS_NOT_DISCOVERED\000"
+ 2980      455F4552 
+ 2980      524F525F 
+ 2980      43484152 
+ 2980      5F49535F 
+ 2981              	.LASF123:
+ 2982 04b7 4359424C 		.ascii	"CYBLE_BLESS_STATE_EVENT_CLOSE\000"
+ 2982      455F424C 
+ 2982      4553535F 
+ 2982      53544154 
+ 2982      455F4556 
+ 2983              	.LASF71:
+ 2984 04d5 4359424C 		.ascii	"CYBLE_EVT_L2CAP_COMMAND_REJ\000"
+ 2984      455F4556 
+ 2984      545F4C32 
+ 2984      4341505F 
+ 2984      434F4D4D 
+ 2985              	.LASF180:
+ 2986 04f1 4359424C 		.ascii	"CYBLE_GATT_ERR_INVALID_ATTRIBUTE_LEN\000"
+ 2986      455F4741 
+ 2986      54545F45 
+ 2986      52525F49 
+ 2986      4E56414C 
+ 2987              	.LASF102:
+ 2988 0516 4359424C 		.ascii	"CYBLE_ERROR_GATT_DB_INVALID_ATTR_HANDLE\000"
+ 2988      455F4552 
+ 2988      524F525F 
+ 2988      47415454 
+ 2988      5F44425F 
+ 2989              	.LASF0:
+ 2990 053e 7369676E 		.ascii	"signed char\000"
+ 2990      65642063 
+ 2990      68617200 
+ 2991              	.LASF20:
+ 2992 054a 4359424C 		.ascii	"CYBLE_EVT_HARDWARE_ERROR\000"
+ 2992      455F4556 
+ 2992      545F4841 
+ 2992      52445741 
+ 2992      52455F45 
+ 2993              	.LASF83:
+ 2994 0563 4359424C 		.ascii	"CYBLE_ERROR_OK\000"
+ 2994      455F4552 
+ 2994      524F525F 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 67
+
+
+ 2994      4F4B00
+ 2995              	.LASF246:
+ 2996 0572 72656672 		.ascii	"refresh\000"
+ 2996      65736800 
+ 2997              	.LASF49:
+ 2998 057a 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP\000"
+ 2998      455F4556 
+ 2998      545F4741 
+ 2998      5454435F 
+ 2998      52454144 
+ 2999              	.LASF152:
+ 3000 05a1 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_CROSS_TRANSPORT_KEY_GEN_DER_NO"
+ 3000      455F4741 
+ 3000      505F4155 
+ 3000      54485F45 
+ 3000      52524F52 
+ 3001 05d4 545F414C 		.ascii	"T_ALLOWED\000"
+ 3001      4C4F5745 
+ 3001      4400
+ 3002              	.LASF227:
+ 3003 05de 4359424C 		.ascii	"CYBLE_STATE_STOPPED\000"
+ 3003      455F5354 
+ 3003      4154455F 
+ 3003      53544F50 
+ 3003      50454400 
+ 3004              	.LASF1:
+ 3005 05f2 756E7369 		.ascii	"unsigned char\000"
+ 3005      676E6564 
+ 3005      20636861 
+ 3005      7200
+ 3006              	.LASF48:
+ 3007 0600 4359424C 		.ascii	"CYBLE_EVT_GATTC_XCHNG_MTU_RSP\000"
+ 3007      455F4556 
+ 3007      545F4741 
+ 3007      5454435F 
+ 3007      5843484E 
+ 3008              	.LASF117:
+ 3009 061e 4359424C 		.ascii	"CYBLE_BLESS_SLEEP\000"
+ 3009      455F424C 
+ 3009      4553535F 
+ 3009      534C4545 
+ 3009      5000
+ 3010              	.LASF43:
+ 3011 0630 4359424C 		.ascii	"CYBLE_EVT_GAP_SMP_NEGOTIATED_AUTH_INFO\000"
+ 3011      455F4556 
+ 3011      545F4741 
+ 3011      505F534D 
+ 3011      505F4E45 
+ 3012              	.LASF78:
+ 3013 0657 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_TX_CREDIT_IND\000"
+ 3013      455F4556 
+ 3013      545F4C32 
+ 3013      4341505F 
+ 3013      43424643 
+ 3014              	.LASF244:
+ 3015 067a 696E7465 		.ascii	"interruptStatus\000"
+ 3015      72727570 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 68
+
+
+ 3015      74537461 
+ 3015      74757300 
+ 3016              	.LASF148:
+ 3017 068a 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_INVALID_PARAMETERS\000"
+ 3017      455F4741 
+ 3017      505F4155 
+ 3017      54485F45 
+ 3017      52524F52 
+ 3018              	.LASF122:
+ 3019 06b2 4359424C 		.ascii	"CYBLE_BLESS_STATE_ACTIVE\000"
+ 3019      455F424C 
+ 3019      4553535F 
+ 3019      53544154 
+ 3019      455F4143 
+ 3020              	.LASF75:
+ 3021 06cb 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DISCONN_CNF\000"
+ 3021      455F4556 
+ 3021      545F4C32 
+ 3021      4341505F 
+ 3021      43424643 
+ 3022              	.LASF52:
+ 3023 06ec 4359424C 		.ascii	"CYBLE_EVT_GATTC_FIND_BY_TYPE_VALUE_RSP\000"
+ 3023      455F4556 
+ 3023      545F4741 
+ 3023      5454435F 
+ 3023      46494E44 
+ 3024              	.LASF121:
+ 3025 0713 4359424C 		.ascii	"CYBLE_LP_MODE_T\000"
+ 3025      455F4C50 
+ 3025      5F4D4F44 
+ 3025      455F5400 
+ 3026              	.LASF40:
+ 3027 0723 4359424C 		.ascii	"CYBLE_EVT_GAP_DATA_LENGTH_CHANGE\000"
+ 3027      455F4556 
+ 3027      545F4741 
+ 3027      505F4441 
+ 3027      54415F4C 
+ 3028              	.LASF14:
+ 3029 0744 63686172 		.ascii	"char\000"
+ 3029      00
+ 3030              	.LASF55:
+ 3031 0749 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_MULTI_RSP\000"
+ 3031      455F4556 
+ 3031      545F4741 
+ 3031      5454435F 
+ 3031      52454144 
+ 3032              	.LASF161:
+ 3033 0768 4359424C 		.ascii	"CYBLE_GAP_AUTH_INFO_T\000"
+ 3033      455F4741 
+ 3033      505F4155 
+ 3033      54485F49 
+ 3033      4E464F5F 
+ 3034              	.LASF17:
+ 3035 077e 4359424C 		.ascii	"CYBLE_EVT_HOST_INVALID\000"
+ 3035      455F4556 
+ 3035      545F484F 
+ 3035      53545F49 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 69
+
+
+ 3035      4E56414C 
+ 3036              	.LASF181:
+ 3037 0795 4359424C 		.ascii	"CYBLE_GATT_ERR_UNLIKELY_ERROR\000"
+ 3037      455F4741 
+ 3037      54545F45 
+ 3037      52525F55 
+ 3037      4E4C494B 
+ 3038              	.LASF42:
+ 3039 07b3 4359424C 		.ascii	"CYBLE_EVT_GAPC_DIRECT_ADV_REPORT\000"
+ 3039      455F4556 
+ 3039      545F4741 
+ 3039      50435F44 
+ 3039      49524543 
+ 3040              	.LASF90:
+ 3041 07d4 4359424C 		.ascii	"CYBLE_ERROR_NO_DEVICE_ENTITY\000"
+ 3041      455F4552 
+ 3041      524F525F 
+ 3041      4E4F5F44 
+ 3041      45564943 
+ 3042              	.LASF54:
+ 3043 07f1 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BLOB_RSP\000"
+ 3043      455F4556 
+ 3043      545F4741 
+ 3043      5454435F 
+ 3043      52454144 
+ 3044              	.LASF236:
+ 3045 080f 6C6F6361 		.ascii	"localAddr\000"
+ 3045      6C416464 
+ 3045      7200
+ 3046              	.LASF61:
+ 3047 0819 4359424C 		.ascii	"CYBLE_EVT_GATTC_EXEC_WRITE_RSP\000"
+ 3047      455F4556 
+ 3047      545F4741 
+ 3047      5454435F 
+ 3047      45584543 
+ 3048              	.LASF185:
+ 3049 0838 4359424C 		.ascii	"CYBLE_GATT_ERR_HEART_RATE_CONTROL_POINT_NOT_SUPPORT"
+ 3049      455F4741 
+ 3049      54545F45 
+ 3049      52525F48 
+ 3049      45415254 
+ 3050 086b 454400   		.ascii	"ED\000"
+ 3051              	.LASF178:
+ 3052 086e 4359424C 		.ascii	"CYBLE_GATT_ERR_ATTRIBUTE_NOT_LONG\000"
+ 3052      455F4741 
+ 3052      54545F45 
+ 3052      52525F41 
+ 3052      54545249 
+ 3053              	.LASF219:
+ 3054 0890 4359424C 		.ascii	"CYBLE_DIS_SOFTWARE_REV\000"
+ 3054      455F4449 
+ 3054      535F534F 
+ 3054      46545741 
+ 3054      52455F52 
+ 3055              	.LASF66:
+ 3056 08a7 4359424C 		.ascii	"CYBLE_EVT_GATTC_STOP_CMD_COMPLETE\000"
+ 3056      455F4556 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 70
+
+
+ 3056      545F4741 
+ 3056      5454435F 
+ 3056      53544F50 
+ 3057              	.LASF201:
+ 3058 08c9 4359424C 		.ascii	"CYBLE_GATT_ERR_ANCS_ACTION_FAILED\000"
+ 3058      455F4741 
+ 3058      54545F45 
+ 3058      52525F41 
+ 3058      4E43535F 
+ 3059              	.LASF215:
+ 3060 08eb 4359424C 		.ascii	"CYBLE_DIS_MODEL_NUMBER\000"
+ 3060      455F4449 
+ 3060      535F4D4F 
+ 3060      44454C5F 
+ 3060      4E554D42 
+ 3061              	.LASF220:
+ 3062 0902 4359424C 		.ascii	"CYBLE_DIS_SYSTEM_ID\000"
+ 3062      455F4449 
+ 3062      535F5359 
+ 3062      5354454D 
+ 3062      5F494400 
+ 3063              	.LASF109:
+ 3064 0916 4359424C 		.ascii	"CYBLE_ERROR_CONTROLLER_BUSY\000"
+ 3064      455F4552 
+ 3064      524F525F 
+ 3064      434F4E54 
+ 3064      524F4C4C 
+ 3065              	.LASF84:
+ 3066 0932 4359424C 		.ascii	"CYBLE_ERROR_INVALID_PARAMETER\000"
+ 3066      455F4552 
+ 3066      524F525F 
+ 3066      494E5641 
+ 3066      4C49445F 
+ 3067              	.LASF131:
+ 3068 0950 6D696E6F 		.ascii	"minorVersion\000"
+ 3068      72566572 
+ 3068      73696F6E 
+ 3068      00
+ 3069              	.LASF151:
+ 3070 095d 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_BR_EDR_PAIRING_IN_PROGRESS\000"
+ 3070      455F4741 
+ 3070      505F4155 
+ 3070      54485F45 
+ 3070      52524F52 
+ 3071              	.LASF86:
+ 3072 098d 4359424C 		.ascii	"CYBLE_ERROR_MEMORY_ALLOCATION_FAILED\000"
+ 3072      455F4552 
+ 3072      524F525F 
+ 3072      4D454D4F 
+ 3072      52595F41 
+ 3073              	.LASF242:
+ 3074 09b2 5744545F 		.ascii	"WDT_Stop\000"
+ 3074      53746F70 
+ 3074      00
+ 3075              	.LASF192:
+ 3076 09bb 4359424C 		.ascii	"CYBLE_GATTS_ERR_CCCD_IMPROPERLY_CONFIGURED\000"
+ 3076      455F4741 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 71
+
+
+ 3076      5454535F 
+ 3076      4552525F 
+ 3076      43434344 
+ 3077              	.LASF110:
+ 3078 09e6 4359424C 		.ascii	"CYBLE_ERROR_MAX\000"
+ 3078      455F4552 
+ 3078      524F525F 
+ 3078      4D415800 
+ 3079              	.LASF70:
+ 3080 09f6 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CONN_PARAM_UPDATE_RSP\000"
+ 3080      455F4556 
+ 3080      545F4C32 
+ 3080      4341505F 
+ 3080      434F4E4E 
+ 3081              	.LASF154:
+ 3082 0a1c 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_LINK_DISCONNECTED\000"
+ 3082      455F4741 
+ 3082      505F4155 
+ 3082      54485F45 
+ 3082      52524F52 
+ 3083              	.LASF120:
+ 3084 0a43 4359424C 		.ascii	"CYBLE_BLESS_INVALID\000"
+ 3084      455F424C 
+ 3084      4553535F 
+ 3084      494E5641 
+ 3084      4C494400 
+ 3085              	.LASF186:
+ 3086 0a57 4359424C 		.ascii	"CYBLE_GATT_ERR_USER_DATA_ACCESS_NOT_PERMITTED\000"
+ 3086      455F4741 
+ 3086      54545F45 
+ 3086      52525F55 
+ 3086      5345525F 
+ 3087              	.LASF28:
+ 3088 0a85 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_COMPLETE\000"
+ 3088      455F4556 
+ 3088      545F4741 
+ 3088      505F4155 
+ 3088      54485F43 
+ 3089              	.LASF29:
+ 3090 0aa1 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_FAILED\000"
+ 3090      455F4556 
+ 3090      545F4741 
+ 3090      505F4155 
+ 3090      54485F46 
+ 3091              	.LASF202:
+ 3092 0abb 4359424C 		.ascii	"CYBLE_GATT_ERR_CCCD_IMPROPERLY_CONFIGURED\000"
+ 3092      455F4741 
+ 3092      54545F45 
+ 3092      52525F43 
+ 3092      4343445F 
+ 3093              	.LASF87:
+ 3094 0ae5 4359424C 		.ascii	"CYBLE_ERROR_INSUFFICIENT_RESOURCES\000"
+ 3094      455F4552 
+ 3094      524F525F 
+ 3094      494E5355 
+ 3094      46464943 
+ 3095              	.LASF190:
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 72
+
+
+ 3096 0b08 4359424C 		.ascii	"CYBLE_GATT_ERR_OP_CODE_NOT_SUPPORTED\000"
+ 3096      455F4741 
+ 3096      54545F45 
+ 3096      52525F4F 
+ 3096      505F434F 
+ 3097              	.LASF5:
+ 3098 0b2d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3098      20756E73 
+ 3098      69676E65 
+ 3098      6420696E 
+ 3098      7400
+ 3099              	.LASF162:
+ 3100 0b3f 73746174 		.ascii	"status\000"
+ 3100      757300
+ 3101              	.LASF107:
+ 3102 0b46 4359424C 		.ascii	"CYBLE_ERROR_UNSUPPORTED_FEATURE_OR_PARAMETER_VALUE\000"
+ 3102      455F4552 
+ 3102      524F525F 
+ 3102      554E5355 
+ 3102      50504F52 
+ 3103              	.LASF145:
+ 3104 0b79 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_COMMAND_NOT_SUPPORTED\000"
+ 3104      455F4741 
+ 3104      505F4155 
+ 3104      54485F45 
+ 3104      52524F52 
+ 3105              	.LASF141:
+ 3106 0ba4 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_AUTHENTICATION_REQ_NOT_MET\000"
+ 3106      455F4741 
+ 3106      505F4155 
+ 3106      54485F45 
+ 3106      52524F52 
+ 3107              	.LASF97:
+ 3108 0bd4 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_PSM_ALREADY_REGISTERED\000"
+ 3108      455F4552 
+ 3108      524F525F 
+ 3108      4C324341 
+ 3108      505F5053 
+ 3109              	.LASF198:
+ 3110 0bfd 4359424C 		.ascii	"CYBLE_GATT_ERR_ANCS_UNKNOWN_COMMAND\000"
+ 3110      455F4741 
+ 3110      54545F45 
+ 3110      52525F41 
+ 3110      4E43535F 
+ 3111              	.LASF216:
+ 3112 0c21 4359424C 		.ascii	"CYBLE_DIS_SERIAL_NUMBER\000"
+ 3112      455F4449 
+ 3112      535F5345 
+ 3112      5249414C 
+ 3112      5F4E554D 
+ 3113              	.LASF34:
+ 3114 0c39 4359424C 		.ascii	"CYBLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE\000"
+ 3114      455F4556 
+ 3114      545F4741 
+ 3114      505F434F 
+ 3114      4E4E4543 
+ 3115              	.LASF228:
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 73
+
+
+ 3116 0c62 4359424C 		.ascii	"CYBLE_STATE_INITIALIZING\000"
+ 3116      455F5354 
+ 3116      4154455F 
+ 3116      494E4954 
+ 3116      49414C49 
+ 3117              	.LASF147:
+ 3118 0c7b 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_REPEATED_ATTEMPTS\000"
+ 3118      455F4741 
+ 3118      505F4155 
+ 3118      54485F45 
+ 3118      52524F52 
+ 3119              	.LASF74:
+ 3120 0ca2 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DISCONN_IND\000"
+ 3120      455F4556 
+ 3120      545F4C32 
+ 3120      4341505F 
+ 3120      43424643 
+ 3121              	.LASF26:
+ 3122 0cc3 4359424C 		.ascii	"CYBLE_EVT_GAP_PASSKEY_ENTRY_REQUEST\000"
+ 3122      455F4556 
+ 3122      545F4741 
+ 3122      505F5041 
+ 3122      53534B45 
+ 3123              	.LASF212:
+ 3124 0ce7 67617474 		.ascii	"gattErrorCode\000"
+ 3124      4572726F 
+ 3124      72436F64 
+ 3124      6500
+ 3125              	.LASF149:
+ 3126 0cf5 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_DHKEY_CHECK_FAILED\000"
+ 3126      455F4741 
+ 3126      505F4155 
+ 3126      54485F45 
+ 3126      52524F52 
+ 3127              	.LASF213:
+ 3128 0d1d 4359424C 		.ascii	"CYBLE_GATTS_CHAR_VAL_READ_REQ_T\000"
+ 3128      455F4741 
+ 3128      5454535F 
+ 3128      43484152 
+ 3128      5F56414C 
+ 3129              	.LASF144:
+ 3130 0d3d 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_INSUFFICIENT_ENCRYPTION_KEY_SI"
+ 3130      455F4741 
+ 3130      505F4155 
+ 3130      54485F45 
+ 3130      52524F52 
+ 3131 0d70 5A4500   		.ascii	"ZE\000"
+ 3132              	.LASF175:
+ 3133 0d73 4359424C 		.ascii	"CYBLE_GATT_ERR_INSUFFICIENT_AUTHORIZATION\000"
+ 3133      455F4741 
+ 3133      54545F45 
+ 3133      52525F49 
+ 3133      4E535546 
+ 3134              	.LASF6:
+ 3135 0d9d 6C6F6E67 		.ascii	"long long int\000"
+ 3135      206C6F6E 
+ 3135      6720696E 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 74
+
+
+ 3135      7400
+ 3136              	.LASF118:
+ 3137 0dab 4359424C 		.ascii	"CYBLE_BLESS_DEEPSLEEP\000"
+ 3137      455F424C 
+ 3137      4553535F 
+ 3137      44454550 
+ 3137      534C4545 
+ 3138              	.LASF233:
+ 3139 0dc1 6576656E 		.ascii	"event\000"
+ 3139      7400
+ 3140              	.LASF222:
+ 3141 0dc7 4359424C 		.ascii	"CYBLE_DIS_PNP_ID\000"
+ 3141      455F4449 
+ 3141      535F504E 
+ 3141      505F4944 
+ 3141      00
+ 3142              	.LASF156:
+ 3143 0dd8 73656375 		.ascii	"security\000"
+ 3143      72697479 
+ 3143      00
+ 3144              	.LASF176:
+ 3145 0de1 4359424C 		.ascii	"CYBLE_GATT_ERR_PREPARE_WRITE_QUEUE_FULL\000"
+ 3145      455F4741 
+ 3145      54545F45 
+ 3145      52525F50 
+ 3145      52455041 
+ 3146              	.LASF98:
+ 3147 0e09 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_PSM_NOT_REGISTERED\000"
+ 3147      455F4552 
+ 3147      524F525F 
+ 3147      4C324341 
+ 3147      505F5053 
+ 3148              	.LASF88:
+ 3149 0e2e 4359424C 		.ascii	"CYBLE_ERROR_OOB_NOT_AVAILABLE\000"
+ 3149      455F4552 
+ 3149      524F525F 
+ 3149      4F4F425F 
+ 3149      4E4F545F 
+ 3150              	.LASF13:
+ 3151 0e4c 646F7562 		.ascii	"double\000"
+ 3151      6C6500
+ 3152              	.LASF103:
+ 3153 0e53 4359424C 		.ascii	"CYBLE_ERROR_DEVICE_ALREADY_EXISTS\000"
+ 3153      455F4552 
+ 3153      524F525F 
+ 3153      44455649 
+ 3153      43455F41 
+ 3154              	.LASF80:
+ 3155 0e75 4359424C 		.ascii	"CYBLE_EVT_PENDING_FLASH_WRITE\000"
+ 3155      455F4556 
+ 3155      545F5045 
+ 3155      4E44494E 
+ 3155      475F464C 
+ 3156              	.LASF179:
+ 3157 0e93 4359424C 		.ascii	"CYBLE_GATT_ERR_INSUFFICIENT_ENC_KEY_SIZE\000"
+ 3157      455F4741 
+ 3157      54545F45 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 75
+
+
+ 3157      52525F49 
+ 3157      4E535546 
+ 3158              	.LASF203:
+ 3159 0ebc 4359424C 		.ascii	"CYBLE_GATT_ERR_PROCEDURE_ALREADY_IN_PROGRESS\000"
+ 3159      455F4741 
+ 3159      54545F45 
+ 3159      52525F50 
+ 3159      524F4345 
+ 3160              	.LASF41:
+ 3161 0ee9 4359424C 		.ascii	"CYBLE_EVT_GAP_ENHANCE_CONN_COMPLETE\000"
+ 3161      455F4556 
+ 3161      545F4741 
+ 3161      505F454E 
+ 3161      48414E43 
+ 3162              	.LASF100:
+ 3163 0f0d 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_CHANNEL_NOT_FOUND\000"
+ 3163      455F4552 
+ 3163      524F525F 
+ 3163      4C324341 
+ 3163      505F4348 
+ 3164              	.LASF91:
+ 3165 0f31 4359424C 		.ascii	"CYBLE_ERROR_REPEATED_ATTEMPTS\000"
+ 3165      455F4552 
+ 3165      524F525F 
+ 3165      52455045 
+ 3165      41544544 
+ 3166              	.LASF12:
+ 3167 0f4f 666C6F61 		.ascii	"float\000"
+ 3167      7400
+ 3168              	.LASF104:
+ 3169 0f55 4359424C 		.ascii	"CYBLE_ERROR_FLASH_WRITE_NOT_PERMITED\000"
+ 3169      455F4552 
+ 3169      524F525F 
+ 3169      464C4153 
+ 3169      485F5752 
+ 3170              	.LASF67:
+ 3171 0f7a 4359424C 		.ascii	"CYBLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ\000"
+ 3171      455F4556 
+ 3171      545F4741 
+ 3171      5454535F 
+ 3171      52454144 
+ 3172              	.LASF133:
+ 3173 0fa3 6275696C 		.ascii	"buildNumber\000"
+ 3173      644E756D 
+ 3173      62657200 
+ 3174              	.LASF211:
+ 3175 0faf 61747472 		.ascii	"attrHandle\000"
+ 3175      48616E64 
+ 3175      6C6500
+ 3176              	.LASF157:
+ 3177 0fba 626F6E64 		.ascii	"bonding\000"
+ 3177      696E6700 
+ 3178              	.LASF8:
+ 3179 0fc2 756E7369 		.ascii	"unsigned int\000"
+ 3179      676E6564 
+ 3179      20696E74 
+ 3179      00
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 76
+
+
+ 3180              	.LASF59:
+ 3181 0fcf 4359424C 		.ascii	"CYBLE_EVT_GATTS_PREP_WRITE_REQ\000"
+ 3181      455F4556 
+ 3181      545F4741 
+ 3181      5454535F 
+ 3181      50524550 
+ 3182              	.LASF172:
+ 3183 0fee 4359424C 		.ascii	"CYBLE_GATT_ERR_INSUFFICIENT_AUTHENTICATION\000"
+ 3183      455F4741 
+ 3183      54545F45 
+ 3183      52525F49 
+ 3183      4E535546 
+ 3184              	.LASF221:
+ 3185 1019 4359424C 		.ascii	"CYBLE_DIS_REG_CERT_DATA\000"
+ 3185      455F4449 
+ 3185      535F5245 
+ 3185      475F4345 
+ 3185      52545F44 
+ 3186              	.LASF130:
+ 3187 1031 6D616A6F 		.ascii	"majorVersion\000"
+ 3187      72566572 
+ 3187      73696F6E 
+ 3187      00
+ 3188              	.LASF189:
+ 3189 103e 4359424C 		.ascii	"CYBLE_GATTS_ERR_PROCEDURE_ALREADY_IN_PROGRESS\000"
+ 3189      455F4741 
+ 3189      5454535F 
+ 3189      4552525F 
+ 3189      50524F43 
+ 3190              	.LASF96:
+ 3191 106c 4359424C 		.ascii	"CYBLE_ERROR_L2CAP_PSM_WRONG_ENCODING\000"
+ 3191      455F4552 
+ 3191      524F525F 
+ 3191      4C324341 
+ 3191      505F5053 
+ 3192              	.LASF177:
+ 3193 1091 4359424C 		.ascii	"CYBLE_GATT_ERR_ATTRIBUTE_NOT_FOUND\000"
+ 3193      455F4741 
+ 3193      54545F45 
+ 3193      52525F41 
+ 3193      54545249 
+ 3194              	.LASF82:
+ 3195 10b4 4359424C 		.ascii	"CYBLE_EVT_MAX\000"
+ 3195      455F4556 
+ 3195      545F4D41 
+ 3195      5800
+ 3196              	.LASF35:
+ 3197 10c2 4359424C 		.ascii	"CYBLE_EVT_GAPC_SCAN_START_STOP\000"
+ 3197      455F4556 
+ 3197      545F4741 
+ 3197      50435F53 
+ 3197      43414E5F 
+ 3198              	.LASF155:
+ 3199 10e1 4359424C 		.ascii	"CYBLE_GAP_AUTH_FAILED_REASON_T\000"
+ 3199      455F4741 
+ 3199      505F4155 
+ 3199      54485F46 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 77
+
+
+ 3199      41494C45 
+ 3200              	.LASF56:
+ 3201 1100 4359424C 		.ascii	"CYBLE_EVT_GATTS_WRITE_REQ\000"
+ 3201      455F4556 
+ 3201      545F4741 
+ 3201      5454535F 
+ 3201      57524954 
+ 3202              	.LASF134:
+ 3203 111a 4359424C 		.ascii	"CYBLE_STACK_LIB_VERSION_T\000"
+ 3203      455F5354 
+ 3203      41434B5F 
+ 3203      4C49425F 
+ 3203      56455253 
+ 3204              	.LASF258:
+ 3205 1134 443A5C47 		.ascii	"D:\\GitHub\\CY_BLE_MOUSE\\BLE_HID_Mouse\\BLE_HID_Mo"
+ 3205      69744875 
+ 3205      625C4359 
+ 3205      5F424C45 
+ 3205      5F4D4F55 
+ 3206 1163 7573652E 		.ascii	"use.cydsn\000"
+ 3206      63796473 
+ 3206      6E00
+ 3207              	.LASF27:
+ 3208 116d 4359424C 		.ascii	"CYBLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST\000"
+ 3208      455F4556 
+ 3208      545F4741 
+ 3208      505F5041 
+ 3208      53534B45 
+ 3209              	.LASF112:
+ 3210 1193 4359424C 		.ascii	"CYBLE_ERROR_IND_DISABLED\000"
+ 3210      455F4552 
+ 3210      524F525F 
+ 3210      494E445F 
+ 3210      44495341 
+ 3211              	.LASF111:
+ 3212 11ac 4359424C 		.ascii	"CYBLE_ERROR_NTF_DISABLED\000"
+ 3212      455F4552 
+ 3212      524F525F 
+ 3212      4E54465F 
+ 3212      44495341 
+ 3213              	.LASF53:
+ 3214 11c5 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_RSP\000"
+ 3214      455F4556 
+ 3214      545F4741 
+ 3214      5454435F 
+ 3214      52454144 
+ 3215              	.LASF174:
+ 3216 11de 4359424C 		.ascii	"CYBLE_GATT_ERR_INVALID_OFFSET\000"
+ 3216      455F4741 
+ 3216      54545F45 
+ 3216      52525F49 
+ 3216      4E56414C 
+ 3217              	.LASF73:
+ 3218 11fc 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_CONN_CNF\000"
+ 3218      455F4556 
+ 3218      545F4C32 
+ 3218      4341505F 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 78
+
+
+ 3218      43424643 
+ 3219              	.LASF204:
+ 3220 121a 4359424C 		.ascii	"CYBLE_GATT_ERR_OUT_OF_RANGE\000"
+ 3220      455F4741 
+ 3220      54545F45 
+ 3220      52525F4F 
+ 3220      55545F4F 
+ 3221              	.LASF254:
+ 3222 1236 6D61696E 		.ascii	"mainTimer\000"
+ 3222      54696D65 
+ 3222      7200
+ 3223              	.LASF23:
+ 3224 1240 4359424C 		.ascii	"CYBLE_EVT_MEMORY_REQUEST\000"
+ 3224      455F4556 
+ 3224      545F4D45 
+ 3224      4D4F5259 
+ 3224      5F524551 
+ 3225              	.LASF138:
+ 3226 1259 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_NONE\000"
+ 3226      455F4741 
+ 3226      505F4155 
+ 3226      54485F45 
+ 3226      52524F52 
+ 3227              	.LASF33:
+ 3228 1273 4359424C 		.ascii	"CYBLE_EVT_GAP_ENCRYPT_CHANGE\000"
+ 3228      455F4556 
+ 3228      545F4741 
+ 3228      505F454E 
+ 3228      43525950 
+ 3229              	.LASF47:
+ 3230 1290 4359424C 		.ascii	"CYBLE_EVT_GATTS_XCNHG_MTU_REQ\000"
+ 3230      455F4556 
+ 3230      545F4741 
+ 3230      5454535F 
+ 3230      58434E48 
+ 3231              	.LASF140:
+ 3232 12ae 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_OOB_DATA_NOT_AVAILABLE\000"
+ 3232      455F4741 
+ 3232      505F4155 
+ 3232      54485F45 
+ 3232      52524F52 
+ 3233              	.LASF226:
+ 3234 12da 4359424C 		.ascii	"CYBLE_SCPS_CHAR_COUNT\000"
+ 3234      455F5343 
+ 3234      50535F43 
+ 3234      4841525F 
+ 3234      434F554E 
+ 3235              	.LASF214:
+ 3236 12f0 4359424C 		.ascii	"CYBLE_DIS_MANUFACTURER_NAME\000"
+ 3236      455F4449 
+ 3236      535F4D41 
+ 3236      4E554641 
+ 3236      43545552 
+ 3237              	.LASF116:
+ 3238 130c 4359424C 		.ascii	"CYBLE_BLESS_ACTIVE\000"
+ 3238      455F424C 
+ 3238      4553535F 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 79
+
+
+ 3238      41435449 
+ 3238      564500
+ 3239              	.LASF166:
+ 3240 131f 4359424C 		.ascii	"CYBLE_GAP_CONN_PARAM_UPDATED_IN_CONTROLLER_T\000"
+ 3240      455F4741 
+ 3240      505F434F 
+ 3240      4E4E5F50 
+ 3240      4152414D 
+ 3241              	.LASF7:
+ 3242 134c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3242      206C6F6E 
+ 3242      6720756E 
+ 3242      7369676E 
+ 3242      65642069 
+ 3243              	.LASF238:
+ 3244 1363 41707043 		.ascii	"AppCallBack\000"
+ 3244      616C6C42 
+ 3244      61636B00 
+ 3245              	.LASF168:
+ 3246 136f 4359424C 		.ascii	"CYBLE_GATT_ERR_INVALID_HANDLE\000"
+ 3246      455F4741 
+ 3246      54545F45 
+ 3246      52525F49 
+ 3246      4E56414C 
+ 3247              	.LASF19:
+ 3248 138d 4359424C 		.ascii	"CYBLE_EVT_TIMEOUT\000"
+ 3248      455F4556 
+ 3248      545F5449 
+ 3248      4D454F55 
+ 3248      5400
+ 3249              	.LASF15:
+ 3250 139f 72656733 		.ascii	"reg32\000"
+ 3250      3200
+ 3251              	.LASF191:
+ 3252 13a5 4359424C 		.ascii	"CYBLE_GATT_ERR_MISSING_CRC\000"
+ 3252      455F4741 
+ 3252      54545F45 
+ 3252      52525F4D 
+ 3252      49535349 
+ 3253              	.LASF114:
+ 3254 13c0 4359424C 		.ascii	"CYBLE_ERROR_INVALID_STATE\000"
+ 3254      455F4552 
+ 3254      524F525F 
+ 3254      494E5641 
+ 3254      4C49445F 
+ 3255              	.LASF206:
+ 3256 13da 4359424C 		.ascii	"CYBLE_GATT_DB_ATTR_HANDLE_T\000"
+ 3256      455F4741 
+ 3256      54545F44 
+ 3256      425F4154 
+ 3256      54525F48 
+ 3257              	.LASF76:
+ 3258 13f6 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DATA_READ\000"
+ 3258      455F4556 
+ 3258      545F4C32 
+ 3258      4341505F 
+ 3258      43424643 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 80
+
+
+ 3259              	.LASF167:
+ 3260 1415 4359424C 		.ascii	"CYBLE_GATT_ERR_NONE\000"
+ 3260      455F4741 
+ 3260      54545F45 
+ 3260      52525F4E 
+ 3260      4F4E4500 
+ 3261              	.LASF251:
+ 3262 1429 6D6F7573 		.ascii	"mouseSimulation\000"
+ 3262      6553696D 
+ 3262      756C6174 
+ 3262      696F6E00 
+ 3263              	.LASF108:
+ 3264 1439 4359424C 		.ascii	"CYBLE_ERROR_FLASH_WRITE\000"
+ 3264      455F4552 
+ 3264      524F525F 
+ 3264      464C4153 
+ 3264      485F5752 
+ 3265              	.LASF188:
+ 3266 1451 4359424C 		.ascii	"CYBLE_GATT_ERR_HTS_OUT_OF_RANGE\000"
+ 3266      455F4741 
+ 3266      54545F45 
+ 3266      52525F48 
+ 3266      54535F4F 
+ 3267              	.LASF224:
+ 3268 1471 4359424C 		.ascii	"CYBLE_SCPS_SCAN_INT_WIN\000"
+ 3268      455F5343 
+ 3268      50535F53 
+ 3268      43414E5F 
+ 3268      494E545F 
+ 3269              	.LASF137:
+ 3270 1489 4359424C 		.ascii	"CYBLE_GAP_BD_ADDR_T\000"
+ 3270      455F4741 
+ 3270      505F4244 
+ 3270      5F414444 
+ 3270      525F5400 
+ 3271              	.LASF256:
+ 3272 149d 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 3272      4320342E 
+ 3272      392E3320 
+ 3272      32303135 
+ 3272      30333033 
+ 3273 14d0 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 3273      20726576 
+ 3273      6973696F 
+ 3273      6E203232 
+ 3273      31323230 
+ 3274 1503 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 3274      66756E63 
+ 3274      74696F6E 
+ 3274      2D736563 
+ 3274      74696F6E 
+ 3275              	.LASF210:
+ 3276 152b 636F6E6E 		.ascii	"connHandle\000"
+ 3276      48616E64 
+ 3276      6C6500
+ 3277              	.LASF143:
+ 3278 1536 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_PAIRING_NOT_SUPPORTED\000"
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 81
+
+
+ 3278      455F4741 
+ 3278      505F4155 
+ 3278      54485F45 
+ 3278      52524F52 
+ 3279              	.LASF248:
+ 3280 1561 6379426C 		.ascii	"cyBle_pendingFlashWrite\000"
+ 3280      655F7065 
+ 3280      6E64696E 
+ 3280      67466C61 
+ 3280      73685772 
+ 3281              	.LASF51:
+ 3282 1579 4359424C 		.ascii	"CYBLE_EVT_GATTC_FIND_INFO_RSP\000"
+ 3282      455F4556 
+ 3282      545F4741 
+ 3282      5454435F 
+ 3282      46494E44 
+ 3283              	.LASF50:
+ 3284 1597 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BY_TYPE_RSP\000"
+ 3284      455F4556 
+ 3284      545F4741 
+ 3284      5454435F 
+ 3284      52454144 
+ 3285              	.LASF237:
+ 3286 15b8 61757468 		.ascii	"authInfo\000"
+ 3286      496E666F 
+ 3286      00
+ 3287              	.LASF193:
+ 3288 15c1 4359424C 		.ascii	"CYBLE_GATTS_ERR_OPERATION_FAILED\000"
+ 3288      455F4741 
+ 3288      5454535F 
+ 3288      4552525F 
+ 3288      4F504552 
+ 3289              	.LASF249:
+ 3290 15e2 6379426C 		.ascii	"cyBle_state\000"
+ 3290      655F7374 
+ 3290      61746500 
+ 3291              	.LASF160:
+ 3292 15ee 70616972 		.ascii	"pairingProperties\000"
+ 3292      696E6750 
+ 3292      726F7065 
+ 3292      72746965 
+ 3292      7300
+ 3293              	.LASF57:
+ 3294 1600 4359424C 		.ascii	"CYBLE_EVT_GATTC_WRITE_RSP\000"
+ 3294      455F4556 
+ 3294      545F4741 
+ 3294      5454435F 
+ 3294      57524954 
+ 3295              	.LASF231:
+ 3296 161a 4359424C 		.ascii	"CYBLE_STATE_DISCONNECTED\000"
+ 3296      455F5354 
+ 3296      4154455F 
+ 3296      44495343 
+ 3296      4F4E4E45 
+ 3297              	.LASF30:
+ 3298 1633 4359424C 		.ascii	"CYBLE_EVT_GAPP_ADVERTISEMENT_START_STOP\000"
+ 3298      455F4556 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 82
+
+
+ 3298      545F4741 
+ 3298      50505F41 
+ 3298      44564552 
+ 3299              	.LASF9:
+ 3300 165b 75696E74 		.ascii	"uint8\000"
+ 3300      3800
+ 3301              	.LASF38:
+ 3302 1661 4359424C 		.ascii	"CYBLE_EVT_GAP_KEYPRESS_NOTIFICATION\000"
+ 3302      455F4556 
+ 3302      545F4741 
+ 3302      505F4B45 
+ 3302      59505245 
+ 3303              	.LASF253:
+ 3304 1685 72657175 		.ascii	"requestScanRefresh\000"
+ 3304      65737453 
+ 3304      63616E52 
+ 3304      65667265 
+ 3304      736800
+ 3305              	.LASF250:
+ 3306 1698 6379426C 		.ascii	"cyBle_connHandle\000"
+ 3306      655F636F 
+ 3306      6E6E4861 
+ 3306      6E646C65 
+ 3306      00
+ 3307              	.LASF2:
+ 3308 16a9 73686F72 		.ascii	"short int\000"
+ 3308      7420696E 
+ 3308      7400
+ 3309              	.LASF159:
+ 3310 16b3 61757468 		.ascii	"authErr\000"
+ 3310      45727200 
+ 3311              	.LASF106:
+ 3312 16bb 4359424C 		.ascii	"CYBLE_ERROR_HARDWARE_FAILURE\000"
+ 3312      455F4552 
+ 3312      524F525F 
+ 3312      48415244 
+ 3312      57415245 
+ 3313              	.LASF187:
+ 3314 16d8 4359424C 		.ascii	"CYBLE_GATT_ERR_CPS_INAPPROPRIATE_CONNECTION_PARAMET"
+ 3314      455F4741 
+ 3314      54545F45 
+ 3314      52525F43 
+ 3314      50535F49 
+ 3315 170b 45525300 		.ascii	"ERS\000"
+ 3316              	.LASF173:
+ 3317 170f 4359424C 		.ascii	"CYBLE_GATT_ERR_REQUEST_NOT_SUPPORTED\000"
+ 3317      455F4741 
+ 3317      54545F45 
+ 3317      52525F52 
+ 3317      45515545 
+ 3318              	.LASF44:
+ 3319 1734 4359424C 		.ascii	"CYBLE_EVT_GATTC_ERROR_RSP\000"
+ 3319      455F4556 
+ 3319      545F4741 
+ 3319      5454435F 
+ 3319      4552524F 
+ 3320              	.LASF232:
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 83
+
+
+ 3321 174e 4359424C 		.ascii	"CYBLE_STATE_T\000"
+ 3321      455F5354 
+ 3321      4154455F 
+ 3321      5400
+ 3322              	.LASF72:
+ 3323 175c 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_CONN_IND\000"
+ 3323      455F4556 
+ 3323      545F4C32 
+ 3323      4341505F 
+ 3323      43424643 
+ 3324              	.LASF60:
+ 3325 177a 4359424C 		.ascii	"CYBLE_EVT_GATTS_EXEC_WRITE_REQ\000"
+ 3325      455F4556 
+ 3325      545F4741 
+ 3325      5454535F 
+ 3325      45584543 
+ 3326              	.LASF24:
+ 3327 1799 4359424C 		.ascii	"CYBLE_EVT_GAPC_SCAN_PROGRESS_RESULT\000"
+ 3327      455F4556 
+ 3327      545F4741 
+ 3327      50435F53 
+ 3327      43414E5F 
+ 3328              	.LASF241:
+ 3329 17bd 5744545F 		.ascii	"WDT_Start\000"
+ 3329      53746172 
+ 3329      7400
+ 3330              	.LASF205:
+ 3331 17c7 4359424C 		.ascii	"CYBLE_GATT_ERR_CODE_T\000"
+ 3331      455F4741 
+ 3331      54545F45 
+ 3331      52525F43 
+ 3331      4F44455F 
+ 3332              	.LASF200:
+ 3333 17dd 4359424C 		.ascii	"CYBLE_GATT_ERR_ANCS_INVALID_PARAMETER\000"
+ 3333      455F4741 
+ 3333      54545F45 
+ 3333      52525F41 
+ 3333      4E43535F 
+ 3334              	.LASF92:
+ 3335 1803 4359424C 		.ascii	"CYBLE_ERROR_GAP_ROLE\000"
+ 3335      455F4552 
+ 3335      524F525F 
+ 3335      4741505F 
+ 3335      524F4C45 
+ 3336              	.LASF135:
+ 3337 1818 62644164 		.ascii	"bdAddr\000"
+ 3337      647200
+ 3338              	.LASF197:
+ 3339 181f 4359424C 		.ascii	"CYBLE_GATT_ERR_ANS_COMMAND_NOT_SUPPORTED\000"
+ 3339      455F4741 
+ 3339      54545F45 
+ 3339      52525F41 
+ 3339      4E535F43 
+ 3340              	.LASF126:
+ 3341 1848 4359424C 		.ascii	"CYBLE_BLESS_STATE_ECO_STABLE\000"
+ 3341      455F424C 
+ 3341      4553535F 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 84
+
+
+ 3341      53544154 
+ 3341      455F4543 
+ 3342              	.LASF89:
+ 3343 1865 4359424C 		.ascii	"CYBLE_ERROR_NO_CONNECTION\000"
+ 3343      455F4552 
+ 3343      524F525F 
+ 3343      4E4F5F43 
+ 3343      4F4E4E45 
+ 3344              	.LASF119:
+ 3345 187f 4359424C 		.ascii	"CYBLE_BLESS_HIBERNATE\000"
+ 3345      455F424C 
+ 3345      4553535F 
+ 3345      48494245 
+ 3345      524E4154 
+ 3346              	.LASF81:
+ 3347 1895 4359424C 		.ascii	"CYBLE_EVT_LE_PING_AUTH_TIMEOUT\000"
+ 3347      455F4556 
+ 3347      545F4C45 
+ 3347      5F50494E 
+ 3347      475F4155 
+ 3348              	.LASF115:
+ 3349 18b4 4359424C 		.ascii	"CYBLE_API_RESULT_T\000"
+ 3349      455F4150 
+ 3349      495F5245 
+ 3349      53554C54 
+ 3349      5F5400
+ 3350              	.LASF129:
+ 3351 18c7 4359424C 		.ascii	"CYBLE_BLESS_STATE_INVALID\000"
+ 3351      455F424C 
+ 3351      4553535F 
+ 3351      53544154 
+ 3351      455F494E 
+ 3352              	.LASF132:
+ 3353 18e1 70617463 		.ascii	"patch\000"
+ 3353      6800
+ 3354              	.LASF63:
+ 3355 18e7 4359424C 		.ascii	"CYBLE_EVT_GATTC_HANDLE_VALUE_IND\000"
+ 3355      455F4556 
+ 3355      545F4741 
+ 3355      5454435F 
+ 3355      48414E44 
+ 3356              	.LASF95:
+ 3357 1908 4359424C 		.ascii	"CYBLE_ERROR_SEC_FAILED\000"
+ 3357      455F4552 
+ 3357      524F525F 
+ 3357      5345435F 
+ 3357      4641494C 
+ 3358              	.LASF243:
+ 3359 191f 626C654D 		.ascii	"bleMode\000"
+ 3359      6F646500 
+ 3360              	.LASF22:
+ 3361 1927 4359424C 		.ascii	"CYBLE_EVT_STACK_BUSY_STATUS\000"
+ 3361      455F4556 
+ 3361      545F5354 
+ 3361      41434B5F 
+ 3361      42555359 
+ 3362              	.LASF164:
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 85
+
+
+ 3363 1943 636F6E6E 		.ascii	"connLatency\000"
+ 3363      4C617465 
+ 3363      6E637900 
+ 3364              	.LASF150:
+ 3365 194f 4359424C 		.ascii	"CYBLE_GAP_AUTH_ERROR_NUMERIC_COMPARISON_FAILED\000"
+ 3365      455F4741 
+ 3365      505F4155 
+ 3365      54485F45 
+ 3365      52524F52 
+ 3366              	.LASF36:
+ 3367 197e 4359424C 		.ascii	"CYBLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT\000"
+ 3367      455F4556 
+ 3367      545F4741 
+ 3367      505F4B45 
+ 3367      59494E46 
+ 3368              	.LASF259:
+ 3369 19a2 4C6F7750 		.ascii	"LowPowerImplementation\000"
+ 3369      6F776572 
+ 3369      496D706C 
+ 3369      656D656E 
+ 3369      74617469 
+ 3370              	.LASF69:
+ 3371 19b9 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CONN_PARAM_UPDATE_REQ\000"
+ 3371      455F4556 
+ 3371      545F4C32 
+ 3371      4341505F 
+ 3371      434F4E4E 
+ 3372              	.LASF257:
+ 3373 19df 2E5C6D61 		.ascii	".\\main.c\000"
+ 3373      696E2E63 
+ 3373      00
+ 3374              	.LASF170:
+ 3375 19e8 4359424C 		.ascii	"CYBLE_GATT_ERR_WRITE_NOT_PERMITTED\000"
+ 3375      455F4741 
+ 3375      54545F45 
+ 3375      52525F57 
+ 3375      52495445 
+ 3376              	.LASF163:
+ 3377 1a0b 636F6E6E 		.ascii	"connIntv\000"
+ 3377      496E7476 
+ 3377      00
+ 3378              	.LASF3:
+ 3379 1a14 73686F72 		.ascii	"short unsigned int\000"
+ 3379      7420756E 
+ 3379      7369676E 
+ 3379      65642069 
+ 3379      6E7400
+ 3380              	.LASF182:
+ 3381 1a27 4359424C 		.ascii	"CYBLE_GATT_ERR_INSUFFICIENT_ENCRYPTION\000"
+ 3381      455F4741 
+ 3381      54545F45 
+ 3381      52525F49 
+ 3381      4E535546 
+ 3382              	.LASF247:
+ 3383 1a4e 73746163 		.ascii	"stackVersion\000"
+ 3383      6B566572 
+ 3383      73696F6E 
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 86
+
+
+ 3383      00
+ 3384              	.LASF229:
+ 3385 1a5b 4359424C 		.ascii	"CYBLE_STATE_CONNECTED\000"
+ 3385      455F5354 
+ 3385      4154455F 
+ 3385      434F4E4E 
+ 3385      45435445 
+ 3386              	.LASF239:
+ 3387 1a71 54696D65 		.ascii	"Timer_Interrupt\000"
+ 3387      725F496E 
+ 3387      74657272 
+ 3387      75707400 
+ 3388              	.LASF208:
+ 3389 1a81 61747449 		.ascii	"attId\000"
+ 3389      6400
+ 3390              	.LASF85:
+ 3391 1a87 4359424C 		.ascii	"CYBLE_ERROR_INVALID_OPERATION\000"
+ 3391      455F4552 
+ 3391      524F525F 
+ 3391      494E5641 
+ 3391      4C49445F 
+ 3392              	.LASF21:
+ 3393 1aa5 4359424C 		.ascii	"CYBLE_EVT_HCI_STATUS\000"
+ 3393      455F4556 
+ 3393      545F4843 
+ 3393      495F5354 
+ 3393      41545553 
+ 3394              	.LASF46:
+ 3395 1aba 4359424C 		.ascii	"CYBLE_EVT_GATT_DISCONNECT_IND\000"
+ 3395      455F4556 
+ 3395      545F4741 
+ 3395      54545F44 
+ 3395      4953434F 
+ 3396              	.LASF165:
+ 3397 1ad8 73757065 		.ascii	"supervisionTO\000"
+ 3397      72766973 
+ 3397      696F6E54 
+ 3397      4F00
+ 3398              	.LASF79:
+ 3399 1ae6 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DATA_WRITE_IND\000"
+ 3399      455F4556 
+ 3399      545F4C32 
+ 3399      4341505F 
+ 3399      43424643 
+ 3400              	.LASF255:
+ 3401 1b0a 61757468 		.ascii	"authenticated\000"
+ 3401      656E7469 
+ 3401      63617465 
+ 3401      6400
+ 3402              	.LASF225:
+ 3403 1b18 4359424C 		.ascii	"CYBLE_SCPS_SCAN_REFRESH\000"
+ 3403      455F5343 
+ 3403      50535F53 
+ 3403      43414E5F 
+ 3403      52454652 
+ 3404              	.LASF68:
+ 3405 1b30 4359424C 		.ascii	"CYBLE_EVT_GATTC_LONG_PROCEDURE_END\000"
+ARM GAS  C:\Users\Herry\AppData\Local\Temp\ccRVhSEd.s 			page 87
+
+
+ 3405      455F4556 
+ 3405      545F4741 
+ 3405      5454435F 
+ 3405      4C4F4E47 
+ 3406              	.LASF32:
+ 3407 1b53 4359424C 		.ascii	"CYBLE_EVT_GAP_DEVICE_DISCONNECTED\000"
+ 3407      455F4556 
+ 3407      545F4741 
+ 3407      505F4445 
+ 3407      56494345 
+ 3408              	.LASF64:
+ 3409 1b75 4359424C 		.ascii	"CYBLE_EVT_GATTS_HANDLE_VALUE_CNF\000"
+ 3409      455F4556 
+ 3409      545F4741 
+ 3409      5454535F 
+ 3409      48414E44 
+ 3410              	.LASF10:
+ 3411 1b96 75696E74 		.ascii	"uint16\000"
+ 3411      313600
+ 3412              	.LASF93:
+ 3413 1b9d 4359424C 		.ascii	"CYBLE_ERROR_TX_POWER_READ\000"
+ 3413      455F4552 
+ 3413      524F525F 
+ 3413      54585F50 
+ 3413      4F574552 
+ 3414              	.LASF252:
+ 3415 1bb7 73757370 		.ascii	"suspend\000"
+ 3415      656E6400 
+ 3416              	.LASF127:
+ 3417 1bbf 4359424C 		.ascii	"CYBLE_BLESS_STATE_DEEPSLEEP\000"
+ 3417      455F424C 
+ 3417      4553535F 
+ 3417      53544154 
+ 3417      455F4445 
+ 3418              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
