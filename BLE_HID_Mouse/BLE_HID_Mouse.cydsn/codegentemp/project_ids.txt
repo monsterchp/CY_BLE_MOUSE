@@ -1,0 +1,5 @@
+D:\GitHub\CY_BLE_MOUSE\BLE_HID_Mouse\BLE_HID_Mouse.cydsn\BLE_HID_Mouse.cyprj|166c006c-0737-4848-8b3c-fd867d1f961c
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|3687166b-a6e0-420b-8fba-c4fc5a26ad95
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|bdb2ffc6-edf5-4bfc-86d1-0ccc5ca6c298
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|07a7f294-b896-41f7-b0e6-6181b6439598
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|588b712e-b1b0-4aa4-9ba5-43cb28a49ec5
